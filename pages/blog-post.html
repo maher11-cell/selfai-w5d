@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Designing agents that disagree well — W5D</title>
+<meta name="description" content="Why we ship debate, not consensus, into every multi-agent run." />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{50:'#f3f1ff',100:'#ebe5ff',200:'#d9ceff',300:'#bda7ff',400:'#9c79ff',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95'},ink:{950:'#070711',900:'#0b0b18',800:'#11111f',700:'#1a1a2e'}},fontFamily:{sans:['Inter','system-ui','sans-serif'],display:['"Space Grotesk"','Inter','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+<link rel="stylesheet" href="../css/style.css" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+<script src="../js/logos.js" defer></script>
+<script src="../js/shell.js" defer></script>
+<script src="../js/megamenu.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script src="../js/api.js" defer></script>
+</head>
+<body data-prefix="../" class="bg-white text-slate-800 dark:bg-ink-950 dark:text-slate-200 transition-colors duration-300">
+<div data-shell></div>
+
+<article class="pt-36 pb-20">
+  <header class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+    <a href="blog.html" class="text-xs text-brand-500 uppercase tracking-widest link-underline">← Engineering</a>
+    <h1 class="font-display text-4xl sm:text-6xl font-bold mt-4 leading-[1.05] text-slate-900 dark:text-white">Designing agents that <span class="gradient-text">disagree well.</span></h1>
+    <div class="mt-6 flex items-center justify-center gap-3">
+      <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-cyan-400"></div>
+      <div class="text-left"><p class="text-sm font-semibold text-slate-900 dark:text-white">Aiko Tanaka</p><p class="text-xs text-slate-500">Head of Research · April 18, 2026 · 9 min read</p></div>
+    </div>
+  </header>
+
+  <!-- Cover -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 mt-10">
+    <div class="rounded-3xl h-64 sm:h-96 bg-gradient-to-br from-brand-500 via-indigo-500 to-cyan-400"></div>
+  </div>
+
+  <!-- Body -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 mt-12 prose-w5d text-lg leading-relaxed text-slate-700 dark:text-slate-300 space-y-6">
+    <p><span class="font-display text-5xl float-left mr-3 leading-none gradient-text">A</span> common assumption in multi-agent systems is that more agents means better answers. Pile enough specialists into a room and surely they'll converge on the truth. We tried this. They didn't. They politely agreed with each other and produced confident, citation-light slop.</p>
+
+    <p>The fix turned out to be obvious in hindsight: agents should disagree on purpose. Not as a personality quirk, but as a structural part of every run.</p>
+
+    <h2 class="font-display text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white !mt-12">The problem with consensus</h2>
+    <p>When two agents share a base model, they share a base bias. Ask them the same question and you get the same answer twice — wrong twice, if it's wrong. The output looks more reliable because it's been "verified," but it's actually just been duplicated.</p>
+
+    <p>Worse, when one agent feeds another, errors compound. The summarizer trusts the researcher. The writer trusts the summarizer. By the time it lands in your inbox, no one — human or machine — knows what was a fact and what was a vibe.</p>
+
+    <h2 class="font-display text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white !mt-12">Disagreement as a feature</h2>
+    <p>So we designed our agents to argue. Concretely:</p>
+    <ul class="list-disc pl-6 space-y-2">
+      <li><strong>Different models for different roles.</strong> The researcher and the critic never run on the same family of base models.</li>
+      <li><strong>Adversarial prompts.</strong> The critic is explicitly told to look for what the researcher missed.</li>
+      <li><strong>Citation comparison.</strong> Disagreements have to point at sources, not vibes.</li>
+      <li><strong>Logged divergence.</strong> Every run shows where agents disagreed and how it resolved.</li>
+    </ul>
+
+    <blockquote class="border-l-4 border-brand-500 pl-5 italic text-slate-900 dark:text-white text-xl !my-10">
+      The most useful AI output isn't the loudest. It's the one that survived a fight.
+    </blockquote>
+
+    <h2 class="font-display text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white !mt-12">What we measured</h2>
+    <p>On our internal hallucination eval (1,200 questions across research, summarization, and analysis), the disagree-first system reduced unsupported claims by <strong>41%</strong> compared to a same-model verifier. Latency went up 12%. Token cost went up 8%. We think that's an obvious trade.</p>
+
+    <h2 class="font-display text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white !mt-12">What's next</h2>
+    <p>We're shipping a new "Critic" agent template in next week's release that you can drop into any workflow with one click. It runs in parallel with your primary agent and surfaces disagreements as comments on the canvas.</p>
+    <p>If you want early access, ping us in the community Discord. And if you build something interesting on top of it, we'd love to feature it here.</p>
+  </div>
+
+  <!-- Tags + share -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 mt-12 flex flex-wrap items-center justify-between gap-4">
+    <div class="flex flex-wrap gap-2 text-xs">
+      <span class="glass rounded-full px-3 py-1">Engineering</span>
+      <span class="glass rounded-full px-3 py-1">Multi-agent</span>
+      <span class="glass rounded-full px-3 py-1">Eval</span>
+    </div>
+    <div class="flex items-center gap-2 text-slate-500">
+      <span class="text-xs">Share</span>
+      <button class="w-9 h-9 glass rounded-lg flex items-center justify-center hover:text-brand-500"><i data-lucide="send" class="w-4 h-4"></i></button>
+      <button class="w-9 h-9 glass rounded-lg flex items-center justify-center hover:text-brand-500"><i data-lucide="briefcase" class="w-4 h-4"></i></button>
+      <button class="w-9 h-9 glass rounded-lg flex items-center justify-center hover:text-brand-500"><i data-lucide="link" class="w-4 h-4"></i></button>
+    </div>
+  </div>
+</article>
+
+<!-- Related -->
+<section class="py-16 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <h2 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-6">Keep reading</h2>
+    <div class="grid md:grid-cols-3 gap-5">
+      <a href="blog-post.html" class="glass rounded-2xl overflow-hidden hover:-translate-y-1 transition"><div class="h-40 bg-gradient-to-br from-cyan-500 via-indigo-500 to-brand-500"></div><div class="p-5"><p class="text-xs text-slate-500">Engineering · 12 min</p><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white mt-2">The router that picks your model</h3></div></a>
+      <a href="blog-post.html" class="glass rounded-2xl overflow-hidden hover:-translate-y-1 transition"><div class="h-40 bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-400"></div><div class="p-5"><p class="text-xs text-slate-500">Security · 8 min</p><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white mt-2">Zero-retention by default, explained</h3></div></a>
+      <a href="blog-post.html" class="glass rounded-2xl overflow-hidden hover:-translate-y-1 transition"><div class="h-40 bg-gradient-to-br from-pink-500 via-rose-500 to-amber-400"></div><div class="p-5"><p class="text-xs text-slate-500">Product · 6 min</p><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white mt-2">A calmer take on the AI cockpit</h3></div></a>
+    </div>
+  </div>
+</section>
+
+<div data-shell-foot></div>
+</body></html>

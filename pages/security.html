@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Security — W5D</title>
+<meta name="description" content="SOC 2 Type II, GDPR, zero-retention routing, and a public sub-processor list. Security at W5D, in plain language." />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{50:'#f3f1ff',100:'#ebe5ff',200:'#d9ceff',300:'#bda7ff',400:'#9c79ff',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95'},ink:{950:'#070711',900:'#0b0b18',800:'#11111f',700:'#1a1a2e'}},fontFamily:{sans:['Inter','system-ui','sans-serif'],display:['"Space Grotesk"','Inter','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+<link rel="stylesheet" href="../css/style.css" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+<script src="../js/logos.js" defer></script>
+<script src="../js/shell.js" defer></script>
+<script src="../js/megamenu.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script src="../js/api.js" defer></script>
+</head>
+<body data-prefix="../" class="bg-white text-slate-800 dark:bg-ink-950 dark:text-slate-200 transition-colors duration-300">
+<div data-shell></div>
+
+<section class="relative pt-36 pb-12 overflow-hidden">
+  <div class="absolute inset-0 grid-bg"></div><div class="orb orb-2 w-[420px] h-[420px] -top-20 -left-20"></div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+    <p class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Security</p>
+    <h1 class="font-display text-5xl sm:text-6xl font-bold mt-4 text-slate-900 dark:text-white">Boring, in the <span class="gradient-text">best way.</span></h1>
+    <p class="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Independent audits, transparent processes, and zero-retention by default. Here's how we look after your data.</p>
+  </div>
+</section>
+
+<!-- Badges -->
+<section class="py-12">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="glass rounded-2xl p-6 text-center"><div class="w-14 h-14 rounded-xl bg-emerald-500/10 text-emerald-500 mx-auto flex items-center justify-center"><i data-lucide="shield-check" class="w-7 h-7"></i></div><p class="font-display font-semibold mt-3 text-slate-900 dark:text-white">SOC 2 Type II</p><p class="text-xs text-slate-500">Audited annually</p></div>
+    <div class="glass rounded-2xl p-6 text-center"><div class="w-14 h-14 rounded-xl bg-cyan-500/10 text-cyan-500 mx-auto flex items-center justify-center"><i data-lucide="globe" class="w-7 h-7"></i></div><p class="font-display font-semibold mt-3 text-slate-900 dark:text-white">GDPR</p><p class="text-xs text-slate-500">EU + UK</p></div>
+    <div class="glass rounded-2xl p-6 text-center"><div class="w-14 h-14 rounded-xl bg-pink-500/10 text-pink-500 mx-auto flex items-center justify-center"><i data-lucide="user-check" class="w-7 h-7"></i></div><p class="font-display font-semibold mt-3 text-slate-900 dark:text-white">CCPA</p><p class="text-xs text-slate-500">California ready</p></div>
+    <div class="glass rounded-2xl p-6 text-center"><div class="w-14 h-14 rounded-xl bg-brand-500/10 text-brand-500 mx-auto flex items-center justify-center"><i data-lucide="lock" class="w-7 h-7"></i></div><p class="font-display font-semibold mt-3 text-slate-900 dark:text-white">ISO 27001</p><p class="text-xs text-slate-500">In progress (Q3)</p></div>
+  </div>
+</section>
+
+<!-- Pillars -->
+<section class="py-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="glass rounded-2xl p-6"><i data-lucide="key" class="w-7 h-7 text-brand-500 mb-3"></i><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Encryption everywhere</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-400">AES-256 at rest, TLS 1.3 in transit. Per-tenant keys, rotated on a schedule.</p></div>
+    <div class="glass rounded-2xl p-6"><i data-lucide="eye-off" class="w-7 h-7 text-cyan-500 mb-3"></i><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Zero-retention routing</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-400">All third-party model calls go through providers with contractual zero-retention.</p></div>
+    <div class="glass rounded-2xl p-6"><i data-lucide="users-round" class="w-7 h-7 text-pink-500 mb-3"></i><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">SSO & SCIM</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-400">SAML 2.0 SSO and SCIM 2.0 provisioning on Enterprise. Granular RBAC.</p></div>
+    <div class="glass rounded-2xl p-6"><i data-lucide="file-search" class="w-7 h-7 text-emerald-500 mb-3"></i><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Full audit log</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Every action — human or agent — is logged, attributed, and exportable.</p></div>
+    <div class="glass rounded-2xl p-6"><i data-lucide="server" class="w-7 h-7 text-amber-500 mb-3"></i><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Regional residency</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Choose US, EU, or APAC data residency on Pro+ plans. Data stays put.</p></div>
+    <div class="glass rounded-2xl p-6"><i data-lucide="bug" class="w-7 h-7 text-rose-500 mb-3"></i><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Bug bounty</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Public program with up to $10k payouts for critical issues.</p></div>
+  </div>
+</section>
+
+<!-- Sub-processors -->
+<section class="py-16 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10"><span class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Sub-processors</span><h2 class="font-display text-3xl font-bold mt-3 text-slate-900 dark:text-white">Who we trust with what.</h2><p class="text-sm text-slate-500 mt-2">Updated monthly. Customers get 30-day advance notice on any change.</p></div>
+    <div class="glass rounded-2xl overflow-hidden"><table class="w-full text-sm">
+      <thead class="border-b border-slate-200/60 dark:border-white/10 text-left"><tr><th class="p-4 font-semibold">Vendor</th><th class="p-4 font-semibold">Purpose</th><th class="p-4 font-semibold">Region</th></tr></thead>
+      <tbody class="divide-y divide-slate-200/60 dark:divide-white/5">
+        <tr><td class="p-4">AWS</td><td class="p-4 text-slate-500">Primary infrastructure</td><td class="p-4 text-slate-500">US, EU, AP</td></tr>
+        <tr><td class="p-4">Cloudflare</td><td class="p-4 text-slate-500">Edge / DDoS protection</td><td class="p-4 text-slate-500">Global</td></tr>
+        <tr><td class="p-4">Stripe</td><td class="p-4 text-slate-500">Payment processing</td><td class="p-4 text-slate-500">US, EU</td></tr>
+        <tr><td class="p-4">Postmark</td><td class="p-4 text-slate-500">Transactional email</td><td class="p-4 text-slate-500">US</td></tr>
+        <tr><td class="p-4">Datadog</td><td class="p-4 text-slate-500">Observability</td><td class="p-4 text-slate-500">US, EU</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- Trust links -->
+<section class="py-16">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+    <a href="#" class="glass rounded-xl p-4 hover:-translate-y-0.5 transition flex items-center gap-3"><i data-lucide="file-text" class="w-5 h-5 text-brand-500"></i><span class="text-sm font-semibold">SOC 2 report</span></a>
+    <a href="#" class="glass rounded-xl p-4 hover:-translate-y-0.5 transition flex items-center gap-3"><i data-lucide="shield" class="w-5 h-5 text-cyan-500"></i><span class="text-sm font-semibold">DPA template</span></a>
+    <a href="#" class="glass rounded-xl p-4 hover:-translate-y-0.5 transition flex items-center gap-3"><i data-lucide="activity" class="w-5 h-5 text-emerald-500"></i><span class="text-sm font-semibold">Status page</span></a>
+    <a href="contact.html" class="glass rounded-xl p-4 hover:-translate-y-0.5 transition flex items-center gap-3"><i data-lucide="mail" class="w-5 h-5 text-pink-500"></i><span class="text-sm font-semibold">security@w5d.ai</span></a>
+  </div>
+</section>
+
+<div data-shell-foot></div>
+</body></html>

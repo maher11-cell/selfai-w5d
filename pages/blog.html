@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog — W5D</title>
+<meta name="description" content="Field notes from the frontier of human + AI work." />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{50:'#f3f1ff',100:'#ebe5ff',200:'#d9ceff',300:'#bda7ff',400:'#9c79ff',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95'},ink:{950:'#070711',900:'#0b0b18',800:'#11111f',700:'#1a1a2e'}},fontFamily:{sans:['Inter','system-ui','sans-serif'],display:['"Space Grotesk"','Inter','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+<link rel="stylesheet" href="../css/style.css" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+<script src="../js/logos.js" defer></script>
+<script src="../js/shell.js" defer></script>
+<script src="../js/megamenu.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script src="../js/api.js" defer></script>
+</head>
+<body data-prefix="../" class="bg-white text-slate-800 dark:bg-ink-950 dark:text-slate-200 transition-colors duration-300">
+<div data-shell></div>
+
+<section class="relative pt-36 pb-12 overflow-hidden">
+  <div class="absolute inset-0 grid-bg"></div><div class="orb orb-3 w-[420px] h-[420px] -top-32 right-1/4"></div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+    <p class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Journal</p>
+    <h1 class="font-display text-5xl sm:text-6xl font-bold mt-4 text-slate-900 dark:text-white">Field notes from the <span class="gradient-text">frontier.</span></h1>
+    <p class="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Engineering deep-dives, design rationale, customer stories, and the occasional rant.</p>
+  </div>
+</section>
+
+<!-- Featured -->
+<section class="py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <a href="blog-post.html" class="group glass rounded-3xl overflow-hidden grid lg:grid-cols-2 hover:-translate-y-1 transition">
+      <div class="h-64 lg:h-auto bg-gradient-to-br from-brand-500 via-indigo-500 to-cyan-400 relative">
+        <span class="absolute top-4 left-4 glass rounded-full px-3 py-1 text-xs font-semibold">Featured · Engineering</span>
+      </div>
+      <div class="p-8 sm:p-10">
+        <p class="text-xs text-slate-500">April 18, 2026 · 9 min read</p>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold mt-3 text-slate-900 dark:text-white group-hover:gradient-text transition">Designing agents that disagree well</h2>
+        <p class="mt-4 text-slate-600 dark:text-slate-400">Why we ship debate, not consensus, into every multi-agent run — and how it cut hallucinations by 41% in our internal eval.</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-cyan-400"></div>
+          <div><p class="text-sm font-semibold text-slate-900 dark:text-white">Aiko Tanaka</p><p class="text-xs text-slate-500">Head of Research</p></div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- Filters -->
+<section class="py-6"><div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-wrap gap-2 text-sm">
+  <button class="glass rounded-full px-4 py-2 text-brand-500 font-semibold">All</button>
+  <button class="glass rounded-full px-4 py-2">Engineering</button>
+  <button class="glass rounded-full px-4 py-2">Product</button>
+  <button class="glass rounded-full px-4 py-2">Design</button>
+  <button class="glass rounded-full px-4 py-2">Customer stories</button>
+  <button class="glass rounded-full px-4 py-2">Security</button>
+</div></section>
+
+<!-- Grid -->
+<section class="py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <article data-aos="fade-up" class="glass rounded-2xl overflow-hidden hover:-translate-y-1 transition">
+      <a href="blog-post.html" class="block"><div class="h-44 bg-gradient-to-br from-pink-500 via-rose-500 to-amber-400 relative"><span class="absolute top-3 left-3 text-xs glass rounded-full px-2 py-1">Product</span></div>
+      <div class="p-5"><p class="text-xs text-slate-500">Apr 11, 2026 · 6 min</p><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white mt-2">A calmer take on the AI cockpit</h3><p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Less chrome, more work. Inside the W5D 2.0 redesign.</p></div></a>
+    </article>
+    <article data-aos="fade-up" data-aos-delay="80" class="glass rounded-2xl overflow-hidden hover:-translate-y-1 transition">
+      <a href="blog-post.html" class="block"><div class="h-44 bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-400 relative"><span class="absolute top-3 left-3 text-xs glass rounded-full px-2 py-1">Security</span></div>
+      <div class="p-5"><p class="text-xs text-slate-500">Apr 4, 2026 · 8 min</p><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white mt-2">Zero-retention by default, explained</h3><p class="text-sm text-slate-600 dark:text-slate-400 mt-2">What your security team should ask before wiring up any LLM.</p></div></a>
+    </article>
+    <article data-aos="fade-up" data-aos-delay="160" class="glass rounded-2xl overflow-hidden hover:-translate-y-1 transition">
+      <a href="blog-post.html" class="block"><div class="h-44 bg-gradient-to-br from-amber-400 via-rose-500 to-brand-500 relative"><span class="absolute top-3 left-3 text-xs glass rounded-full px-2 py-1">Customer story</span></div>
+      <div class="p-5"><p class="text-xs text-slate-500">Mar 28, 2026 · 6 min</p><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white mt-2">How Atlasly cut report time by 78%</h3><p class="text-sm text-slate-600 dark:text-slate-400 mt-2">A weekly close that used to take three days now takes four hours.</p></div></a>
+    </article>
+    <article data-aos="fade-up" class="glass rounded-2xl overflow-hidden hover:-translate-y-1 transition">
+      <a href="blog-post.html" class="block"><div class="h-44 bg-gradient-to-br from-cyan-500 via-indigo-500 to-brand-500 relative"><span class="absolute top-3 left-3 text-xs glass rounded-full px-2 py-1">Engineering</span></div>
+      <div class="p-5"><p class="text-xs text-slate-500">Mar 21, 2026 · 12 min</p><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white mt-2">The router that picks your model</h3><p class="text-sm text-slate-600 dark:text-slate-400 mt-2">How we route between 14 frontier and open models — and cut costs 60%.</p></div></a>
+    </article>
+    <article data-aos="fade-up" data-aos-delay="80" class="glass rounded-2xl overflow-hidden hover:-translate-y-1 transition">
+      <a href="blog-post.html" class="block"><div class="h-44 bg-gradient-to-br from-violet-500 via-fuchsia-500 to-pink-500 relative"><span class="absolute top-3 left-3 text-xs glass rounded-full px-2 py-1">Design</span></div>
+      <div class="p-5"><p class="text-xs text-slate-500">Mar 14, 2026 · 5 min</p><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white mt-2">On the etiquette of AI nudges</h3><p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Designing notifications that earn the user's attention rather than steal it.</p></div></a>
+    </article>
+    <article data-aos="fade-up" data-aos-delay="160" class="glass rounded-2xl overflow-hidden hover:-translate-y-1 transition">
+      <a href="blog-post.html" class="block"><div class="h-44 bg-gradient-to-br from-lime-500 via-emerald-500 to-cyan-400 relative"><span class="absolute top-3 left-3 text-xs glass rounded-full px-2 py-1">Product</span></div>
+      <div class="p-5"><p class="text-xs text-slate-500">Mar 7, 2026 · 7 min</p><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white mt-2">Building memory that respects privacy</h3><p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Long-term agent memory, without the surveillance vibes.</p></div></a>
+    </article>
+  </div>
+
+  <div class="text-center mt-12"><button class="btn-ghost rounded-xl px-6 py-3 font-semibold">Load more</button></div>
+</section>
+
+<!-- Newsletter -->
+<section class="py-20">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+    <h2 class="font-display text-3xl font-bold text-slate-900 dark:text-white">Get the W5D Dispatch</h2>
+    <p class="mt-3 text-slate-600 dark:text-slate-400">One email a week. Useful things only. Unsubscribe anytime.</p>
+    <form data-newsletter class="mt-6 flex max-w-md mx-auto">
+      <input type="email" required placeholder="you@company.com" class="flex-1 bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-l-lg px-3 py-2.5 text-sm focus:outline-none focus:border-brand-500" />
+      <button type="submit" class="btn-primary rounded-r-lg px-5 text-sm font-semibold">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<div data-shell-foot></div>
+</body></html>

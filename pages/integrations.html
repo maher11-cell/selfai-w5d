@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Integrations — W5D</title>
+<meta name="description" content="120+ native integrations and a clean REST API. W5D plays nicely with your whole stack." />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{50:'#f3f1ff',100:'#ebe5ff',200:'#d9ceff',300:'#bda7ff',400:'#9c79ff',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95'},ink:{950:'#070711',900:'#0b0b18',800:'#11111f',700:'#1a1a2e'}},fontFamily:{sans:['Inter','system-ui','sans-serif'],display:['"Space Grotesk"','Inter','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+<link rel="stylesheet" href="../css/style.css" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+<script src="../js/logos.js" defer></script>
+<script src="../js/shell.js" defer></script>
+<script src="../js/megamenu.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script src="../js/api.js" defer></script>
+</head>
+<body data-prefix="../" class="bg-white text-slate-800 dark:bg-ink-950 dark:text-slate-200 transition-colors duration-300">
+<div data-shell></div>
+
+<section class="relative pt-36 pb-12 overflow-hidden">
+  <div class="absolute inset-0 grid-bg"></div><div class="orb orb-2 w-[420px] h-[420px] -top-20 right-1/4"></div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+    <p class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Integrations</p>
+    <h1 class="font-display text-5xl sm:text-6xl font-bold mt-4 text-slate-900 dark:text-white">Plays nicely with your <span class="gradient-text">whole stack.</span></h1>
+    <p class="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">120+ native, bidirectional integrations and a clean REST API. If your tool has an endpoint, W5D can talk to it.</p>
+    <div class="mt-8"><input type="text" placeholder="Search 120+ integrations…" class="w-full max-w-md bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500" oninput="document.querySelectorAll('[data-int]').forEach(c=>{c.style.display=c.dataset.int.toLowerCase().includes(this.value.toLowerCase())?'':'none'})" /></div>
+  </div>
+</section>
+
+<!-- Categories -->
+<section class="py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-wrap gap-2 mb-10 justify-center text-sm">
+      <button class="glass rounded-full px-4 py-2 text-brand-500 font-semibold">All</button>
+      <button class="glass rounded-full px-4 py-2">Communication</button>
+      <button class="glass rounded-full px-4 py-2">Productivity</button>
+      <button class="glass rounded-full px-4 py-2">Engineering</button>
+      <button class="glass rounded-full px-4 py-2">CRM & Sales</button>
+      <button class="glass rounded-full px-4 py-2">Analytics</button>
+      <button class="glass rounded-full px-4 py-2">Storage</button>
+    </div>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <!-- Each card uses generic icons + names -->
+      <a href="#" data-int="messaging hub" class="glass rounded-2xl p-5 hover:-translate-y-1 transition flex items-start gap-3"><div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-500 flex items-center justify-center"><i data-lucide="hash" class="w-5 h-5"></i></div><div><p class="font-semibold text-slate-900 dark:text-white">Messaging Hub</p><p class="text-xs text-slate-500">Communication</p></div></a>
+      <a href="#" data-int="email" class="glass rounded-2xl p-5 hover:-translate-y-1 transition flex items-start gap-3"><div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-500 flex items-center justify-center"><i data-lucide="mail" class="w-5 h-5"></i></div><div><p class="font-semibold text-slate-900 dark:text-white">Mailroom</p><p class="text-xs text-slate-500">Communication</p></div></a>
+      <a href="#" data-int="docs notion" class="glass rounded-2xl p-5 hover:-translate-y-1 transition flex items-start gap-3"><div class="w-10 h-10 rounded-lg bg-pink-500/10 text-pink-500 flex items-center justify-center"><i data-lucide="file-text" class="w-5 h-5"></i></div><div><p class="font-semibold text-slate-900 dark:text-white">Docs Cloud</p><p class="text-xs text-slate-500">Productivity</p></div></a>
+      <a href="#" data-int="storage drive" class="glass rounded-2xl p-5 hover:-translate-y-1 transition flex items-start gap-3"><div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center"><i data-lucide="folder" class="w-5 h-5"></i></div><div><p class="font-semibold text-slate-900 dark:text-white">Drive Sync</p><p class="text-xs text-slate-500">Storage</p></div></a>
+      <a href="#" data-int="repos github" class="glass rounded-2xl p-5 hover:-translate-y-1 transition flex items-start gap-3"><div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-500 flex items-center justify-center"><i data-lucide="git-branch" class="w-5 h-5"></i></div><div><p class="font-semibold text-slate-900 dark:text-white">Repo Hub</p><p class="text-xs text-slate-500">Engineering</p></div></a>
+      <a href="#" data-int="tickets linear" class="glass rounded-2xl p-5 hover:-translate-y-1 transition flex items-start gap-3"><div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center"><i data-lucide="kanban" class="w-5 h-5"></i></div><div><p class="font-semibold text-slate-900 dark:text-white">Issue Tracker</p><p class="text-xs text-slate-500">Engineering</p></div></a>
+      <a href="#" data-int="crm hubspot" class="glass rounded-2xl p-5 hover:-translate-y-1 transition flex items-start gap-3"><div class="w-10 h-10 rounded-lg bg-rose-500/10 text-rose-500 flex items-center justify-center"><i data-lucide="users" class="w-5 h-5"></i></div><div><p class="font-semibold text-slate-900 dark:text-white">CRM Connect</p><p class="text-xs text-slate-500">CRM & Sales</p></div></a>
+      <a href="#" data-int="design figma" class="glass rounded-2xl p-5 hover:-translate-y-1 transition flex items-start gap-3"><div class="w-10 h-10 rounded-lg bg-violet-500/10 text-violet-500 flex items-center justify-center"><i data-lucide="pen-tool" class="w-5 h-5"></i></div><div><p class="font-semibold text-slate-900 dark:text-white">Design Hub</p><p class="text-xs text-slate-500">Productivity</p></div></a>
+      <a href="#" data-int="analytics" class="glass rounded-2xl p-5 hover:-translate-y-1 transition flex items-start gap-3"><div class="w-10 h-10 rounded-lg bg-teal-500/10 text-teal-500 flex items-center justify-center"><i data-lucide="bar-chart-3" class="w-5 h-5"></i></div><div><p class="font-semibold text-slate-900 dark:text-white">Insights</p><p class="text-xs text-slate-500">Analytics</p></div></a>
+      <a href="#" data-int="calendar" class="glass rounded-2xl p-5 hover:-translate-y-1 transition flex items-start gap-3"><div class="w-10 h-10 rounded-lg bg-orange-500/10 text-orange-500 flex items-center justify-center"><i data-lucide="calendar" class="w-5 h-5"></i></div><div><p class="font-semibold text-slate-900 dark:text-white">Calendar Sync</p><p class="text-xs text-slate-500">Productivity</p></div></a>
+      <a href="#" data-int="payments stripe" class="glass rounded-2xl p-5 hover:-translate-y-1 transition flex items-start gap-3"><div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-500 flex items-center justify-center"><i data-lucide="credit-card" class="w-5 h-5"></i></div><div><p class="font-semibold text-slate-900 dark:text-white">Pay Engine</p><p class="text-xs text-slate-500">Finance</p></div></a>
+      <a href="#" data-int="warehouse" class="glass rounded-2xl p-5 hover:-translate-y-1 transition flex items-start gap-3"><div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-500 flex items-center justify-center"><i data-lucide="database" class="w-5 h-5"></i></div><div><p class="font-semibold text-slate-900 dark:text-white">Warehouse</p><p class="text-xs text-slate-500">Analytics</p></div></a>
+      <a href="#" data-int="support" class="glass rounded-2xl p-5 hover:-translate-y-1 transition flex items-start gap-3"><div class="w-10 h-10 rounded-lg bg-fuchsia-500/10 text-fuchsia-500 flex items-center justify-center"><i data-lucide="life-buoy" class="w-5 h-5"></i></div><div><p class="font-semibold text-slate-900 dark:text-white">HelpDesk</p><p class="text-xs text-slate-500">Support</p></div></a>
+      <a href="#" data-int="meet video" class="glass rounded-2xl p-5 hover:-translate-y-1 transition flex items-start gap-3"><div class="w-10 h-10 rounded-lg bg-lime-500/10 text-lime-600 flex items-center justify-center"><i data-lucide="video" class="w-5 h-5"></i></div><div><p class="font-semibold text-slate-900 dark:text-white">Meet Recorder</p><p class="text-xs text-slate-500">Communication</p></div></a>
+      <a href="#" data-int="forms" class="glass rounded-2xl p-5 hover:-translate-y-1 transition flex items-start gap-3"><div class="w-10 h-10 rounded-lg bg-red-500/10 text-red-500 flex items-center justify-center"><i data-lucide="clipboard-list" class="w-5 h-5"></i></div><div><p class="font-semibold text-slate-900 dark:text-white">Form Builder</p><p class="text-xs text-slate-500">Productivity</p></div></a>
+      <a href="#" data-int="cloud" class="glass rounded-2xl p-5 hover:-translate-y-1 transition flex items-start gap-3"><div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-500 flex items-center justify-center"><i data-lucide="cloud" class="w-5 h-5"></i></div><div><p class="font-semibold text-slate-900 dark:text-white">Cloud Bucket</p><p class="text-xs text-slate-500">Storage</p></div></a>
+    </div>
+
+    <p class="text-center mt-10 text-sm text-slate-500">…and 100+ more. Don't see yours? <a href="contact.html" class="text-brand-500 link-underline">Request an integration.</a></p>
+  </div>
+</section>
+
+<!-- API banner -->
+<section class="py-20">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="grad-border glass rounded-3xl p-10 grid lg:grid-cols-2 gap-8 items-center">
+      <div>
+        <span class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Developer API</span>
+        <h2 class="font-display text-3xl font-bold mt-3 text-slate-900 dark:text-white">Build whatever's missing.</h2>
+        <p class="mt-3 text-slate-600 dark:text-slate-400">Clean REST + webhooks. SDKs in 6 languages. The whole platform is one well-documented API call away.</p>
+        <a href="#" class="mt-5 inline-flex items-center gap-1 text-brand-500 font-semibold link-underline">Read API docs <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+      <pre class="bg-ink-900 dark:bg-ink-900 text-slate-200 rounded-xl p-4 text-xs overflow-x-auto"><code>curl https://api.w5d.ai/v1/agents/run \
+  -H "Authorization: Bearer $W5D_KEY" \
+  -d '{
+    "agent": "researcher",
+    "input": "Summarize this week\u2019s product feedback by theme",
+    "sources": ["intercom", "linear"]
+  }'</code></pre>
+    </div>
+  </div>
+</section>
+
+<div data-shell-foot></div>
+</body></html>

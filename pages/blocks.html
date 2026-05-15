@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blocks library — W5D</title>
+<meta name="description" content="Every reusable section in the W5D design system, on one page." />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{50:'#f3f1ff',100:'#ebe5ff',200:'#d9ceff',300:'#bda7ff',400:'#9c79ff',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95'},ink:{950:'#070711',900:'#0b0b18',800:'#11111f',700:'#1a1a2e'}},fontFamily:{sans:['Inter','system-ui','sans-serif'],display:['"Space Grotesk"','Inter','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+<link rel="stylesheet" href="../css/style.css" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+<script src="../js/logos.js" defer></script>
+<script src="../js/shell.js" defer></script>
+<script src="../js/megamenu.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script src="../js/api.js" defer></script>
+<style>
+  .block-section { scroll-margin-top: 120px; }
+  .block-label { position: sticky; top: 96px; z-index: 5; }
+</style>
+</head>
+<body data-prefix="../" class="bg-white text-slate-800 dark:bg-ink-950 dark:text-slate-200 transition-colors duration-300">
+<div data-shell></div>
+
+<!-- Header -->
+<section class="relative pt-36 pb-12 overflow-hidden">
+  <div class="absolute inset-0 grid-bg"></div><div class="orb orb-1 w-[420px] h-[420px] -top-32 -left-20"></div>
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6 text-center">
+    <p class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Library</p>
+    <h1 class="font-display text-5xl sm:text-6xl font-bold mt-4 text-slate-900 dark:text-white">Every <span class="gradient-text">block.</span> One page.</h1>
+    <p class="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Browse 30+ reusable sections from the W5D design system. Use as-is, or remix into your own pages.</p>
+  </div>
+</section>
+
+<!-- Index nav -->
+<section class="py-6 sticky top-20 z-30 bg-white/70 dark:bg-ink-950/70 backdrop-blur border-y border-slate-200/60 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex gap-2 overflow-x-auto no-scrollbar text-xs">
+    <a href="#heroes" class="glass rounded-full px-3 py-1.5 whitespace-nowrap">Heroes</a>
+    <a href="#features" class="glass rounded-full px-3 py-1.5 whitespace-nowrap">Features</a>
+    <a href="#stats" class="glass rounded-full px-3 py-1.5 whitespace-nowrap">Stats</a>
+    <a href="#bento" class="glass rounded-full px-3 py-1.5 whitespace-nowrap">Bento</a>
+    <a href="#how" class="glass rounded-full px-3 py-1.5 whitespace-nowrap">How it works</a>
+    <a href="#integrations" class="glass rounded-full px-3 py-1.5 whitespace-nowrap">Integrations</a>
+    <a href="#pricing" class="glass rounded-full px-3 py-1.5 whitespace-nowrap">Pricing</a>
+    <a href="#testimonials" class="glass rounded-full px-3 py-1.5 whitespace-nowrap">Testimonials</a>
+    <a href="#faq" class="glass rounded-full px-3 py-1.5 whitespace-nowrap">FAQ</a>
+    <a href="#cta" class="glass rounded-full px-3 py-1.5 whitespace-nowrap">CTA</a>
+    <a href="#logos" class="glass rounded-full px-3 py-1.5 whitespace-nowrap">Logos</a>
+    <a href="#forms" class="glass rounded-full px-3 py-1.5 whitespace-nowrap">Forms</a>
+  </div>
+</section>
+
+<!-- ===== HEROES ===== -->
+<section id="heroes" class="block-section py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="block-label inline-flex items-center gap-2 glass rounded-full px-3 py-1 text-xs font-semibold mb-6">Heroes <span class="text-slate-500">/ 3</span></div>
+
+    <!-- Centered hero -->
+    <div class="rounded-3xl glass p-2 mb-6">
+      <div class="relative rounded-2xl overflow-hidden p-12 text-center bg-slate-50 dark:bg-ink-900">
+        <div class="absolute inset-0 grid-bg opacity-50"></div>
+        <div class="relative">
+          <span class="inline-flex glass rounded-full px-3 py-1 text-xs font-semibold">New release</span>
+          <h2 class="font-display text-4xl sm:text-5xl font-bold mt-4 text-slate-900 dark:text-white">Centered hero with <span class="gradient-text">orbs</span></h2>
+          <p class="mt-3 text-slate-600 dark:text-slate-400 max-w-md mx-auto">A short, punchy supporting line that sells the idea fast.</p>
+          <div class="mt-6 flex flex-wrap justify-center gap-2"><button class="btn-primary rounded-lg px-4 py-2 text-sm font-semibold">Primary CTA</button><button class="btn-ghost rounded-lg px-4 py-2 text-sm font-semibold">Secondary</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Split hero -->
+    <div class="rounded-3xl glass p-2 mb-6">
+      <div class="rounded-2xl overflow-hidden p-10 grid lg:grid-cols-2 gap-8 items-center bg-slate-50 dark:bg-ink-900">
+        <div>
+          <span class="inline-flex glass rounded-full px-3 py-1 text-xs font-semibold">Split layout</span>
+          <h2 class="font-display text-4xl font-bold mt-4 text-slate-900 dark:text-white">Headline left, <span class="gradient-text">visual right</span></h2>
+          <p class="mt-3 text-slate-600 dark:text-slate-400">Pairs well with a product mock or animated illustration on the opposite side.</p>
+          <button class="btn-primary rounded-lg px-4 py-2 text-sm font-semibold mt-5">Try it</button>
+        </div>
+        <div class="grad-border glass rounded-2xl p-5 h-48 flex items-center justify-center text-slate-500 text-sm">[ Product mock here ]</div>
+      </div>
+    </div>
+
+    <!-- Editorial hero -->
+    <div class="rounded-3xl glass p-2">
+      <div class="rounded-2xl overflow-hidden p-10 bg-slate-50 dark:bg-ink-900">
+        <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Issue 03 · Editorial</p>
+        <h2 class="font-display font-bold text-6xl sm:text-7xl mt-4 leading-[0.95] text-slate-900 dark:text-white">Make<span class="gradient-text">.</span><br />Don't <span class="italic font-light">manage.</span></h2>
+        <p class="mt-5 max-w-md text-slate-600 dark:text-slate-400">Bold typography, low-key supporting copy. Great for brand pages and manifesto-style content.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section id="features" class="block-section py-16 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="block-label inline-flex items-center gap-2 glass rounded-full px-3 py-1 text-xs font-semibold mb-6">Features <span class="text-slate-500">/ 3</span></div>
+
+    <!-- 3-up grid -->
+    <h3 class="text-sm font-semibold text-slate-500 mb-4">3-column grid</h3>
+    <div class="grid md:grid-cols-3 gap-5 mb-10">
+      <div class="glass rounded-2xl p-6"><div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center mb-4"><i data-lucide="brain-circuit" class="w-6 h-6"></i></div><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Multi-agent reasoning</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Agents collaborate, critique, and verify each other.</p></div>
+      <div class="glass rounded-2xl p-6"><div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center mb-4"><i data-lucide="database" class="w-6 h-6"></i></div><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Private knowledge</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Connect your sources, get cited answers.</p></div>
+      <div class="glass rounded-2xl p-6"><div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center mb-4"><i data-lucide="workflow" class="w-6 h-6"></i></div><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Visual workflows</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Drag, drop, deploy — no code needed.</p></div>
+    </div>
+
+    <!-- Alternating zig-zag -->
+    <h3 class="text-sm font-semibold text-slate-500 mb-4">Zig-zag deep dive</h3>
+    <div class="grid lg:grid-cols-2 gap-8 items-center mb-10">
+      <div><span class="text-sm font-semibold text-brand-500">Step 01</span><h3 class="font-display text-2xl font-bold mt-2 text-slate-900 dark:text-white">Describe the outcome</h3><p class="mt-3 text-sm text-slate-600 dark:text-slate-400">Tell W5D what done looks like.</p></div>
+      <div class="grad-border glass rounded-2xl p-5 h-40"></div>
+    </div>
+
+    <!-- Feature list with icons -->
+    <h3 class="text-sm font-semibold text-slate-500 mb-4">Numbered list</h3>
+    <div class="glass rounded-2xl divide-y divide-slate-200/60 dark:divide-white/5">
+      <div class="grid grid-cols-12 gap-4 py-5 px-5 items-center"><div class="col-span-1 font-display text-2xl text-slate-300 dark:text-slate-700">01</div><div class="col-span-3 font-display font-semibold text-slate-900 dark:text-white">Agents</div><div class="col-span-7 text-sm text-slate-500">Multi-step reasoning with tools and memory.</div><div class="col-span-1 text-right"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></div></div>
+      <div class="grid grid-cols-12 gap-4 py-5 px-5 items-center"><div class="col-span-1 font-display text-2xl text-slate-300 dark:text-slate-700">02</div><div class="col-span-3 font-display font-semibold text-slate-900 dark:text-white">Knowledge</div><div class="col-span-7 text-sm text-slate-500">Cited answers from your private sources.</div><div class="col-span-1 text-right"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></div></div>
+      <div class="grid grid-cols-12 gap-4 py-5 px-5 items-center"><div class="col-span-1 font-display text-2xl text-slate-300 dark:text-slate-700">03</div><div class="col-span-3 font-display font-semibold text-slate-900 dark:text-white">Workflows</div><div class="col-span-7 text-sm text-slate-500">Visual chains of agents and actions.</div><div class="col-span-1 text-right"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section id="stats" class="block-section py-16 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="block-label inline-flex items-center gap-2 glass rounded-full px-3 py-1 text-xs font-semibold mb-6">Stats <span class="text-slate-500">/ 2</span></div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+      <div class="glass rounded-2xl p-6 text-center"><div class="font-display text-4xl font-bold gradient-text">42K+</div><p class="mt-1 text-sm text-slate-500">Teams onboarded</p></div>
+      <div class="glass rounded-2xl p-6 text-center"><div class="font-display text-4xl font-bold gradient-text">3.2×</div><p class="mt-1 text-sm text-slate-500">Faster delivery</p></div>
+      <div class="glass rounded-2xl p-6 text-center"><div class="font-display text-4xl font-bold gradient-text">98%</div><p class="mt-1 text-sm text-slate-500">CSAT</p></div>
+      <div class="glass rounded-2xl p-6 text-center"><div class="font-display text-4xl font-bold gradient-text">120+</div><p class="mt-1 text-sm text-slate-500">Integrations</p></div>
+    </div>
+    <div class="grid md:grid-cols-4 gap-10">
+      <div><div class="font-display text-5xl font-bold gradient-text">42K+</div><p class="mt-2 text-sm text-slate-500">Teams shipping with W5D</p></div>
+      <div><div class="font-display text-5xl font-bold gradient-text">3.2×</div><p class="mt-2 text-sm text-slate-500">Faster output</p></div>
+      <div><div class="font-display text-5xl font-bold gradient-text">120+</div><p class="mt-2 text-sm text-slate-500">Native integrations</p></div>
+      <div><div class="font-display text-5xl font-bold gradient-text">98%</div><p class="mt-2 text-sm text-slate-500">CSAT</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BENTO ===== -->
+<section id="bento" class="block-section py-16 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="block-label inline-flex items-center gap-2 glass rounded-full px-3 py-1 text-xs font-semibold mb-6">Bento <span class="text-slate-500">/ 1</span></div>
+    <div class="grid grid-cols-12 gap-5 auto-rows-[150px]">
+      <div class="col-span-12 md:col-span-7 row-span-2 glass rounded-2xl p-6"><i data-lucide="bot" class="w-7 h-7 text-brand-500 mb-3"></i><h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Hero card</h3><p class="text-sm text-slate-500 mt-2">Largest card carries the headline feature.</p></div>
+      <div class="col-span-12 md:col-span-5 glass rounded-2xl p-5"><i data-lucide="database" class="w-6 h-6 text-cyan-500 mb-2"></i><h4 class="font-display font-semibold">Knowledge</h4></div>
+      <div class="col-span-12 md:col-span-5 glass rounded-2xl p-5"><i data-lucide="puzzle" class="w-6 h-6 text-pink-500 mb-2"></i><h4 class="font-display font-semibold">Integrations</h4></div>
+      <div class="col-span-6 md:col-span-4 glass rounded-2xl p-5"><i data-lucide="shield-check" class="w-6 h-6 text-emerald-500 mb-2"></i><h4 class="font-display font-semibold">Security</h4></div>
+      <div class="col-span-6 md:col-span-4 glass rounded-2xl p-5"><i data-lucide="git-branch" class="w-6 h-6 text-amber-500 mb-2"></i><h4 class="font-display font-semibold">Workflows</h4></div>
+      <div class="col-span-12 md:col-span-4 glass rounded-2xl p-5"><i data-lucide="terminal" class="w-6 h-6 text-indigo-500 mb-2"></i><h4 class="font-display font-semibold">API</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section id="how" class="block-section py-16 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="block-label inline-flex items-center gap-2 glass rounded-full px-3 py-1 text-xs font-semibold mb-6">How it works <span class="text-slate-500">/ 1</span></div>
+    <div class="grid md:grid-cols-3 gap-6 relative">
+      <div class="hidden md:block absolute top-12 left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-brand-500/40 to-transparent"></div>
+      <div class="glass rounded-2xl p-6 relative"><div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-cyan-400 text-white font-bold flex items-center justify-center mb-3 relative z-10">1</div><h3 class="font-display font-semibold text-slate-900 dark:text-white">Connect your stack</h3><p class="text-sm text-slate-500 mt-1">120+ integrations in one click.</p></div>
+      <div class="glass rounded-2xl p-6 relative"><div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-cyan-400 text-white font-bold flex items-center justify-center mb-3 relative z-10">2</div><h3 class="font-display font-semibold text-slate-900 dark:text-white">Hire an agent</h3><p class="text-sm text-slate-500 mt-1">Pick a template or describe a job.</p></div>
+      <div class="glass rounded-2xl p-6 relative"><div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-cyan-400 text-white font-bold flex items-center justify-center mb-3 relative z-10">3</div><h3 class="font-display font-semibold text-slate-900 dark:text-white">Ship outcomes</h3><p class="text-sm text-slate-500 mt-1">Reports, drafts, deployed changes.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTEGRATIONS ===== -->
+<section id="integrations" class="block-section py-16 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="block-label inline-flex items-center gap-2 glass rounded-full px-3 py-1 text-xs font-semibold mb-6">Integrations hub <span class="text-slate-500">/ 1</span></div>
+    <div class="relative h-[360px] glass rounded-3xl">
+      <div class="absolute inset-0 flex items-center justify-center"><div class="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-brand-500 via-indigo-500 to-cyan-400 flex items-center justify-center pulse-ring"><span class="font-display font-bold text-white text-xl">W5</span></div></div>
+      <div class="absolute top-4 left-1/2 -translate-x-1/2 glass rounded-xl p-3 float-y"><i data-lucide="hash" class="w-6 h-6"></i></div>
+      <div class="absolute top-1/2 left-4 -translate-y-1/2 glass rounded-xl p-3 float-y" style="animation-delay:-2s"><i data-lucide="git-branch" class="w-6 h-6"></i></div>
+      <div class="absolute top-1/2 right-4 -translate-y-1/2 glass rounded-xl p-3 float-y" style="animation-delay:-4s"><i data-lucide="pen-tool" class="w-6 h-6"></i></div>
+      <div class="absolute bottom-4 left-1/2 -translate-x-1/2 glass rounded-xl p-3 float-y" style="animation-delay:-1s"><i data-lucide="mail" class="w-6 h-6"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section id="pricing" class="block-section py-16 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="block-label inline-flex items-center gap-2 glass rounded-full px-3 py-1 text-xs font-semibold mb-6">Pricing <span class="text-slate-500">/ 2</span></div>
+    <h3 class="text-sm font-semibold text-slate-500 mb-4">3-tier cards</h3>
+    <div class="grid md:grid-cols-3 gap-5 mb-10">
+      <div class="glass rounded-2xl p-6"><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Starter</h3><div class="mt-4"><span class="font-display text-3xl font-bold text-slate-900 dark:text-white">$0</span><span class="text-slate-500 text-sm">/forever</span></div></div>
+      <div class="grad-border rounded-2xl p-6 bg-white dark:bg-ink-900"><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Pro</h3><div class="mt-4"><span class="font-display text-3xl font-bold text-slate-900 dark:text-white">$29</span><span class="text-slate-500 text-sm">/seat/mo</span></div></div>
+      <div class="glass rounded-2xl p-6"><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Enterprise</h3><div class="mt-4"><span class="font-display text-3xl font-bold text-slate-900 dark:text-white">Custom</span></div></div>
+    </div>
+    <h3 class="text-sm font-semibold text-slate-500 mb-4">Comparison row</h3>
+    <div class="glass rounded-2xl p-5 grid grid-cols-4 gap-3 text-sm">
+      <div class="font-semibold">Feature</div><div class="text-center font-semibold">Starter</div><div class="text-center font-semibold">Pro</div><div class="text-center font-semibold">Enterprise</div>
+      <div class="text-slate-500">Monthly runs</div><div class="text-center">200</div><div class="text-center">Unlimited</div><div class="text-center">Unlimited</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials" class="block-section py-16 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="block-label inline-flex items-center gap-2 glass rounded-full px-3 py-1 text-xs font-semibold mb-6">Testimonials <span class="text-slate-500">/ 3</span></div>
+    <h3 class="text-sm font-semibold text-slate-500 mb-4">Grid</h3>
+    <div class="grid md:grid-cols-3 gap-5 mb-10">
+      <figure class="glass rounded-2xl p-5"><blockquote class="text-slate-700 dark:text-slate-300 text-sm">"It's the keyboard shortcut for my whole team."</blockquote><figcaption class="mt-4 text-xs font-semibold">Maya — Northwind</figcaption></figure>
+      <figure class="glass rounded-2xl p-5"><blockquote class="text-slate-700 dark:text-slate-300 text-sm">"Day-one approval from security. That never happens."</blockquote><figcaption class="mt-4 text-xs font-semibold">Daniel — Atlasly</figcaption></figure>
+      <figure class="glass rounded-2xl p-5"><blockquote class="text-slate-700 dark:text-slate-300 text-sm">"A teammate that always cites sources."</blockquote><figcaption class="mt-4 text-xs font-semibold">Priya — Helix</figcaption></figure>
+    </div>
+    <h3 class="text-sm font-semibold text-slate-500 mb-4">Featured single quote</h3>
+    <div class="grad-border glass rounded-2xl p-10 text-center mb-10"><i data-lucide="quote" class="w-8 h-8 text-brand-500 mx-auto opacity-60"></i><blockquote class="font-display text-2xl mt-3 text-slate-900 dark:text-white max-w-2xl mx-auto">"W5D is the first AI tool that survived contact with our actual workflow."</blockquote></div>
+    <h3 class="text-sm font-semibold text-slate-500 mb-4">Masonry</h3>
+    <div class="columns-1 md:columns-3 gap-5">
+      <figure class="glass rounded-2xl p-5 mb-5 break-inside-avoid"><blockquote class="text-sm text-slate-700 dark:text-slate-300">"Audit logs sold our security team. Speed sold the rest of us."</blockquote></figure>
+      <figure class="glass rounded-2xl p-5 mb-5 break-inside-avoid"><blockquote class="text-sm text-slate-700 dark:text-slate-300">"My favourite feature is the silence."</blockquote></figure>
+      <figure class="glass rounded-2xl p-5 mb-5 break-inside-avoid"><blockquote class="text-sm text-slate-700 dark:text-slate-300">"We replaced four tools in our first month."</blockquote></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="block-section py-16 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="block-label inline-flex items-center gap-2 glass rounded-full px-3 py-1 text-xs font-semibold mb-6">FAQ <span class="text-slate-500">/ 1</span></div>
+    <div class="space-y-3">
+      <div data-faq class="glass rounded-2xl"><button data-faq-btn class="w-full flex items-center justify-between p-5 text-left"><span class="font-semibold text-slate-900 dark:text-white">Will W5D train on my data?</span><i data-faq-icon data-lucide="plus" class="w-5 h-5 transition-transform"></i></button><div data-faq-panel class="hidden px-5 pb-5 text-sm text-slate-600 dark:text-slate-400">Never. Zero-retention routing by default.</div></div>
+      <div data-faq class="glass rounded-2xl"><button data-faq-btn class="w-full flex items-center justify-between p-5 text-left"><span class="font-semibold text-slate-900 dark:text-white">Which models can I use?</span><i data-faq-icon data-lucide="plus" class="w-5 h-5 transition-transform"></i></button><div data-faq-panel class="hidden px-5 pb-5 text-sm text-slate-600 dark:text-slate-400">All major frontier and open models, plus your own.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section id="cta" class="block-section py-16 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-6">
+    <div class="block-label inline-flex items-center gap-2 glass rounded-full px-3 py-1 text-xs font-semibold mb-6">CTA banners <span class="text-slate-500">/ 3</span></div>
+
+    <div class="relative overflow-hidden rounded-3xl p-10 text-center bg-gradient-to-br from-brand-600 via-indigo-600 to-cyan-500"><div class="absolute inset-0 grid-bg opacity-30"></div><div class="relative"><h2 class="font-display text-3xl font-bold text-white">Gradient banner</h2><p class="mt-2 text-white/80">For high-impact closing rows.</p><button class="mt-5 bg-white text-brand-700 rounded-xl px-5 py-2.5 font-semibold text-sm">Primary CTA</button></div></div>
+
+    <div class="relative overflow-hidden rounded-3xl p-10 text-center border border-slate-200/60 dark:border-white/10"><div class="orb orb-1 w-[300px] h-[300px] -top-20 -left-20"></div><div class="orb orb-2 w-[300px] h-[300px] -bottom-20 -right-20"></div><div class="relative"><h2 class="font-display text-3xl font-bold text-slate-900 dark:text-white">Editorial CTA</h2><p class="mt-2 text-slate-500">Outlined, with subtle orb glow.</p></div></div>
+
+    <div class="grad-border glass rounded-3xl p-10 grid lg:grid-cols-2 gap-6 items-center"><div><h2 class="font-display text-2xl font-bold text-slate-900 dark:text-white">Inline form CTA</h2><p class="mt-2 text-sm text-slate-500">Banner + email capture together.</p></div><form data-newsletter class="flex"><input type="email" required placeholder="you@company.com" class="flex-1 bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-l-lg px-3 py-2.5 text-sm focus:outline-none focus:border-brand-500" /><button type="submit" class="btn-primary rounded-r-lg px-4 text-sm font-semibold">Join</button></form></div>
+  </div>
+</section>
+
+<!-- ===== LOGOS ===== -->
+<section id="logos" class="block-section py-16 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="block-label inline-flex items-center gap-2 glass rounded-full px-3 py-1 text-xs font-semibold mb-6">Logo blocks <span class="text-slate-500">/ 2</span></div>
+    <h3 class="text-sm font-semibold text-slate-500 mb-4">Marquee</h3>
+    <div class="marquee mb-10"><div data-logo-marquee class="marquee-track items-center"></div></div>
+    <h3 class="text-sm font-semibold text-slate-500 mb-4">Static grid</h3>
+    <div data-logo-grid class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 glass rounded-2xl p-6"></div>
+  </div>
+</section>
+
+<!-- ===== FORMS ===== -->
+<section id="forms" class="block-section py-16 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="block-label inline-flex items-center gap-2 glass rounded-full px-3 py-1 text-xs font-semibold mb-6">Forms <span class="text-slate-500">/ 3</span></div>
+    <div class="grid lg:grid-cols-3 gap-5">
+      <div class="glass rounded-2xl p-6"><h3 class="font-display font-semibold mb-4 text-slate-900 dark:text-white">Newsletter</h3><form data-newsletter class="flex"><input type="email" required placeholder="Email" class="flex-1 bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-l-lg px-3 py-2 text-sm focus:outline-none focus:border-brand-500" /><button class="btn-primary rounded-r-lg px-4 text-sm font-semibold">Join</button></form></div>
+      <div class="glass rounded-2xl p-6"><h3 class="font-display font-semibold mb-4 text-slate-900 dark:text-white">Contact (mini)</h3><form class="space-y-2"><input type="email" placeholder="Email" class="w-full bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-lg px-3 py-2 text-sm" /><textarea rows="3" placeholder="Message" class="w-full bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-lg px-3 py-2 text-sm"></textarea><button class="btn-primary rounded-lg px-4 py-2 text-sm font-semibold w-full">Send</button></form></div>
+      <div class="glass rounded-2xl p-6"><h3 class="font-display font-semibold mb-4 text-slate-900 dark:text-white">Demo request</h3><form class="space-y-2"><input placeholder="Name" class="w-full bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-lg px-3 py-2 text-sm" /><input placeholder="Work email" class="w-full bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-lg px-3 py-2 text-sm" /><select class="w-full bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-lg px-3 py-2 text-sm"><option>1-10</option><option>11-50</option></select><button class="btn-primary rounded-lg px-4 py-2 text-sm font-semibold w-full">Book a demo</button></form></div>
+    </div>
+  </div>
+</section>
+
+<div data-shell-foot></div>
+</body></html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — W5D</title>
+<meta name="description" content="Talk to sales, support, partnerships, or press. We answer every message within one business day." />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{50:'#f3f1ff',100:'#ebe5ff',200:'#d9ceff',300:'#bda7ff',400:'#9c79ff',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95'},ink:{950:'#070711',900:'#0b0b18',800:'#11111f',700:'#1a1a2e'}},fontFamily:{sans:['Inter','system-ui','sans-serif'],display:['"Space Grotesk"','Inter','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+<link rel="stylesheet" href="../css/style.css" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+<script src="../js/logos.js" defer></script>
+<script src="../js/shell.js" defer></script>
+<script src="../js/megamenu.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script src="../js/api.js" defer></script>
+</head>
+<body data-prefix="../" class="bg-white text-slate-800 dark:bg-ink-950 dark:text-slate-200 transition-colors duration-300">
+<div data-shell></div>
+
+<section class="relative pt-36 pb-12 overflow-hidden">
+  <div class="absolute inset-0 grid-bg"></div><div class="orb orb-1 w-[420px] h-[420px] -top-32 -left-20"></div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+    <p class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Contact</p>
+    <h1 class="font-display text-5xl sm:text-6xl font-bold mt-4 text-slate-900 dark:text-white">Let's <span class="gradient-text">talk.</span></h1>
+    <p class="mt-6 text-lg text-slate-600 dark:text-slate-400">We answer every message within one business day. Promise.</p>
+  </div>
+</section>
+
+<section class="py-12">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[1fr_1.4fr] gap-10">
+    <!-- Channels -->
+    <aside class="space-y-4">
+      <div class="glass rounded-2xl p-6"><div class="flex items-center gap-3 mb-2"><i data-lucide="mail" class="w-5 h-5 text-brand-500"></i><h3 class="font-display font-semibold text-slate-900 dark:text-white">General</h3></div><p class="text-sm text-slate-500">hello@w5d.ai — for anything that doesn't fit the boxes below.</p></div>
+      <div class="glass rounded-2xl p-6"><div class="flex items-center gap-3 mb-2"><i data-lucide="trending-up" class="w-5 h-5 text-emerald-500"></i><h3 class="font-display font-semibold text-slate-900 dark:text-white">Sales</h3></div><p class="text-sm text-slate-500">sales@w5d.ai — Enterprise plans, custom deployments, procurement.</p></div>
+      <div class="glass rounded-2xl p-6"><div class="flex items-center gap-3 mb-2"><i data-lucide="life-buoy" class="w-5 h-5 text-cyan-500"></i><h3 class="font-display font-semibold text-slate-900 dark:text-white">Support</h3></div><p class="text-sm text-slate-500">support@w5d.ai — 24/7 for Pro and Enterprise customers.</p></div>
+      <div class="glass rounded-2xl p-6"><div class="flex items-center gap-3 mb-2"><i data-lucide="newspaper" class="w-5 h-5 text-pink-500"></i><h3 class="font-display font-semibold text-slate-900 dark:text-white">Press</h3></div><p class="text-sm text-slate-500">press@w5d.ai — Story ideas and media inquiries.</p></div>
+      <div class="glass rounded-2xl p-6"><div class="flex items-center gap-3 mb-2"><i data-lucide="map-pin" class="w-5 h-5 text-amber-500"></i><h3 class="font-display font-semibold text-slate-900 dark:text-white">Offices</h3></div><p class="text-sm text-slate-500">Lisbon · Toronto · Singapore</p></div>
+    </aside>
+
+    <!-- Form -->
+    <div class="glass rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display text-2xl font-bold text-slate-900 dark:text-white">Send us a message</h2>
+      <p class="text-sm text-slate-500 mt-1">We'll route it to the right human.</p>
+
+      <form data-contact class="mt-6 space-y-4">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <label class="block"><span class="block text-xs font-semibold mb-1 text-slate-700 dark:text-slate-300">Full name *</span>
+            <input name="name" required type="text" class="w-full bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-brand-500" placeholder="Alex Doe" />
+          </label>
+          <label class="block"><span class="block text-xs font-semibold mb-1 text-slate-700 dark:text-slate-300">Email *</span>
+            <input name="email" required type="email" class="w-full bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-brand-500" placeholder="alex@company.com" />
+          </label>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <label class="block"><span class="block text-xs font-semibold mb-1 text-slate-700 dark:text-slate-300">Company</span>
+            <input name="company" type="text" class="w-full bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-brand-500" placeholder="Acme Inc." />
+          </label>
+          <label class="block"><span class="block text-xs font-semibold mb-1 text-slate-700 dark:text-slate-300">Topic</span>
+            <select name="topic" class="w-full bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-brand-500">
+              <option value="sales">Sales</option>
+              <option value="support">Support</option>
+              <option value="partnership">Partnership</option>
+              <option value="press">Press</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+        </div>
+        <label class="block"><span class="block text-xs font-semibold mb-1 text-slate-700 dark:text-slate-300">Message *</span>
+          <textarea name="message" rows="6" required class="w-full bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-brand-500" placeholder="Tell us what's on your mind…"></textarea>
+        </label>
+        <button type="submit" class="btn-primary rounded-xl px-6 py-3 font-semibold inline-flex items-center gap-2">Send message <i data-lucide="send" class="w-4 h-4"></i></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Demo CTA section -->
+<section class="py-20">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6">
+    <div class="grad-border glass rounded-3xl p-8 sm:p-10">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+        <div>
+          <span class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Book a demo</span>
+          <h2 class="font-display text-2xl font-bold mt-2 text-slate-900 dark:text-white">See W5D in action — live, with your data.</h2>
+        </div>
+        <i data-lucide="calendar-clock" class="w-10 h-10 text-brand-500"></i>
+      </div>
+      <form data-demo class="grid sm:grid-cols-2 gap-4">
+        <label class="block"><span class="block text-xs font-semibold mb-1 text-slate-700 dark:text-slate-300">Name *</span>
+          <input name="name" required type="text" class="w-full bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-brand-500" /></label>
+        <label class="block"><span class="block text-xs font-semibold mb-1 text-slate-700 dark:text-slate-300">Work email *</span>
+          <input name="work_email" required type="email" class="w-full bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-brand-500" /></label>
+        <label class="block"><span class="block text-xs font-semibold mb-1 text-slate-700 dark:text-slate-300">Company *</span>
+          <input name="company" required type="text" class="w-full bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-brand-500" /></label>
+        <label class="block"><span class="block text-xs font-semibold mb-1 text-slate-700 dark:text-slate-300">Team size</span>
+          <select name="team_size" class="w-full bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-brand-500">
+            <option>1-10</option><option>11-50</option><option>51-200</option><option>201-1000</option><option>1000+</option>
+          </select></label>
+        <label class="block sm:col-span-2"><span class="block text-xs font-semibold mb-1 text-slate-700 dark:text-slate-300">What problem are you trying to solve?</span>
+          <textarea name="use_case" rows="3" class="w-full bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-brand-500"></textarea></label>
+        <div class="sm:col-span-2"><button type="submit" class="btn-primary rounded-xl px-6 py-3 font-semibold inline-flex items-center gap-2">Request a demo <i data-lucide="arrow-right" class="w-4 h-4"></i></button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div data-shell-foot></div>
+</body></html>

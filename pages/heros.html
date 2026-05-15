@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Heroes Library — W5D</title>
+<meta name="description" content="Twelve animated, copy-paste hero sections built with TailwindCSS — the W5D launch kit for new sites." />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{50:'#f3f1ff',100:'#ebe5ff',200:'#d9ceff',300:'#bda7ff',400:'#9c79ff',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95'},ink:{950:'#070711',900:'#0b0b18',800:'#11111f',700:'#1a1a2e'}},fontFamily:{sans:['Inter','system-ui','sans-serif'],display:['"Space Grotesk"','Inter','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/style.css" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="../js/logos.js" defer></script>
+<script src="../js/shell.js" defer></script>
+<script src="../js/megamenu.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script src="../js/api.js" defer></script>
+</head>
+<body data-prefix="../" class="bg-white text-slate-800 dark:bg-ink-950 dark:text-slate-200 transition-colors duration-300">
+<div data-shell></div>
+
+<!-- Page intro -->
+<section class="relative pt-36 pb-12 overflow-hidden">
+  <div class="absolute inset-0 grid-bg"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 text-center" data-rv="up">
+    <span class="inline-block text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Library · 12 hero sections</span>
+    <h1 class="font-display font-bold text-4xl sm:text-6xl mt-3 text-slate-900 dark:text-white">Heroes that <span class="gradient-shift">launch a site</span> in one paste.</h1>
+    <p class="mt-5 max-w-2xl mx-auto text-slate-600 dark:text-slate-400">Each block below is self-contained. Copy the markup, drop it on a page that already includes <code class="text-brand-500">style.css</code> + <code class="text-brand-500">main.js</code>, and ship.</p>
+    <div class="mt-6 flex items-center justify-center gap-3">
+      <a href="#h1" class="btn-primary rounded-xl px-5 py-2.5 text-sm font-semibold">Browse heroes</a>
+      <a href="documentations.html" class="btn-ghost rounded-xl px-5 py-2.5 text-sm font-semibold">How to reuse</a>
+    </div>
+  </div>
+</section>
+
+<!-- Quick index -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 pb-6">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
+    <a href="#h1" class="glass rounded-xl px-4 py-3 hover:border-brand-500/60 transition">01 · Aurora centered</a>
+    <a href="#h2" class="glass rounded-xl px-4 py-3 hover:border-brand-500/60 transition">02 · Split + product mock</a>
+    <a href="#h3" class="glass rounded-xl px-4 py-3 hover:border-brand-500/60 transition">03 · Editorial display</a>
+    <a href="#h4" class="glass rounded-xl px-4 py-3 hover:border-brand-500/60 transition">04 · Conic spotlight</a>
+    <a href="#h5" class="glass rounded-xl px-4 py-3 hover:border-brand-500/60 transition">05 · Starfield night</a>
+    <a href="#h6" class="glass rounded-xl px-4 py-3 hover:border-brand-500/60 transition">06 · Bento card grid</a>
+    <a href="#h7" class="glass rounded-xl px-4 py-3 hover:border-brand-500/60 transition">07 · Video-style mock</a>
+    <a href="#h8" class="glass rounded-xl px-4 py-3 hover:border-brand-500/60 transition">08 · Beam scanner</a>
+    <a href="#h9" class="glass rounded-xl px-4 py-3 hover:border-brand-500/60 transition">09 · 3D card stack</a>
+    <a href="#h10" class="glass rounded-xl px-4 py-3 hover:border-brand-500/60 transition">10 · Marquee headline</a>
+    <a href="#h11" class="glass rounded-xl px-4 py-3 hover:border-brand-500/60 transition">11 · Form-first capture</a>
+    <a href="#h12" class="glass rounded-xl px-4 py-3 hover:border-brand-500/60 transition">12 · Minimal type-only</a>
+  </div>
+</section>
+
+<!-- =========================================================
+     HERO 01 — Aurora centered
+     ========================================================= -->
+<section id="h1" class="relative isolate overflow-hidden py-32 sm:py-40">
+  <div class="aurora"></div>
+  <div class="absolute inset-0 grid-bg"></div>
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6 text-center stagger" data-rv="up">
+    <span class="inline-flex items-center gap-2 text-xs px-3 py-1 rounded-full glass">
+      <span class="relative flex w-2 h-2"><span class="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-75"></span><span class="relative w-2 h-2 rounded-full bg-emerald-500"></span></span>
+      Now in public beta — invite a teammate, get 30 days free
+    </span>
+    <h2 class="font-display font-bold text-5xl sm:text-7xl mt-5 text-slate-900 dark:text-white leading-[1.05]">
+      The calm <span class="gradient-shift">AI workspace</span><br/>for teams that ship.
+    </h2>
+    <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-400">One surface for agents, knowledge, and workflows — with the receipts your security team actually wants.</p>
+    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+      <a href="contact.html" class="btn-primary rounded-xl px-6 py-3 font-semibold inline-flex items-center gap-2 shine">Start free <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      <a href="features.html" class="btn-ghost rounded-xl px-6 py-3 font-semibold inline-flex items-center gap-2"><i data-lucide="play-circle" class="w-4 h-4"></i> Watch the 90s tour</a>
+    </div>
+    <p class="mt-6 text-xs text-slate-500">No credit card · SOC 2 Type II · GDPR ready</p>
+  </div>
+</section>
+
+<!-- =========================================================
+     HERO 02 — Split with product mock
+     ========================================================= -->
+<section id="h2" class="relative overflow-hidden py-24 sm:py-32 border-t border-slate-200/60 dark:border-white/5">
+  <div class="absolute -top-32 -left-32 w-[500px] h-[500px] orb orb-1"></div>
+  <div class="absolute bottom-0 -right-32 w-[400px] h-[400px] orb orb-2"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+    <div data-rv="right" class="stagger">
+      <span class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Product-led</span>
+      <h2 class="font-display font-bold text-4xl sm:text-6xl mt-3 text-slate-900 dark:text-white leading-[1.05]">Brief in.<br/>Campaign <span class="gradient-text">out</span>.</h2>
+      <p class="mt-5 text-slate-600 dark:text-slate-400 max-w-md">A workspace where a single brief becomes a research note, three drafts, a launch checklist and a Slack post — in under a minute.</p>
+      <div class="mt-7 flex items-center gap-3">
+        <a href="contact.html" class="btn-primary rounded-xl px-5 py-3 text-sm font-semibold inline-flex items-center gap-2">Try it free <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        <a href="features.html" class="link-underline text-sm font-semibold">See how it works</a>
+      </div>
+      <div class="mt-8 flex items-center gap-5 text-xs text-slate-500">
+        <span class="inline-flex items-center gap-1.5"><i data-lucide="shield-check" class="w-4 h-4 text-brand-500"></i> SOC 2</span>
+        <span class="inline-flex items-center gap-1.5"><i data-lucide="lock" class="w-4 h-4 text-brand-500"></i> SSO + SCIM</span>
+        <span class="inline-flex items-center gap-1.5"><i data-lucide="globe" class="w-4 h-4 text-brand-500"></i> EU residency</span>
+      </div>
+    </div>
+    <!-- mock -->
+    <div data-rv="left" class="relative tilt">
+      <div class="grad-border glass rounded-3xl p-5 shadow-2xl shadow-brand-500/20">
+        <div class="flex items-center gap-1.5 mb-3"><span class="w-2.5 h-2.5 rounded-full bg-rose-400"></span><span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span><span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span></div>
+        <div class="space-y-3">
+          <div class="rounded-xl bg-brand-500/10 px-3 py-2 text-sm text-brand-600 dark:text-brand-300"><strong>You:</strong> Draft a launch announcement for our Spring release.</div>
+          <div class="rounded-xl bg-slate-100 dark:bg-ink-800 px-3 py-2 text-sm">
+            <div class="flex items-center gap-2 mb-1.5 text-xs text-slate-500"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-500"></i> W5D · drafting</div>
+            <p>Pulled three sources from <span class="text-brand-500">Notion</span>, the <span class="text-brand-500">changelog</span>, and our <span class="text-brand-500">Q1 brief</span>. Tone: confident, plainspoken.</p>
+            <div class="mt-2 flex items-center gap-1 text-brand-500"><span class="typing-dot w-1.5 h-1.5 rounded-full bg-brand-500"></span><span class="typing-dot w-1.5 h-1.5 rounded-full bg-brand-500"></span><span class="typing-dot w-1.5 h-1.5 rounded-full bg-brand-500"></span></div>
+          </div>
+          <div class="rounded-xl bg-slate-100 dark:bg-ink-800 px-3 py-2 text-sm">
+            <p class="font-semibold text-slate-900 dark:text-white">A calmer way to launch.</p>
+            <p class="text-slate-600 dark:text-slate-400 mt-1">Spring brings parallel tool use, 60% cheaper long runs, and a redesigned inbox. Open the changelog →</p>
+          </div>
+        </div>
+      </div>
+      <div class="absolute -bottom-4 -right-4 glass rounded-xl px-3 py-2 text-xs flex items-center gap-2 shadow-lg float-y"><i data-lucide="zap" class="w-4 h-4 text-amber-500"></i> 1.4s · 3 sources cited</div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     HERO 03 — Editorial display
+     ========================================================= -->
+<section id="h3" class="relative overflow-hidden py-32 border-t border-slate-200/60 dark:border-white/5">
+  <div class="absolute inset-0 noise"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between mb-10 text-xs uppercase tracking-[0.3em] text-slate-500" data-rv="up">
+      <span>Vol. 03 · Spring 2026</span>
+      <span>An editorial about software</span>
+    </div>
+    <h2 class="font-display font-black text-[clamp(3rem,12vw,11rem)] leading-[0.9] tracking-tighter text-slate-900 dark:text-white" data-rv="up">
+      We make <span class="italic gradient-text">soft</span><br/>software for<br/>hard problems<span class="text-brand-500">.</span>
+    </h2>
+    <div class="mt-12 grid md:grid-cols-3 gap-8 stagger" data-rv="up">
+      <p class="text-sm text-slate-600 dark:text-slate-400 md:col-span-2">W5D is a workspace shaped like a thought. Type a sentence, ship a campaign. Drop in a doc, ground a thousand replies. Fewer tabs, fewer meetings, fewer apologies.</p>
+      <div class="flex md:justify-end items-center gap-3">
+        <a href="contact.html" class="btn-primary rounded-xl px-5 py-3 text-sm font-semibold">Start a trial</a>
+        <a href="about.html" class="link-underline text-sm font-semibold">Read the manifesto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     HERO 04 — Conic spotlight
+     ========================================================= -->
+<section id="h4" class="relative overflow-hidden py-32 border-t border-slate-200/60 dark:border-white/5">
+  <div class="conic-spin"></div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center" data-rv="zoom">
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs">
+      <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-500"></i> Agents 2.0 · live this week
+    </div>
+    <h2 class="font-display font-bold text-5xl sm:text-7xl mt-6 text-slate-900 dark:text-white leading-[1.05]">Multi-step reasoning,<br/><span class="gradient-text">parallel tools</span>, one bill.</h2>
+    <p class="mt-6 max-w-2xl mx-auto text-slate-600 dark:text-slate-400">Long-running runs got 60% cheaper. Same answers, less waiting, fewer surprise invoices.</p>
+    <div class="mt-8 inline-flex flex-wrap items-center justify-center gap-3">
+      <a href="features.html" class="btn-primary rounded-xl px-6 py-3 text-sm font-semibold inline-flex items-center gap-2">Explore Agents 2.0 <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      <a href="changelog.html" class="btn-ghost rounded-xl px-6 py-3 text-sm font-semibold">Read the release</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     HERO 05 — Starfield night
+     ========================================================= -->
+<section id="h5" class="relative overflow-hidden py-32 border-t border-slate-200/60 dark:border-white/5 bg-ink-950 text-slate-100">
+  <div class="stars"></div>
+  <div class="absolute inset-0 mesh-bg opacity-50"></div>
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6 text-center" data-rv="up">
+    <span class="text-xs uppercase tracking-[0.3em] text-brand-300">Engineering · platform</span>
+    <h2 class="font-display font-bold text-5xl sm:text-7xl mt-3 leading-[1.05]">Built for <span class="gradient-shift">long-running</span> work.</h2>
+    <p class="mt-5 max-w-2xl mx-auto text-slate-300">Durable execution, deterministic replays, and an API your on-call team can actually trust at 3am.</p>
+    <div class="mt-8 flex items-center justify-center gap-3">
+      <a href="features.html" class="btn-primary rounded-xl px-6 py-3 text-sm font-semibold">Read the docs</a>
+      <a href="contact.html" class="rounded-xl px-6 py-3 text-sm font-semibold border border-white/15 hover:border-brand-400 transition">Talk to engineering</a>
+    </div>
+    <div class="mt-12 flex items-center justify-center gap-6 text-xs text-slate-400">
+      <span class="inline-flex items-center gap-1.5"><i data-lucide="activity" class="w-4 h-4 text-emerald-400"></i> 99.99% uptime</span>
+      <span class="inline-flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4 text-brand-300"></i> p95 &lt; 280ms</span>
+      <span class="inline-flex items-center gap-1.5"><i data-lucide="git-branch" class="w-4 h-4 text-cyan-300"></i> 6 SDKs</span>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     HERO 06 — Bento card grid
+     ========================================================= -->
+<section id="h6" class="relative overflow-hidden py-24 border-t border-slate-200/60 dark:border-white/5">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10" data-rv="up">
+      <h2 class="font-display font-bold text-4xl sm:text-6xl text-slate-900 dark:text-white leading-tight">Everything in one <span class="gradient-text">calm surface</span>.</h2>
+      <p class="mt-4 max-w-xl mx-auto text-slate-600 dark:text-slate-400">Pick the bento tile that matches your stack — chat, search, workflows, integrations.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 stagger" data-rv="up">
+      <div class="lg:col-span-2 lg:row-span-2 grad-border glass rounded-3xl p-7 relative overflow-hidden tilt">
+        <div class="absolute inset-0 mesh-bg opacity-30"></div>
+        <div class="relative">
+          <i data-lucide="message-square" class="w-8 h-8 text-brand-500"></i>
+          <h3 class="font-display font-bold text-2xl mt-3 text-slate-900 dark:text-white">Chat with your work</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">A unified inbox for prompts, replies, and grounded answers from your private docs.</p>
+          <div class="mt-6 rounded-xl bg-slate-100 dark:bg-ink-800 px-4 py-3 text-sm">
+            <p class="text-brand-500 text-xs font-semibold mb-1">W5D answer</p>
+            <p>Q3 churn dropped 1.4 pts because <span class="text-brand-500">enterprise renewals</span> moved earlier — see attached cohort note.</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 tilt">
+        <i data-lucide="search" class="w-7 h-7 text-cyan-500"></i>
+        <h4 class="font-semibold mt-3 text-slate-900 dark:text-white">Cited search</h4>
+        <p class="text-xs text-slate-500 mt-1">Every answer points at the source paragraph.</p>
+      </div>
+      <div class="glass rounded-3xl p-6 tilt">
+        <i data-lucide="git-branch" class="w-7 h-7 text-pink-500"></i>
+        <h4 class="font-semibold mt-3 text-slate-900 dark:text-white">Workflows</h4>
+        <p class="text-xs text-slate-500 mt-1">Visual chains of agents + tools, observable end-to-end.</p>
+      </div>
+      <div class="glass rounded-3xl p-6 tilt">
+        <i data-lucide="puzzle" class="w-7 h-7 text-emerald-500"></i>
+        <h4 class="font-semibold mt-3 text-slate-900 dark:text-white">120+ integrations</h4>
+        <p class="text-xs text-slate-500 mt-1">Native, bidirectional, no glue code.</p>
+      </div>
+      <div class="glass rounded-3xl p-6 tilt">
+        <i data-lucide="shield-check" class="w-7 h-7 text-amber-500"></i>
+        <h4 class="font-semibold mt-3 text-slate-900 dark:text-white">Audit trail</h4>
+        <p class="text-xs text-slate-500 mt-1">Every action logged, exportable on demand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     HERO 07 — Video-style mock
+     ========================================================= -->
+<section id="h7" class="relative overflow-hidden py-28 border-t border-slate-200/60 dark:border-white/5">
+  <div class="absolute -top-20 left-1/3 w-[500px] h-[500px] orb orb-3"></div>
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 text-center" data-rv="up">
+    <h2 class="font-display font-bold text-4xl sm:text-6xl text-slate-900 dark:text-white leading-tight">A <span class="gradient-text">90-second</span> tour.</h2>
+    <p class="mt-3 text-slate-600 dark:text-slate-400">A real session, sped up. No talking head, no buzzwords.</p>
+    <div class="mt-10 relative grad-border rounded-3xl overflow-hidden shadow-2xl shadow-brand-500/20 group cursor-pointer tilt" data-rv="zoom">
+      <div class="aspect-video bg-gradient-to-br from-brand-500/30 via-indigo-500/20 to-cyan-400/30 flex items-center justify-center">
+        <div class="absolute inset-0 grid-bg"></div>
+        <div class="relative">
+          <span class="absolute -inset-6 rounded-full bg-white/10 animate-ping"></span>
+          <button class="relative w-20 h-20 rounded-full bg-white text-brand-600 flex items-center justify-center shadow-2xl group-hover:scale-110 transition" aria-label="Play tour">
+            <i data-lucide="play" class="w-8 h-8 ml-1"></i>
+          </button>
+        </div>
+        <div class="absolute bottom-4 left-4 glass rounded-lg px-3 py-1.5 text-xs flex items-center gap-2"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 1:32 · 4 chapters</div>
+        <div class="absolute top-4 right-4 glass rounded-lg px-3 py-1.5 text-xs">English · subtitles</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     HERO 08 — Beam scanner
+     ========================================================= -->
+<section id="h8" class="relative overflow-hidden py-32 border-t border-slate-200/60 dark:border-white/5 spotlight">
+  <div class="beam"></div>
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6 text-center" data-rv="up">
+    <span class="text-xs uppercase tracking-[0.3em] text-brand-500 font-semibold">For engineering teams</span>
+    <h2 class="font-display font-bold text-5xl sm:text-7xl mt-3 text-slate-900 dark:text-white leading-[1.05]">Ship features, not <span class="line-through text-slate-500">prompts</span> <span class="gradient-text">duct-tape</span>.</h2>
+    <p class="mt-5 max-w-2xl mx-auto text-slate-600 dark:text-slate-400">Typed SDKs, deterministic runs, and a CLI that fits inside your existing CI. Move the cursor — the spotlight follows.</p>
+    <div class="mt-8 max-w-xl mx-auto rounded-2xl glass p-1 grad-border">
+      <div class="rounded-xl bg-slate-50 dark:bg-ink-900 px-4 py-3 text-left code-block flex items-center justify-between">
+        <span><span class="tok-c"># install</span><br/><span class="tok-k">npm</span> i <span class="tok-s">@w5d/sdk</span> <span class="tok-c">&amp;&amp;</span> <span class="tok-k">w5d</span> init</span>
+        <button data-copy class="text-xs text-slate-400 hover:text-brand-500 inline-flex items-center gap-1"><i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     HERO 09 — 3D card stack
+     ========================================================= -->
+<section id="h9" class="relative overflow-hidden py-28 border-t border-slate-200/60 dark:border-white/5">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-14 items-center">
+    <div data-rv="right">
+      <span class="text-xs uppercase tracking-[0.3em] text-brand-500 font-semibold">Knowledge</span>
+      <h2 class="font-display font-bold text-4xl sm:text-6xl mt-3 text-slate-900 dark:text-white leading-[1.05]">Your private <span class="gradient-text">source layer</span>, with citations.</h2>
+      <p class="mt-5 text-slate-600 dark:text-slate-400 max-w-md">Drop in PDFs, Notion, Drive, your wiki — every answer footnotes the exact paragraph. No hallucination, no homework.</p>
+      <a href="features.html" class="mt-7 inline-flex btn-primary rounded-xl px-5 py-3 text-sm font-semibold items-center gap-2">See knowledge sources <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+    </div>
+    <div class="relative h-[420px]" data-rv="left">
+      <div class="stack-3d relative h-full">
+        <div class="absolute top-4 left-1/2 -translate-x-1/2 w-72 h-96 glass rounded-2xl p-4 shadow-xl rotate-[-2deg]">
+          <div class="flex items-center gap-2 text-xs text-slate-500"><i data-lucide="file-text" class="w-3.5 h-3.5"></i> Q4-strategy.pdf</div>
+          <p class="mt-3 font-semibold text-slate-900 dark:text-white text-sm">Renewal motion</p>
+          <p class="mt-2 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Move enterprise renewals to T-90 with a structured QBR; expect a 1–2pt impact on net retention by Q3 of the following year.</p>
+        </div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-72 h-96 glass rounded-2xl p-4 shadow-2xl">
+          <div class="flex items-center gap-2 text-xs text-slate-500"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-500"></i> W5D answer</div>
+          <p class="mt-3 font-semibold text-slate-900 dark:text-white text-sm">Why did Q3 churn drop?</p>
+          <p class="mt-2 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Enterprise renewals moved 90 days earlier (per <span class="text-brand-500 underline">Q4-strategy.pdf · §3</span>) and a tighter QBR cadence kept the at-risk cohort engaged through the dip.</p>
+          <div class="mt-3 flex items-center gap-2 text-[11px]"><span class="px-1.5 py-0.5 rounded bg-brand-500/10 text-brand-500">3 sources</span><span class="text-slate-500">cited inline</span></div>
+        </div>
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-72 h-96 glass rounded-2xl p-4 shadow-xl rotate-[3deg]">
+          <div class="flex items-center gap-2 text-xs text-slate-500"><i data-lucide="database" class="w-3.5 h-3.5"></i> Notion · CS team</div>
+          <p class="mt-3 font-semibold text-slate-900 dark:text-white text-sm">QBR cadence v2</p>
+          <p class="mt-2 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Run an executive sync at T-60, a working session at T-30, and a renewal review at T-7 of the renewal date.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     HERO 10 — Marquee headline
+     ========================================================= -->
+<section id="h10" class="relative overflow-hidden py-28 border-t border-slate-200/60 dark:border-white/5">
+  <div class="absolute inset-0 grid-bg opacity-60"></div>
+  <div class="relative" data-rv="up">
+    <div class="overflow-hidden">
+      <div class="headline-marquee font-display font-black text-[clamp(3rem,11vw,9rem)] leading-none tracking-tighter text-slate-900 dark:text-white whitespace-nowrap">
+        <span class="px-4">Calm software</span>
+        <span class="px-4 gradient-text">·</span>
+        <span class="px-4">for noisy work</span>
+        <span class="px-4 gradient-text">·</span>
+        <span class="px-4">Calm software</span>
+        <span class="px-4 gradient-text">·</span>
+        <span class="px-4">for noisy work</span>
+        <span class="px-4 gradient-text">·</span>
+      </div>
+    </div>
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center mt-8">
+      <p class="text-slate-600 dark:text-slate-400">A workspace that does the chasing, summarizing, and follow-up for you. So you can do the actual work.</p>
+      <div class="mt-6 inline-flex items-center gap-3">
+        <a href="contact.html" class="btn-primary rounded-xl px-5 py-2.5 text-sm font-semibold">Start free</a>
+        <a href="pricing.html" class="link-underline text-sm font-semibold">See pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     HERO 11 — Form-first capture
+     ========================================================= -->
+<section id="h11" class="relative overflow-hidden py-28 border-t border-slate-200/60 dark:border-white/5">
+  <div class="absolute -top-32 -right-32 w-[500px] h-[500px] orb orb-1"></div>
+  <div class="absolute -bottom-32 -left-32 w-[500px] h-[500px] orb orb-2"></div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center" data-rv="zoom">
+    <i data-lucide="mail-plus" class="w-10 h-10 text-brand-500 mx-auto"></i>
+    <h2 class="font-display font-bold text-4xl sm:text-6xl mt-4 text-slate-900 dark:text-white leading-[1.05]">Get the <span class="gradient-text">field notes</span>.</h2>
+    <p class="mt-4 max-w-xl mx-auto text-slate-600 dark:text-slate-400">A weekly dispatch from the team — what we shipped, what we learned, what we'll never ship.</p>
+    <form data-newsletter class="mt-8 max-w-md mx-auto flex shadow-2xl shadow-brand-500/10 grad-border rounded-xl p-1">
+      <input type="email" required placeholder="you@company.com" class="flex-1 bg-white dark:bg-ink-900 rounded-lg px-4 py-3 text-sm focus:outline-none" />
+      <button type="submit" class="btn-primary rounded-lg px-5 text-sm font-semibold inline-flex items-center gap-2">Subscribe <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+    </form>
+    <p class="mt-4 text-xs text-slate-500">No spam, ever. Unsubscribe with one click.</p>
+    <div class="mt-10 flex items-center justify-center gap-6 text-xs text-slate-500">
+      <span><strong class="text-slate-900 dark:text-white">12,400+</strong> readers</span>
+      <span class="w-px h-4 bg-slate-300 dark:bg-white/10"></span>
+      <span><strong class="text-slate-900 dark:text-white">4.9★</strong> reader rating</span>
+      <span class="w-px h-4 bg-slate-300 dark:bg-white/10"></span>
+      <span><strong class="text-slate-900 dark:text-white">Weekly</strong> · Wednesdays</span>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     HERO 12 — Minimal type-only
+     ========================================================= -->
+<section id="h12" class="relative overflow-hidden py-32 border-t border-slate-200/60 dark:border-white/5">
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center" data-rv="up">
+    <p class="text-xs uppercase tracking-[0.4em] text-slate-500">W5D · 2026</p>
+    <h2 class="font-display font-bold text-5xl sm:text-7xl mt-6 text-slate-900 dark:text-white leading-[1.1]">
+      A workspace.<br/>An assistant.<br/><span class="wave-text">A standard.</span>
+    </h2>
+    <div class="mt-10 flex items-center justify-center gap-6">
+      <a href="contact.html" class="link-underline text-sm font-semibold">Start a trial →</a>
+      <a href="pricing.html" class="link-underline text-sm font-semibold">See pricing →</a>
+      <a href="about.html" class="link-underline text-sm font-semibold">About →</a>
+    </div>
+    <i data-lucide="arrow-down" class="w-6 h-6 mx-auto mt-16 text-slate-400 bounce-y"></i>
+  </div>
+</section>
+
+<!-- Footer / next steps -->
+<section class="py-20 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center" data-rv="up">
+    <h3 class="font-display font-bold text-3xl text-slate-900 dark:text-white">Need more pieces?</h3>
+    <p class="mt-3 text-slate-600 dark:text-slate-400">Pair any hero with a section from the matching library.</p>
+    <div class="mt-6 inline-flex flex-wrap items-center justify-center gap-3">
+      <a href="sections.html" class="btn-primary rounded-xl px-5 py-2.5 text-sm font-semibold inline-flex items-center gap-2">Browse 28 sections <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      <a href="documentations.html" class="btn-ghost rounded-xl px-5 py-2.5 text-sm font-semibold">Read the docs</a>
+    </div>
+  </div>
+</section>
+
+<div data-shell-foot></div>
+</body></html>

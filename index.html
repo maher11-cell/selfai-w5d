@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>W5D — AI that ships work for you</title>
+  <meta name="description" content="W5D is the all-in-one AI workspace that automates research, writing, and workflows so your team can focus on building what's next." />
+
+  <!-- Tailwind CDN with dark mode + custom theme -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:  '#f3f1ff', 100: '#ebe5ff', 200: '#d9ceff', 300: '#bda7ff',
+              400: '#9c79ff', 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9',
+              800: '#5b21b6', 900: '#4c1d95'
+            },
+            ink: { 950: '#070711', 900: '#0b0b18', 800: '#11111f', 700: '#1a1a2e' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['"Space Grotesk"', 'Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="js/logos.js" defer></script>
+  <script src="js/megamenu.js" defer></script>
+  <script src="js/api.js" defer></script>
+</head>
+
+<body class="bg-white text-slate-800 dark:bg-ink-950 dark:text-slate-200 transition-colors duration-300">
+
+  <!-- ======================= NAVBAR ======================= -->
+  <header class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-3">
+      <nav class="glass rounded-2xl flex items-center justify-between px-4 sm:px-6 py-3">
+        <a href="index.html" class="flex items-center gap-2">
+          <span class="relative inline-flex w-9 h-9 rounded-xl bg-gradient-to-br from-brand-500 via-indigo-500 to-cyan-400 items-center justify-center shadow-lg shadow-brand-500/30">
+            <span class="font-display font-bold text-white text-sm">W5</span>
+          </span>
+          <span class="font-display font-bold text-lg tracking-tight text-slate-900 dark:text-white">W5D</span>
+        </a>
+
+        <ul data-mega-host data-prefix="" class="hidden lg:flex items-center gap-8 text-sm font-medium"></ul>
+
+        <div class="flex items-center gap-2">
+          <button data-theme-toggle class="btn-ghost rounded-lg w-10 h-10 flex items-center justify-center" aria-label="Toggle theme">
+            <i data-theme-icon="sun" data-lucide="sun" class="w-5 h-5"></i>
+            <i data-theme-icon="moon" data-lucide="moon" class="w-5 h-5 hidden"></i>
+          </button>
+          <a href="#" class="hidden sm:inline-flex btn-primary rounded-lg px-4 py-2 text-sm font-semibold items-center gap-1">
+            Get started <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <button data-mobile-toggle class="lg:hidden btn-ghost rounded-lg w-10 h-10 flex items-center justify-center" aria-label="Menu">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="hidden lg:hidden glass rounded-2xl mt-2 p-4">
+        <div data-mega-mobile></div>
+        <a href="pages/contact.html" class="btn-primary rounded-lg px-4 py-2 text-sm font-semibold inline-flex mt-3">Get started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================= HERO ======================= -->
+  <section class="relative pt-36 pb-24 overflow-hidden">
+    <div class="absolute inset-0 grid-bg"></div>
+    <div class="orb orb-1 w-[480px] h-[480px] -top-32 -left-32"></div>
+    <div class="orb orb-2 w-[420px] h-[420px] top-20 right-0"></div>
+    <div class="orb orb-3 w-[380px] h-[380px] bottom-0 left-1/3"></div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      <span data-aos="fade-up" class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs font-semibold">
+        <span class="relative inline-flex w-2 h-2 rounded-full bg-brand-500 pulse-ring"></span>
+        New • W5D Agents 2.0 is live
+      </span>
+
+      <h1 data-aos="fade-up" data-aos-delay="80" class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold mt-6 leading-[1.05] text-slate-900 dark:text-white">
+        The AI workspace that <span class="gradient-text">ships work</span><br class="hidden sm:block" /> while you sleep.
+      </h1>
+
+      <p data-aos="fade-up" data-aos-delay="160" class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+        W5D blends multi-agent reasoning, your private knowledge, and 100+ integrations into one calm interface — so your team moves from idea to outcome in hours, not weeks.
+      </p>
+
+      <div data-aos="fade-up" data-aos-delay="240" class="mt-9 flex flex-wrap items-center justify-center gap-3">
+        <a href="#pricing" class="btn-primary rounded-xl px-6 py-3 font-semibold inline-flex items-center gap-2">
+          Start free trial <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="#how" class="btn-ghost rounded-xl px-6 py-3 font-semibold inline-flex items-center gap-2">
+          <i data-lucide="play-circle" class="w-5 h-5"></i> Watch 90s demo
+        </a>
+      </div>
+
+      <p data-aos="fade-up" data-aos-delay="320" class="mt-5 text-xs text-slate-500">No credit card • 14-day Pro trial • Cancel anytime</p>
+
+      <!-- Hero product preview -->
+      <div data-aos="zoom-in-up" data-aos-delay="400" class="relative mt-16 mx-auto max-w-5xl">
+        <div class="grad-border rounded-3xl glass p-2 shadow-2xl shadow-brand-500/10">
+          <div class="rounded-2xl overflow-hidden bg-slate-50 dark:bg-ink-900">
+            <!-- Mock app chrome -->
+            <div class="flex items-center gap-2 px-4 py-3 border-b border-slate-200/60 dark:border-white/5">
+              <span class="w-3 h-3 rounded-full bg-rose-400"></span>
+              <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+              <span class="ml-3 text-xs text-slate-500">app.w5d.ai / workspace</span>
+            </div>
+            <div class="grid md:grid-cols-[200px_1fr] min-h-[360px]">
+              <aside class="hidden md:block border-r border-slate-200/60 dark:border-white/5 p-4 space-y-3 text-sm">
+                <div class="flex items-center gap-2 text-slate-500"><i data-lucide="sparkles" class="w-4 h-4"></i> Agents</div>
+                <div class="rounded-lg bg-brand-500/10 text-brand-600 dark:text-brand-300 px-3 py-2 flex items-center gap-2"><i data-lucide="search" class="w-4 h-4"></i> Researcher</div>
+                <div class="px-3 py-2 flex items-center gap-2 text-slate-500"><i data-lucide="pen-tool" class="w-4 h-4"></i> Copywriter</div>
+                <div class="px-3 py-2 flex items-center gap-2 text-slate-500"><i data-lucide="bar-chart-3" class="w-4 h-4"></i> Analyst</div>
+                <div class="px-3 py-2 flex items-center gap-2 text-slate-500"><i data-lucide="bot" class="w-4 h-4"></i> Support</div>
+              </aside>
+              <div class="p-5 sm:p-6 text-left space-y-4">
+                <div class="flex justify-end">
+                  <div class="max-w-md rounded-2xl rounded-tr-sm bg-brand-500 text-white px-4 py-2.5 text-sm">
+                    Draft a launch plan for our Q3 product, with timeline and risks.
+                  </div>
+                </div>
+                <div class="flex gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-cyan-400 flex items-center justify-center text-white text-xs font-bold">W</div>
+                  <div class="flex-1 max-w-lg rounded-2xl rounded-tl-sm bg-white dark:bg-ink-800 border border-slate-200/60 dark:border-white/5 px-4 py-3 text-sm space-y-2">
+                    <p class="font-semibold text-slate-900 dark:text-white">Q3 launch plan — draft v1</p>
+                    <ul class="text-slate-600 dark:text-slate-400 space-y-1">
+                      <li>• Week 1–2: positioning & messaging tests</li>
+                      <li>• Week 3–4: beta with 50 design partners</li>
+                      <li>• Week 5: GA launch + lifecycle automation</li>
+                    </ul>
+                    <div class="flex gap-1 pt-1">
+                      <span class="typing-dot w-1.5 h-1.5 bg-slate-400 rounded-full inline-block"></span>
+                      <span class="typing-dot w-1.5 h-1.5 bg-slate-400 rounded-full inline-block"></span>
+                      <span class="typing-dot w-1.5 h-1.5 bg-slate-400 rounded-full inline-block"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Floating chips -->
+        <div class="hidden md:flex absolute -left-6 top-24 glass rounded-xl px-3 py-2 items-center gap-2 text-xs font-medium float-y">
+          <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i> 3.2× faster output
+        </div>
+        <div class="hidden md:flex absolute -right-6 bottom-24 glass rounded-xl px-3 py-2 items-center gap-2 text-xs font-medium float-y" style="animation-delay:-3s">
+          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i> SOC 2 Type II
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= TRUSTED BY ======================= -->
+  <section class="py-12 border-y border-slate-200/60 dark:border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <p class="text-center text-xs uppercase tracking-[0.25em] text-slate-500 mb-8">Trusted by fast-moving teams at</p>
+      <div class="marquee">
+        <div data-logo-marquee class="marquee-track items-center"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= STATS ======================= -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <div data-aos="fade-up" class="glass rounded-2xl p-6 text-center">
+        <div class="font-display text-4xl font-bold gradient-text stat-num"><span data-counter="42000" data-suffix="+">0</span></div>
+        <p class="mt-1 text-sm text-slate-500">Teams onboarded</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="80" class="glass rounded-2xl p-6 text-center">
+        <div class="font-display text-4xl font-bold gradient-text stat-num"><span data-counter="3.2" data-decimals="1" data-suffix="×">0</span></div>
+        <p class="mt-1 text-sm text-slate-500">Faster delivery</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="160" class="glass rounded-2xl p-6 text-center">
+        <div class="font-display text-4xl font-bold gradient-text stat-num"><span data-counter="98" data-suffix="%">0</span></div>
+        <p class="mt-1 text-sm text-slate-500">Customer CSAT</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="240" class="glass rounded-2xl p-6 text-center">
+        <div class="font-display text-4xl font-bold gradient-text stat-num"><span data-counter="120" data-suffix="+">0</span></div>
+        <p class="mt-1 text-sm text-slate-500">Native integrations</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= FEATURES ======================= -->
+  <section id="features" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl mx-auto text-center mb-14">
+        <span data-aos="fade-up" class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Features</span>
+        <h2 data-aos="fade-up" data-aos-delay="80" class="font-display text-4xl sm:text-5xl font-bold mt-3 text-slate-900 dark:text-white">
+          A calm cockpit for <span class="gradient-text">deep work</span>
+        </h2>
+        <p data-aos="fade-up" data-aos-delay="160" class="mt-4 text-slate-600 dark:text-slate-400">
+          Six tightly-integrated modules replace the ten browser tabs you have open right now.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Feature card template -->
+        <article data-aos="fade-up" class="glass rounded-2xl p-6 hover:-translate-y-1 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center mb-4">
+            <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Multi-agent reasoning</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Agents collaborate, critique, and verify each other so outputs hold up under scrutiny.</p>
+        </article>
+        <article data-aos="fade-up" data-aos-delay="80" class="glass rounded-2xl p-6 hover:-translate-y-1 transition">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center mb-4">
+            <i data-lucide="database" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Private knowledge base</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Connect Drive, Notion, Confluence, or upload — answers cite your own sources.</p>
+        </article>
+        <article data-aos="fade-up" data-aos-delay="160" class="glass rounded-2xl p-6 hover:-translate-y-1 transition">
+          <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center mb-4">
+            <i data-lucide="workflow" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Visual workflows</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Drag, drop, and chain steps. No code required — but the API is there if you want it.</p>
+        </article>
+        <article data-aos="fade-up" class="glass rounded-2xl p-6 hover:-translate-y-1 transition">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-4">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Enterprise security</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">SOC 2, GDPR, SSO, granular permissions, and zero-retention model routing.</p>
+        </article>
+        <article data-aos="fade-up" data-aos-delay="80" class="glass rounded-2xl p-6 hover:-translate-y-1 transition">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center mb-4">
+            <i data-lucide="layers" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Model-agnostic</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Route between top open and frontier models, or bring your own for total control.</p>
+        </article>
+        <article data-aos="fade-up" data-aos-delay="160" class="glass rounded-2xl p-6 hover:-translate-y-1 transition">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center mb-4">
+            <i data-lucide="users" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Real-time collaboration</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Comments, presence, and shared agent runs — like a doc, but it does the work.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= HOW IT WORKS ======================= -->
+  <section id="how" class="py-24 relative overflow-hidden">
+    <div class="orb orb-1 w-[400px] h-[400px] top-10 -left-40"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
+      <div class="max-w-2xl mx-auto text-center mb-14">
+        <span data-aos="fade-up" class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">How it works</span>
+        <h2 data-aos="fade-up" data-aos-delay="80" class="font-display text-4xl sm:text-5xl font-bold mt-3 text-slate-900 dark:text-white">
+          Three steps. Then it just runs.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 relative">
+        <!-- connector line -->
+        <div class="hidden md:block absolute top-12 left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-brand-500/40 to-transparent"></div>
+
+        <div data-aos="fade-up" class="glass rounded-2xl p-7 relative">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-cyan-400 text-white font-bold flex items-center justify-center mb-4 relative z-10">1</div>
+          <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Connect your stack</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Plug into Slack, Gmail, Drive, GitHub, HubSpot, and 115+ more in a single click.</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="120" class="glass rounded-2xl p-7 relative">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-cyan-400 text-white font-bold flex items-center justify-center mb-4 relative z-10">2</div>
+          <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Hire an agent</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Pick a template (or describe a job in plain English) and the agent learns your context.</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="240" class="glass rounded-2xl p-7 relative">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-cyan-400 text-white font-bold flex items-center justify-center mb-4 relative z-10">3</div>
+          <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Ship outcomes</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Get a draft, a report, a ticket, or a deployed change — with citations and an audit log.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= USE CASES BENTO ======================= -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl mx-auto text-center mb-14">
+        <span class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Use cases</span>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold mt-3 text-slate-900 dark:text-white">Built for every team that <span class="gradient-text">creates</span></h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 auto-rows-[180px]">
+        <div data-aos="fade-up" class="md:col-span-2 md:row-span-2 glass rounded-2xl p-7 relative overflow-hidden">
+          <i data-lucide="megaphone" class="w-8 h-8 text-brand-500 mb-4"></i>
+          <h3 class="font-display text-2xl font-semibold text-slate-900 dark:text-white">Marketing</h3>
+          <p class="mt-2 max-w-md text-slate-600 dark:text-slate-400">Brief in, full campaign out. Copy, visuals, audience segments, and a launch checklist — all on-brand.</p>
+          <div class="absolute right-6 bottom-6 hidden sm:block">
+            <div class="grad-border rounded-xl p-2 glass w-56">
+              <div class="text-[11px] text-slate-500 mb-1">Campaign brief</div>
+              <div class="h-2 rounded bg-brand-500/40 mb-1.5"></div>
+              <div class="h-2 rounded bg-brand-500/30 mb-1.5 w-4/5"></div>
+              <div class="h-2 rounded bg-brand-500/20 w-3/5"></div>
+            </div>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="80" class="glass rounded-2xl p-6">
+          <i data-lucide="code-2" class="w-7 h-7 text-cyan-500 mb-3"></i>
+          <h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Engineering</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">PR reviews, doc generation, on-call summaries.</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="160" class="glass rounded-2xl p-6">
+          <i data-lucide="line-chart" class="w-7 h-7 text-emerald-500 mb-3"></i>
+          <h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Analytics</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Ask data questions in English; get charts and insights.</p>
+        </div>
+        <div data-aos="fade-up" class="glass rounded-2xl p-6">
+          <i data-lucide="headphones" class="w-7 h-7 text-pink-500 mb-3"></i>
+          <h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Support</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Resolve tier-1 tickets with grounded, on-brand replies.</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="80" class="md:col-span-2 glass rounded-2xl p-6 flex items-center justify-between">
+          <div>
+            <i data-lucide="briefcase" class="w-7 h-7 text-amber-500 mb-3"></i>
+            <h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Operations</h3>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Automate the busywork — invoices, recaps, reminders, follow-ups.</p>
+          </div>
+          <div class="hidden sm:flex flex-col items-end gap-2">
+            <div class="glass rounded-lg px-3 py-1.5 text-xs">⏱ 12h saved / week</div>
+            <div class="glass rounded-lg px-3 py-1.5 text-xs">📈 +28% throughput</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= INTEGRATIONS ======================= -->
+  <section class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div data-aos="fade-right">
+        <span class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Integrations</span>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold mt-3 text-slate-900 dark:text-white">Plays nicely with your <span class="gradient-text">whole stack</span></h2>
+        <p class="mt-4 text-slate-600 dark:text-slate-400">Over 120 native integrations and a clean REST API. If your tool has an endpoint, W5D can talk to it.</p>
+        <ul class="mt-6 space-y-3 text-sm">
+          <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i> One-click OAuth setup</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i> Bidirectional sync, never just read-only</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i> Field-level data masking by default</li>
+        </ul>
+        <a href="#" class="mt-6 inline-flex items-center gap-1 text-brand-500 font-semibold link-underline">Browse all integrations <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+
+      <div data-aos="fade-left" class="relative h-[420px]">
+        <!-- Center hub -->
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="relative w-24 h-24 rounded-2xl bg-gradient-to-br from-brand-500 via-indigo-500 to-cyan-400 flex items-center justify-center shadow-2xl shadow-brand-500/40 pulse-ring">
+            <span class="font-display font-bold text-white text-2xl">W5</span>
+          </div>
+        </div>
+        <!-- Orbiting tiles -->
+        <div class="absolute top-4 left-1/2 -translate-x-1/2 glass rounded-xl p-3 float-y"><i data-lucide="hash" class="w-7 h-7"></i></div>
+        <div class="absolute top-1/2 left-4 -translate-y-1/2 glass rounded-xl p-3 float-y" style="animation-delay:-2s"><i data-lucide="git-branch" class="w-7 h-7"></i></div>
+        <div class="absolute top-1/2 right-4 -translate-y-1/2 glass rounded-xl p-3 float-y" style="animation-delay:-4s"><i data-lucide="pen-tool" class="w-7 h-7"></i></div>
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 glass rounded-xl p-3 float-y" style="animation-delay:-1s"><i data-lucide="mail" class="w-7 h-7"></i></div>
+        <div class="absolute top-16 left-12 glass rounded-xl p-3 float-y" style="animation-delay:-3s"><i data-lucide="kanban" class="w-7 h-7"></i></div>
+        <div class="absolute top-16 right-12 glass rounded-xl p-3 float-y" style="animation-delay:-5s"><i data-lucide="globe" class="w-7 h-7"></i></div>
+        <div class="absolute bottom-16 left-12 glass rounded-xl p-3 float-y" style="animation-delay:-2.5s"><i data-lucide="cloud" class="w-7 h-7"></i></div>
+        <div class="absolute bottom-16 right-12 glass rounded-xl p-3 float-y" style="animation-delay:-1.5s"><i data-lucide="calendar" class="w-7 h-7"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= PRICING ======================= -->
+  <section id="pricing" class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl mx-auto text-center mb-10">
+        <span class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Pricing</span>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold mt-3 text-slate-900 dark:text-white">Simple plans. <span class="gradient-text">No surprises.</span></h2>
+        <p class="mt-4 text-slate-600 dark:text-slate-400">Start free. Scale when it earns its keep.</p>
+
+        <div class="mt-6 inline-flex items-center gap-3 glass rounded-full px-4 py-2">
+          <span class="text-sm">Monthly</span>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input id="pricingToggle" type="checkbox" class="sr-only peer" />
+            <div class="w-11 h-6 bg-slate-300 dark:bg-ink-700 rounded-full peer-checked:bg-brand-500 transition"></div>
+            <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full transition peer-checked:translate-x-5"></div>
+          </label>
+          <span class="text-sm">Yearly <span class="text-emerald-500 text-xs font-semibold">−20%</span></span>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <!-- Free -->
+        <div data-aos="fade-up" class="glass rounded-2xl p-7 flex flex-col">
+          <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Starter</h3>
+          <p class="text-sm text-slate-500 mt-1">For curious individuals.</p>
+          <div class="mt-5">
+            <span class="font-display text-4xl font-bold text-slate-900 dark:text-white">$0</span>
+            <span class="text-slate-500">/forever</span>
+          </div>
+          <ul class="mt-6 space-y-2 text-sm text-slate-600 dark:text-slate-400 flex-1">
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> 200 messages/mo</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> 3 integrations</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> Community support</li>
+          </ul>
+          <a href="#" class="btn-ghost rounded-xl px-4 py-2.5 text-center font-semibold mt-6">Get started</a>
+        </div>
+
+        <!-- Pro highlighted -->
+        <div data-aos="fade-up" data-aos-delay="80" class="grad-border rounded-2xl p-7 flex flex-col bg-white dark:bg-ink-900 relative">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-500 to-cyan-400 text-white text-xs font-semibold px-3 py-1 rounded-full">Most popular</span>
+          <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Pro</h3>
+          <p class="text-sm text-slate-500 mt-1">For small teams that ship.</p>
+          <div class="mt-5">
+            <span data-price-monthly class="font-display text-4xl font-bold text-slate-900 dark:text-white">$29</span>
+            <span data-price-yearly class="hidden font-display text-4xl font-bold text-slate-900 dark:text-white">$23</span>
+            <span class="text-slate-500">/seat/mo</span>
+          </div>
+          <ul class="mt-6 space-y-2 text-sm text-slate-600 dark:text-slate-400 flex-1">
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> Unlimited messages</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> All 120+ integrations</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> Custom agents</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> Priority support</li>
+          </ul>
+          <a href="#" class="btn-primary rounded-xl px-4 py-2.5 text-center font-semibold mt-6">Start 14-day trial</a>
+        </div>
+
+        <!-- Enterprise -->
+        <div data-aos="fade-up" data-aos-delay="160" class="glass rounded-2xl p-7 flex flex-col">
+          <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Enterprise</h3>
+          <p class="text-sm text-slate-500 mt-1">Security, scale, and SLAs.</p>
+          <div class="mt-5">
+            <span class="font-display text-4xl font-bold text-slate-900 dark:text-white">Custom</span>
+          </div>
+          <ul class="mt-6 space-y-2 text-sm text-slate-600 dark:text-slate-400 flex-1">
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> SSO, SCIM, audit logs</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> Dedicated cluster</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> Solutions engineer</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> 99.95% uptime SLA</li>
+          </ul>
+          <a href="#" class="btn-ghost rounded-xl px-4 py-2.5 text-center font-semibold mt-6">Talk to sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= TESTIMONIALS ======================= -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl mx-auto text-center mb-14">
+        <span class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Testimonials</span>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold mt-3 text-slate-900 dark:text-white">Loved by builders, <span class="gradient-text">trusted by leaders</span></h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <figure data-aos="fade-up" class="glass rounded-2xl p-6">
+          <div class="flex gap-0.5 text-amber-400 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <blockquote class="text-slate-700 dark:text-slate-300">“We replaced four tools with W5D in our first month. The agents handle the boring half of marketing so we can think bigger.”</blockquote>
+          <figcaption class="mt-5 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-pink-500"></div>
+            <div>
+              <div class="text-sm font-semibold text-slate-900 dark:text-white">Maya Okafor</div>
+              <div class="text-xs text-slate-500">Head of Growth, Northwind</div>
+            </div>
+          </figcaption>
+        </figure>
+        <figure data-aos="fade-up" data-aos-delay="80" class="glass rounded-2xl p-6">
+          <div class="flex gap-0.5 text-amber-400 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <blockquote class="text-slate-700 dark:text-slate-300">“The audit log alone sold our security team. Day-one approval for a generative tool — that never happens.”</blockquote>
+          <figcaption class="mt-5 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-indigo-500"></div>
+            <div>
+              <div class="text-sm font-semibold text-slate-900 dark:text-white">Daniel Reyes</div>
+              <div class="text-xs text-slate-500">CTO, Atlasly</div>
+            </div>
+          </figcaption>
+        </figure>
+        <figure data-aos="fade-up" data-aos-delay="160" class="glass rounded-2xl p-6">
+          <div class="flex gap-0.5 text-amber-400 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <blockquote class="text-slate-700 dark:text-slate-300">“It feels less like an AI tool and more like a teammate that never sleeps and always cites sources.”</blockquote>
+          <figcaption class="mt-5 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-cyan-500"></div>
+            <div>
+              <div class="text-sm font-semibold text-slate-900 dark:text-white">Priya Shah</div>
+              <div class="text-xs text-slate-500">Director of Ops, Helix</div>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= FAQ ======================= -->
+  <section class="py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <span class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">FAQ</span>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold mt-3 text-slate-900 dark:text-white">Questions, answered.</h2>
+      </div>
+
+      <div class="space-y-3">
+        <div data-faq class="glass rounded-2xl">
+          <button data-faq-btn class="w-full flex items-center justify-between p-5 text-left">
+            <span class="font-semibold text-slate-900 dark:text-white">Will W5D train on my data?</span>
+            <i data-faq-icon data-lucide="plus" class="w-5 h-5 transition-transform"></i>
+          </button>
+          <div data-faq-panel class="hidden px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm">
+            Never. By default we route through zero-retention model providers, and your team's content is encrypted at rest with isolated tenant keys.
+          </div>
+        </div>
+        <div data-faq class="glass rounded-2xl">
+          <button data-faq-btn class="w-full flex items-center justify-between p-5 text-left">
+            <span class="font-semibold text-slate-900 dark:text-white">Which models can I use?</span>
+            <i data-faq-icon data-lucide="plus" class="w-5 h-5 transition-transform"></i>
+          </button>
+          <div data-faq-panel class="hidden px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm">
+            All major frontier and open models, plus your own. W5D's router picks the cheapest model that meets your quality bar for each step.
+          </div>
+        </div>
+        <div data-faq class="glass rounded-2xl">
+          <button data-faq-btn class="w-full flex items-center justify-between p-5 text-left">
+            <span class="font-semibold text-slate-900 dark:text-white">How long does setup take?</span>
+            <i data-faq-icon data-lucide="plus" class="w-5 h-5 transition-transform"></i>
+          </button>
+          <div data-faq-panel class="hidden px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm">
+            Most teams run their first agent in under 15 minutes. Enterprise rollouts with SSO and custom data sources typically land in a single week.
+          </div>
+        </div>
+        <div data-faq class="glass rounded-2xl">
+          <button data-faq-btn class="w-full flex items-center justify-between p-5 text-left">
+            <span class="font-semibold text-slate-900 dark:text-white">Do you offer a discount for non-profits or students?</span>
+            <i data-faq-icon data-lucide="plus" class="w-5 h-5 transition-transform"></i>
+          </button>
+          <div data-faq-panel class="hidden px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm">
+            Yes — 50% off Pro for verified non-profits and educators. Reach out from your institutional email.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= BLOG TEASER ======================= -->
+  <section id="blog" class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-end justify-between mb-10 flex-wrap gap-3">
+        <div>
+          <span class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Journal</span>
+          <h2 class="font-display text-4xl sm:text-5xl font-bold mt-3 text-slate-900 dark:text-white">Field notes from the frontier</h2>
+        </div>
+        <a href="#" class="text-brand-500 font-semibold link-underline inline-flex items-center gap-1">View all <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <article data-aos="fade-up" class="glass rounded-2xl overflow-hidden hover:-translate-y-1 transition">
+          <div class="h-44 bg-gradient-to-br from-brand-500 via-indigo-500 to-cyan-400 relative">
+            <span class="absolute top-3 left-3 text-xs glass rounded-full px-2 py-1">Engineering</span>
+          </div>
+          <div class="p-5">
+            <p class="text-xs text-slate-500">Apr 12, 2026 • 6 min read</p>
+            <h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white mt-2">Designing agents that disagree well</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Why we ship debate, not consensus, into every multi-agent run.</p>
+          </div>
+        </article>
+        <article data-aos="fade-up" data-aos-delay="80" class="glass rounded-2xl overflow-hidden hover:-translate-y-1 transition">
+          <div class="h-44 bg-gradient-to-br from-pink-500 via-rose-500 to-amber-400 relative">
+            <span class="absolute top-3 left-3 text-xs glass rounded-full px-2 py-1">Product</span>
+          </div>
+          <div class="p-5">
+            <p class="text-xs text-slate-500">Apr 4, 2026 • 4 min read</p>
+            <h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white mt-2">A calmer take on the AI cockpit</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Less chrome, more work. Inside the W5D 2.0 redesign.</p>
+          </div>
+        </article>
+        <article data-aos="fade-up" data-aos-delay="160" class="glass rounded-2xl overflow-hidden hover:-translate-y-1 transition">
+          <div class="h-44 bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-400 relative">
+            <span class="absolute top-3 left-3 text-xs glass rounded-full px-2 py-1">Security</span>
+          </div>
+          <div class="p-5">
+            <p class="text-xs text-slate-500">Mar 28, 2026 • 8 min read</p>
+            <h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white mt-2">Zero-retention by default, explained</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">What your security team should ask before wiring up any LLM.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= CTA BANNER ======================= -->
+  <section id="contact" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="relative overflow-hidden rounded-3xl p-10 sm:p-16 text-center bg-gradient-to-br from-brand-600 via-indigo-600 to-cyan-500">
+        <div class="absolute inset-0 grid-bg opacity-30"></div>
+        <div class="relative">
+          <h2 class="font-display text-4xl sm:text-5xl font-bold text-white">Ship more. Stay sane.</h2>
+          <p class="mt-4 text-white/80 max-w-xl mx-auto">Bring W5D into your workspace today — your future self will thank you on Friday afternoon.</p>
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <a href="#" class="bg-white text-brand-700 rounded-xl px-6 py-3 font-semibold inline-flex items-center gap-2 hover:bg-slate-100 transition">Start free trial <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            <a href="#" class="text-white border border-white/40 rounded-xl px-6 py-3 font-semibold inline-flex items-center gap-2 hover:bg-white/10 transition">Book a demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="border-t border-slate-200/60 dark:border-white/5 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-5 gap-10">
+      <div class="md:col-span-2">
+        <a href="#" class="flex items-center gap-2">
+          <span class="inline-flex w-9 h-9 rounded-xl bg-gradient-to-br from-brand-500 via-indigo-500 to-cyan-400 items-center justify-center">
+            <span class="font-display font-bold text-white text-sm">W5</span>
+          </span>
+          <span class="font-display font-bold text-lg text-slate-900 dark:text-white">W5D</span>
+        </a>
+        <p class="mt-4 text-sm text-slate-600 dark:text-slate-400 max-w-sm">The calm AI workspace for teams that actually ship. Built with care in three time zones.</p>
+        <form data-newsletter class="mt-5 flex max-w-sm">
+          <input type="email" required placeholder="you@company.com" class="flex-1 bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-l-lg px-3 py-2 text-sm focus:outline-none focus:border-brand-500" />
+          <button type="submit" class="btn-primary rounded-r-lg px-4 text-sm font-semibold">Subscribe</button>
+        </form>
+      </div>
+      <div>
+        <h4 class="font-semibold text-slate-900 dark:text-white text-sm">Product</h4>
+        <ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+          <li><a href="pages/features.html" class="hover:text-brand-500">Features</a></li>
+          <li><a href="pages/pricing.html" class="hover:text-brand-500">Pricing</a></li>
+          <li><a href="pages/integrations.html" class="hover:text-brand-500">Integrations</a></li>
+          <li><a href="pages/changelog.html" class="hover:text-brand-500">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-slate-900 dark:text-white text-sm">Company</h4>
+        <ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+          <li><a href="pages/about.html" class="hover:text-brand-500">About</a></li>
+          <li><a href="pages/blog.html" class="hover:text-brand-500">Blog</a></li>
+          <li><a href="pages/careers.html" class="hover:text-brand-500">Careers</a></li>
+          <li><a href="pages/contact.html" class="hover:text-brand-500">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-slate-900 dark:text-white text-sm">Legal</h4>
+        <ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+          <li><a href="pages/privacy.html" class="hover:text-brand-500">Privacy</a></li>
+          <li><a href="pages/terms.html" class="hover:text-brand-500">Terms</a></li>
+          <li><a href="pages/security.html" class="hover:text-brand-500">Security</a></li>
+          <li><a href="pages/blocks.html" class="hover:text-brand-500">Blocks library</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-12 pt-6 border-t border-slate-200/60 dark:border-white/5 flex flex-wrap items-center justify-between gap-4">
+      <p class="text-xs text-slate-500">© 2026 W5D Labs Inc. All rights reserved.</p>
+      <div class="flex items-center gap-3 text-slate-500">
+        <a href="#" aria-label="X" class="hover:text-brand-500"><i data-lucide="send" class="w-4 h-4"></i></a>
+        <a href="#" aria-label="LinkedIn" class="hover:text-brand-500"><i data-lucide="briefcase" class="w-4 h-4"></i></a>
+        <a href="#" aria-label="GitHub" class="hover:text-brand-500"><i data-lucide="git-branch" class="w-4 h-4"></i></a>
+        <a href="#" aria-label="YouTube" class="hover:text-brand-500"><i data-lucide="play-circle" class="w-4 h-4"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

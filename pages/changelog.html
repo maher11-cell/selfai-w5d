@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Changelog — W5D</title>
+<meta name="description" content="Everything we ship at W5D, in chronological order." />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{50:'#f3f1ff',100:'#ebe5ff',200:'#d9ceff',300:'#bda7ff',400:'#9c79ff',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95'},ink:{950:'#070711',900:'#0b0b18',800:'#11111f',700:'#1a1a2e'}},fontFamily:{sans:['Inter','system-ui','sans-serif'],display:['"Space Grotesk"','Inter','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+<link rel="stylesheet" href="../css/style.css" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+<script src="../js/logos.js" defer></script>
+<script src="../js/shell.js" defer></script>
+<script src="../js/megamenu.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script src="../js/api.js" defer></script>
+</head>
+<body data-prefix="../" class="bg-white text-slate-800 dark:bg-ink-950 dark:text-slate-200 transition-colors duration-300">
+<div data-shell></div>
+
+<section class="relative pt-36 pb-12 overflow-hidden">
+  <div class="absolute inset-0 grid-bg"></div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+    <p class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Changelog</p>
+    <h1 class="font-display text-5xl sm:text-6xl font-bold mt-4 text-slate-900 dark:text-white">What's <span class="gradient-text">new.</span></h1>
+    <p class="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">We ship most weeks. Big things, small things, and the occasional bug fix worth celebrating.</p>
+    <a href="#" class="mt-6 inline-flex items-center gap-2 text-brand-500 font-semibold link-underline"><i data-lucide="rss" class="w-4 h-4"></i> Subscribe via RSS</a>
+  </div>
+</section>
+
+<section class="py-12">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 space-y-12">
+
+    <article class="grad-border glass rounded-2xl p-7">
+      <div class="flex items-center gap-3 mb-3"><span class="text-xs glass rounded-full px-2 py-1 font-semibold">v2.4.0 · Major</span><span class="text-xs text-slate-500">April 22, 2026</span></div>
+      <h2 class="font-display text-2xl font-bold text-slate-900 dark:text-white">Agents 2.0 is live</h2>
+      <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+        <li class="flex gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-brand-500 mt-0.5"></i> Multi-step planning with self-critique loops, on by default for all Pro+ workspaces.</li>
+        <li class="flex gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-brand-500 mt-0.5"></i> Parallel tool use — agents can search, browse, and run code simultaneously.</li>
+        <li class="flex gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-brand-500 mt-0.5"></i> 60% lower cost on long runs thanks to the new model router.</li>
+      </ul>
+    </article>
+
+    <article class="glass rounded-2xl p-7">
+      <div class="flex items-center gap-3 mb-3"><span class="text-xs glass rounded-full px-2 py-1 font-semibold">v2.3.7</span><span class="text-xs text-slate-500">April 14, 2026</span></div>
+      <h2 class="font-display text-xl font-bold text-slate-900 dark:text-white">Canvas comments + presence</h2>
+      <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+        <li class="flex gap-2"><i data-lucide="plus" class="w-4 h-4 text-emerald-500 mt-0.5"></i> Real-time presence indicators on the canvas.</li>
+        <li class="flex gap-2"><i data-lucide="plus" class="w-4 h-4 text-emerald-500 mt-0.5"></i> Threaded comments with @mentions for both humans and agents.</li>
+        <li class="flex gap-2"><i data-lucide="wrench" class="w-4 h-4 text-amber-500 mt-0.5"></i> Fixed a long-standing bug where Friday afternoon runs felt slower (they weren't, but the UI lied).</li>
+      </ul>
+    </article>
+
+    <article class="glass rounded-2xl p-7">
+      <div class="flex items-center gap-3 mb-3"><span class="text-xs glass rounded-full px-2 py-1 font-semibold">v2.3.5</span><span class="text-xs text-slate-500">April 7, 2026</span></div>
+      <h2 class="font-display text-xl font-bold text-slate-900 dark:text-white">12 new integrations</h2>
+      <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+        <li class="flex gap-2"><i data-lucide="plus" class="w-4 h-4 text-emerald-500 mt-0.5"></i> Added: Warehouse, HelpDesk, Form Builder, Calendar Sync, Pay Engine, and 7 more.</li>
+        <li class="flex gap-2"><i data-lucide="plus" class="w-4 h-4 text-emerald-500 mt-0.5"></i> All new integrations support bidirectional sync with field-level masking.</li>
+      </ul>
+    </article>
+
+    <article class="glass rounded-2xl p-7">
+      <div class="flex items-center gap-3 mb-3"><span class="text-xs glass rounded-full px-2 py-1 font-semibold">v2.3.0</span><span class="text-xs text-slate-500">March 24, 2026</span></div>
+      <h2 class="font-display text-xl font-bold text-slate-900 dark:text-white">SCIM 2.0 + audit log export</h2>
+      <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+        <li class="flex gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-cyan-500 mt-0.5"></i> SCIM 2.0 provisioning for Enterprise plans.</li>
+        <li class="flex gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-cyan-500 mt-0.5"></i> One-click audit log export to S3, GCS, or Splunk.</li>
+      </ul>
+    </article>
+
+    <article class="glass rounded-2xl p-7">
+      <div class="flex items-center gap-3 mb-3"><span class="text-xs glass rounded-full px-2 py-1 font-semibold">v2.2.8</span><span class="text-xs text-slate-500">March 10, 2026</span></div>
+      <h2 class="font-display text-xl font-bold text-slate-900 dark:text-white">Bug fixes + small polish</h2>
+      <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+        <li class="flex gap-2"><i data-lucide="wrench" class="w-4 h-4 text-amber-500 mt-0.5"></i> Theme toggle no longer flashes on slow connections.</li>
+        <li class="flex gap-2"><i data-lucide="wrench" class="w-4 h-4 text-amber-500 mt-0.5"></i> Workflow editor now snaps to a 4px grid (your designers will be happy).</li>
+        <li class="flex gap-2"><i data-lucide="wrench" class="w-4 h-4 text-amber-500 mt-0.5"></i> 8 small accessibility fixes from a community audit. Thank you @rosaaa.</li>
+      </ul>
+    </article>
+
+    <div class="text-center pt-8"><button class="btn-ghost rounded-xl px-6 py-3 font-semibold">Older releases</button></div>
+  </div>
+</section>
+
+<div data-shell-foot></div>
+</body></html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pricing — W5D</title>
+<meta name="description" content="Simple, honest pricing. Start free, scale when it earns its keep." />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{50:'#f3f1ff',100:'#ebe5ff',200:'#d9ceff',300:'#bda7ff',400:'#9c79ff',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95'},ink:{950:'#070711',900:'#0b0b18',800:'#11111f',700:'#1a1a2e'}},fontFamily:{sans:['Inter','system-ui','sans-serif'],display:['"Space Grotesk"','Inter','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+<link rel="stylesheet" href="../css/style.css" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+<script src="../js/logos.js" defer></script>
+<script src="../js/shell.js" defer></script>
+<script src="../js/megamenu.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script src="../js/api.js" defer></script>
+</head>
+<body data-prefix="../" class="bg-white text-slate-800 dark:bg-ink-950 dark:text-slate-200 transition-colors duration-300">
+<div data-shell></div>
+
+<section class="relative pt-36 pb-12 overflow-hidden">
+  <div class="absolute inset-0 grid-bg"></div>
+  <div class="orb orb-1 w-[420px] h-[420px] -top-32 left-1/2 -translate-x-1/2"></div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+    <p class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Pricing</p>
+    <h1 class="font-display text-5xl sm:text-6xl font-bold mt-4 leading-[1.05] text-slate-900 dark:text-white">Simple plans. <span class="gradient-text">No surprises.</span></h1>
+    <p class="mt-6 text-lg text-slate-600 dark:text-slate-400">Start free. Scale when it earns its keep. Cancel anytime — no exit interview required.</p>
+    <div class="mt-8 inline-flex items-center gap-3 glass rounded-full px-4 py-2">
+      <span class="text-sm">Monthly</span>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input id="pricingToggle" type="checkbox" class="sr-only peer" />
+        <div class="w-11 h-6 bg-slate-300 dark:bg-ink-700 rounded-full peer-checked:bg-brand-500 transition"></div>
+        <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full transition peer-checked:translate-x-5"></div>
+      </label>
+      <span class="text-sm">Yearly <span class="text-emerald-500 text-xs font-semibold">−20%</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- Plan cards -->
+<section class="py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-3 gap-5">
+    <div data-aos="fade-up" class="glass rounded-2xl p-7 flex flex-col">
+      <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Starter</h3>
+      <p class="text-sm text-slate-500 mt-1">For curious individuals.</p>
+      <div class="mt-5"><span class="font-display text-4xl font-bold text-slate-900 dark:text-white">$0</span><span class="text-slate-500">/forever</span></div>
+      <ul class="mt-6 space-y-2 text-sm text-slate-600 dark:text-slate-400 flex-1">
+        <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> 1 user, 200 runs / mo</li>
+        <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> 3 integrations</li>
+        <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> Community Discord</li>
+      </ul>
+      <a href="contact.html" class="btn-ghost rounded-xl px-4 py-2.5 text-center font-semibold mt-6">Get started</a>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="80" class="grad-border rounded-2xl p-7 flex flex-col bg-white dark:bg-ink-900 relative">
+      <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-500 to-cyan-400 text-white text-xs font-semibold px-3 py-1 rounded-full">Most popular</span>
+      <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Pro</h3>
+      <p class="text-sm text-slate-500 mt-1">For small teams that ship.</p>
+      <div class="mt-5">
+        <span data-price-monthly class="font-display text-4xl font-bold text-slate-900 dark:text-white">$29</span>
+        <span data-price-yearly class="hidden font-display text-4xl font-bold text-slate-900 dark:text-white">$23</span>
+        <span class="text-slate-500">/seat/mo</span>
+      </div>
+      <ul class="mt-6 space-y-2 text-sm text-slate-600 dark:text-slate-400 flex-1">
+        <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> Unlimited runs</li>
+        <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> All 120+ integrations</li>
+        <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> Custom agents</li>
+        <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> Priority support</li>
+      </ul>
+      <a href="contact.html" class="btn-primary rounded-xl px-4 py-2.5 text-center font-semibold mt-6">Start 14-day trial</a>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="160" class="glass rounded-2xl p-7 flex flex-col">
+      <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Enterprise</h3>
+      <p class="text-sm text-slate-500 mt-1">Security, scale, and SLAs.</p>
+      <div class="mt-5"><span class="font-display text-4xl font-bold text-slate-900 dark:text-white">Custom</span></div>
+      <ul class="mt-6 space-y-2 text-sm text-slate-600 dark:text-slate-400 flex-1">
+        <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> SSO, SCIM, audit logs</li>
+        <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> Dedicated cluster</li>
+        <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> Solutions engineer</li>
+        <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5"></i> 99.95% uptime SLA</li>
+      </ul>
+      <a href="contact.html" class="btn-ghost rounded-xl px-4 py-2.5 text-center font-semibold mt-6">Talk to sales</a>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison table -->
+<section class="py-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10">
+      <span class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Compare</span>
+      <h2 class="font-display text-4xl font-bold mt-3 text-slate-900 dark:text-white">Plan comparison</h2>
+    </div>
+    <div class="glass rounded-2xl overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="border-b border-slate-200/60 dark:border-white/10">
+            <tr class="text-left">
+              <th class="p-4 font-semibold text-slate-900 dark:text-white w-2/5">Feature</th>
+              <th class="p-4 font-semibold text-slate-900 dark:text-white text-center">Starter</th>
+              <th class="p-4 font-semibold text-slate-900 dark:text-white text-center">Pro</th>
+              <th class="p-4 font-semibold text-slate-900 dark:text-white text-center">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200/60 dark:divide-white/5">
+            <tr><td class="p-4 text-slate-600 dark:text-slate-300">Monthly agent runs</td><td class="p-4 text-center">200</td><td class="p-4 text-center">Unlimited</td><td class="p-4 text-center">Unlimited</td></tr>
+            <tr><td class="p-4 text-slate-600 dark:text-slate-300">Team seats</td><td class="p-4 text-center">1</td><td class="p-4 text-center">Up to 50</td><td class="p-4 text-center">Unlimited</td></tr>
+            <tr><td class="p-4 text-slate-600 dark:text-slate-300">Integrations</td><td class="p-4 text-center">3</td><td class="p-4 text-center">All 120+</td><td class="p-4 text-center">All 120+ + custom</td></tr>
+            <tr><td class="p-4 text-slate-600 dark:text-slate-300">Custom agents</td><td class="p-4 text-center text-slate-400">—</td><td class="p-4 text-center"><i data-lucide="check" class="w-4 h-4 text-emerald-500 inline"></i></td><td class="p-4 text-center"><i data-lucide="check" class="w-4 h-4 text-emerald-500 inline"></i></td></tr>
+            <tr><td class="p-4 text-slate-600 dark:text-slate-300">Bring your own model</td><td class="p-4 text-center text-slate-400">—</td><td class="p-4 text-center"><i data-lucide="check" class="w-4 h-4 text-emerald-500 inline"></i></td><td class="p-4 text-center"><i data-lucide="check" class="w-4 h-4 text-emerald-500 inline"></i></td></tr>
+            <tr><td class="p-4 text-slate-600 dark:text-slate-300">SSO & SAML</td><td class="p-4 text-center text-slate-400">—</td><td class="p-4 text-center text-slate-400">—</td><td class="p-4 text-center"><i data-lucide="check" class="w-4 h-4 text-emerald-500 inline"></i></td></tr>
+            <tr><td class="p-4 text-slate-600 dark:text-slate-300">SCIM provisioning</td><td class="p-4 text-center text-slate-400">—</td><td class="p-4 text-center text-slate-400">—</td><td class="p-4 text-center"><i data-lucide="check" class="w-4 h-4 text-emerald-500 inline"></i></td></tr>
+            <tr><td class="p-4 text-slate-600 dark:text-slate-300">Audit logs</td><td class="p-4 text-center">7 days</td><td class="p-4 text-center">90 days</td><td class="p-4 text-center">Unlimited + export</td></tr>
+            <tr><td class="p-4 text-slate-600 dark:text-slate-300">Private VPC deploy</td><td class="p-4 text-center text-slate-400">—</td><td class="p-4 text-center text-slate-400">—</td><td class="p-4 text-center"><i data-lucide="check" class="w-4 h-4 text-emerald-500 inline"></i></td></tr>
+            <tr><td class="p-4 text-slate-600 dark:text-slate-300">Uptime SLA</td><td class="p-4 text-center">—</td><td class="p-4 text-center">99.9%</td><td class="p-4 text-center">99.95%</td></tr>
+            <tr><td class="p-4 text-slate-600 dark:text-slate-300">Support</td><td class="p-4 text-center">Community</td><td class="p-4 text-center">Priority email</td><td class="p-4 text-center">Solutions engineer</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Add-ons -->
+<section class="py-20 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12">
+      <span class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Add-ons</span>
+      <h2 class="font-display text-4xl font-bold mt-3 text-slate-900 dark:text-white">Pay only for what you actually need.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="glass rounded-2xl p-6"><i data-lucide="cpu" class="w-7 h-7 text-brand-500 mb-3"></i><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Extra compute</h3><p class="mt-1 text-sm text-slate-500">$10 per 1,000 additional runs.</p></div>
+      <div class="glass rounded-2xl p-6"><i data-lucide="database" class="w-7 h-7 text-cyan-500 mb-3"></i><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Larger knowledge base</h3><p class="mt-1 text-sm text-slate-500">$25 per 100GB indexed sources.</p></div>
+      <div class="glass rounded-2xl p-6"><i data-lucide="user-check" class="w-7 h-7 text-pink-500 mb-3"></i><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Implementation assist</h3><p class="mt-1 text-sm text-slate-500">$2,500 one-time. We set up your first 5 workflows with you.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-20">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12">
+      <span class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">FAQ</span>
+      <h2 class="font-display text-4xl font-bold mt-3 text-slate-900 dark:text-white">Pricing questions, answered.</h2>
+    </div>
+    <div class="space-y-3">
+      <div data-faq class="glass rounded-2xl"><button data-faq-btn class="w-full flex items-center justify-between p-5 text-left"><span class="font-semibold text-slate-900 dark:text-white">What counts as a "run"?</span><i data-faq-icon data-lucide="plus" class="w-5 h-5 transition-transform"></i></button><div data-faq-panel class="hidden px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm">Each completed agent task — a chat reply, a workflow execution, or a scheduled trigger firing. Failed runs don't count.</div></div>
+      <div data-faq class="glass rounded-2xl"><button data-faq-btn class="w-full flex items-center justify-between p-5 text-left"><span class="font-semibold text-slate-900 dark:text-white">Can I switch plans anytime?</span><i data-faq-icon data-lucide="plus" class="w-5 h-5 transition-transform"></i></button><div data-faq-panel class="hidden px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm">Yes. Upgrades are instant; downgrades take effect at the next billing cycle. We prorate to the nearest day.</div></div>
+      <div data-faq class="glass rounded-2xl"><button data-faq-btn class="w-full flex items-center justify-between p-5 text-left"><span class="font-semibold text-slate-900 dark:text-white">Do you offer non-profit or student discounts?</span><i data-faq-icon data-lucide="plus" class="w-5 h-5 transition-transform"></i></button><div data-faq-panel class="hidden px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm">50% off Pro for verified non-profits and accredited educators. Email hello@w5d.ai from your institutional address.</div></div>
+      <div data-faq class="glass rounded-2xl"><button data-faq-btn class="w-full flex items-center justify-between p-5 text-left"><span class="font-semibold text-slate-900 dark:text-white">What payment methods do you accept?</span><i data-faq-icon data-lucide="plus" class="w-5 h-5 transition-transform"></i></button><div data-faq-panel class="hidden px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm">All major cards via Stripe. Enterprise plans can pay by invoice (NET-30) in USD, EUR, or GBP.</div></div>
+      <div data-faq class="glass rounded-2xl"><button data-faq-btn class="w-full flex items-center justify-between p-5 text-left"><span class="font-semibold text-slate-900 dark:text-white">Is there a free trial?</span><i data-faq-icon data-lucide="plus" class="w-5 h-5 transition-transform"></i></button><div data-faq-panel class="hidden px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm">14 days of Pro, no card required. Starter is also free forever — no time limit.</div></div>
+    </div>
+  </div>
+</section>
+
+<div data-shell-foot></div>
+</body></html>

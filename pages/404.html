@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lost — W5D</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{50:'#f3f1ff',100:'#ebe5ff',200:'#d9ceff',300:'#bda7ff',400:'#9c79ff',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95'},ink:{950:'#070711',900:'#0b0b18',800:'#11111f',700:'#1a1a2e'}},fontFamily:{sans:['Inter','system-ui','sans-serif'],display:['"Space Grotesk"','Inter','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/style.css" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="../js/logos.js" defer></script>
+<script src="../js/shell.js" defer></script>
+<script src="../js/megamenu.js" defer></script>
+<script src="../js/main.js" defer></script>
+</head>
+<body data-prefix="../" class="bg-white text-slate-800 dark:bg-ink-950 dark:text-slate-200 transition-colors duration-300">
+<div data-shell></div>
+
+<section class="relative min-h-[80vh] flex items-center overflow-hidden pt-24">
+  <div class="absolute inset-0 grid-bg"></div>
+  <div class="orb orb-1 w-[480px] h-[480px] -top-32 -left-32"></div>
+  <div class="orb orb-3 w-[420px] h-[420px] bottom-0 right-0"></div>
+  <div class="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
+    <p class="font-display font-bold text-[28vw] sm:text-[18rem] gradient-text leading-none">404</p>
+    <h1 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">This page took the day off.</h1>
+    <p class="mt-4 text-slate-600 dark:text-slate-400">It's either moved, never existed, or an agent renamed it without telling anyone. Let's get you somewhere useful.</p>
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <a href="../index.html" class="btn-primary rounded-xl px-6 py-3 font-semibold inline-flex items-center gap-2"><i data-lucide="home" class="w-4 h-4"></i> Back home</a>
+      <a href="contact.html" class="btn-ghost rounded-xl px-6 py-3 font-semibold inline-flex items-center gap-2"><i data-lucide="message-circle" class="w-4 h-4"></i> Tell us what's broken</a>
+    </div>
+  </div>
+</section>
+
+<div data-shell-foot></div>
+</body></html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Features — W5D</title>
+<meta name="description" content="Multi-agent reasoning, private knowledge, visual workflows, and 120+ integrations — in one calm cockpit." />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{50:'#f3f1ff',100:'#ebe5ff',200:'#d9ceff',300:'#bda7ff',400:'#9c79ff',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95'},ink:{950:'#070711',900:'#0b0b18',800:'#11111f',700:'#1a1a2e'}},fontFamily:{sans:['Inter','system-ui','sans-serif'],display:['"Space Grotesk"','Inter','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+<link rel="stylesheet" href="../css/style.css" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+<script src="../js/logos.js" defer></script>
+<script src="../js/shell.js" defer></script>
+<script src="../js/megamenu.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script src="../js/api.js" defer></script>
+</head>
+<body data-prefix="../" class="bg-white text-slate-800 dark:bg-ink-950 dark:text-slate-200 transition-colors duration-300">
+<div data-shell></div>
+
+<section class="relative pt-36 pb-12 overflow-hidden">
+  <div class="absolute inset-0 grid-bg"></div><div class="orb orb-1 w-[420px] h-[420px] -top-32 -left-20"></div><div class="orb orb-3 w-[400px] h-[400px] top-20 right-0"></div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+    <p class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Features</p>
+    <h1 class="font-display text-5xl sm:text-6xl font-bold mt-4 text-slate-900 dark:text-white">A small toolkit. <span class="gradient-text">Tightly integrated.</span></h1>
+    <p class="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Six modules that replace the ten browser tabs you have open right now. Each one earns its place.</p>
+  </div>
+</section>
+
+<!-- Sticky tabs -->
+<section class="py-6 sticky top-20 z-30 bg-white/70 dark:bg-ink-950/70 backdrop-blur border-y border-slate-200/60 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex gap-3 overflow-x-auto no-scrollbar text-sm">
+    <a href="#agents" class="glass rounded-full px-4 py-2 whitespace-nowrap">Agents</a>
+    <a href="#knowledge" class="glass rounded-full px-4 py-2 whitespace-nowrap">Knowledge</a>
+    <a href="#workflows" class="glass rounded-full px-4 py-2 whitespace-nowrap">Workflows</a>
+    <a href="#canvas" class="glass rounded-full px-4 py-2 whitespace-nowrap">Canvas</a>
+    <a href="#api" class="glass rounded-full px-4 py-2 whitespace-nowrap">Developer API</a>
+    <a href="#governance" class="glass rounded-full px-4 py-2 whitespace-nowrap">Governance</a>
+  </div>
+</section>
+
+<!-- Deep-dive: Agents -->
+<section id="agents" class="py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+    <div data-aos="fade-right">
+      <span class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">01 — Agents</span>
+      <h2 class="font-display text-4xl font-bold mt-3 text-slate-900 dark:text-white">Specialists, not generalists.</h2>
+      <p class="mt-4 text-slate-600 dark:text-slate-400">Spin up purpose-built agents — researcher, writer, analyst, support — each with their own tools, memory, and tone. Agents call each other when they need help.</p>
+      <ul class="mt-5 space-y-2 text-sm">
+        <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i> Multi-step planning with self-critique</li>
+        <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i> Parallel tool use (search, code, browse)</li>
+        <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i> Long-term memory across runs</li>
+      </ul>
+    </div>
+    <div data-aos="fade-left" class="grad-border glass rounded-2xl p-5">
+      <div class="space-y-3">
+        <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-cyan-400 flex items-center justify-center text-white text-xs font-bold">R</div><div><p class="text-sm font-semibold">Researcher</p><p class="text-xs text-slate-500">Searched 12 sources, found 3 high-confidence matches</p></div></div>
+        <div class="flex items-center gap-3 pl-4"><i data-lucide="arrow-down" class="w-4 h-4 text-slate-400"></i></div>
+        <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-indigo-500 flex items-center justify-center text-white text-xs font-bold">A</div><div><p class="text-sm font-semibold">Analyst</p><p class="text-xs text-slate-500">Synthesized findings into 5 themes</p></div></div>
+        <div class="flex items-center gap-3 pl-4"><i data-lucide="arrow-down" class="w-4 h-4 text-slate-400"></i></div>
+        <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-pink-500 to-amber-500 flex items-center justify-center text-white text-xs font-bold">W</div><div><p class="text-sm font-semibold">Writer</p><p class="text-xs text-slate-500">Drafted 800-word brief in your voice</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Knowledge -->
+<section id="knowledge" class="py-24 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+    <div data-aos="fade-right" class="order-2 lg:order-1 grad-border glass rounded-2xl p-5">
+      <p class="text-xs text-slate-500 mb-3">Connected sources</p>
+      <div class="grid grid-cols-2 gap-2">
+        <div class="glass rounded-lg px-3 py-2 text-xs flex items-center gap-1.5"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Drive · 2,341</div>
+        <div class="glass rounded-lg px-3 py-2 text-xs flex items-center gap-1.5"><i data-lucide="file-text" class="w-3.5 h-3.5"></i> Notion · 891</div>
+        <div class="glass rounded-lg px-3 py-2 text-xs flex items-center gap-1.5"><i data-lucide="book-open" class="w-3.5 h-3.5"></i> Confluence · 612</div>
+        <div class="glass rounded-lg px-3 py-2 text-xs flex items-center gap-1.5"><i data-lucide="git-branch" class="w-3.5 h-3.5"></i> GitHub · 4,002</div>
+      </div>
+      <p class="text-[11px] text-slate-500 mt-4 flex items-center gap-1"><i data-lucide="refresh-cw" class="w-3 h-3"></i> Last sync 2 minutes ago</p>
+    </div>
+    <div data-aos="fade-left" class="order-1 lg:order-2">
+      <span class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">02 — Knowledge</span>
+      <h2 class="font-display text-4xl font-bold mt-3 text-slate-900 dark:text-white">Grounded in your sources.</h2>
+      <p class="mt-4 text-slate-600 dark:text-slate-400">A living index of your team's docs, decisions, and code. Every answer cites its source — and respects the original permissions.</p>
+      <ul class="mt-5 space-y-2 text-sm">
+        <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i> Drive, Notion, Confluence, GitHub, Linear</li>
+        <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i> Permission-aware retrieval</li>
+        <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i> Real-time sync, not nightly batch</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Workflows -->
+<section id="workflows" class="py-24 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+    <div data-aos="fade-right">
+      <span class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">03 — Workflows</span>
+      <h2 class="font-display text-4xl font-bold mt-3 text-slate-900 dark:text-white">Drag, drop, deploy.</h2>
+      <p class="mt-4 text-slate-600 dark:text-slate-400">Chain agents and actions visually. Schedule them, trigger them on events, or run on demand. No code required — full code available.</p>
+      <ul class="mt-5 space-y-2 text-sm">
+        <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i> Branching, loops, conditional logic</li>
+        <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i> Cron, webhook, and event triggers</li>
+        <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i> Per-step approvals for sensitive actions</li>
+      </ul>
+    </div>
+    <div data-aos="fade-left" class="grad-border glass rounded-2xl p-5 space-y-3 text-sm">
+      <div class="flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-500 text-[10px] font-bold flex items-center justify-center">1</span> Trigger: Mondays 9am</div>
+      <div class="flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-500 text-[10px] font-bold flex items-center justify-center">2</span> Pull last week's tickets</div>
+      <div class="flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-500 text-[10px] font-bold flex items-center justify-center">3</span> Cluster by theme (parallel)</div>
+      <div class="flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-500 text-[10px] font-bold flex items-center justify-center">4</span> Draft summary in our voice</div>
+      <div class="flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-500 text-[10px] font-bold flex items-center justify-center">✓</span> Post to #leadership</div>
+    </div>
+  </div>
+</section>
+
+<!-- Canvas, API, Governance grid -->
+<section class="py-24 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-3 gap-5">
+    <div id="canvas" class="glass rounded-2xl p-7"><div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center mb-4"><i data-lucide="square-pen" class="w-6 h-6"></i></div><h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Canvas</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-400">A real-time doc surface where agents and humans co-edit. Comments, presence, version history.</p></div>
+    <div id="api" class="glass rounded-2xl p-7"><div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center mb-4"><i data-lucide="terminal" class="w-6 h-6"></i></div><h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Developer API</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-400">REST + webhooks. SDKs in TypeScript, Python, Go, Ruby, Java, and PHP.</p></div>
+    <div id="governance" class="glass rounded-2xl p-7"><div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-4"><i data-lucide="shield-check" class="w-6 h-6"></i></div><h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Governance</h3><p class="mt-2 text-sm text-slate-600 dark:text-slate-400">SOC 2 Type II, GDPR, SSO, SCIM, granular roles, full audit trail.</p></div>
+  </div>
+</section>
+
+<!-- By team -->
+<section class="py-24 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12"><span class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">By team</span><h2 class="font-display text-4xl font-bold mt-3 text-slate-900 dark:text-white">Built for every team that creates.</h2></div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div id="marketing" class="glass rounded-2xl p-6"><i data-lucide="megaphone" class="w-7 h-7 text-brand-500 mb-3"></i><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Marketing</h3><p class="mt-1 text-sm text-slate-500">Brief in, full campaign out. Copy, segments, launch checklist.</p></div>
+      <div id="engineering" class="glass rounded-2xl p-6"><i data-lucide="code-2" class="w-7 h-7 text-cyan-500 mb-3"></i><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Engineering</h3><p class="mt-1 text-sm text-slate-500">PR review, doc generation, on-call summaries.</p></div>
+      <div id="operations" class="glass rounded-2xl p-6"><i data-lucide="briefcase" class="w-7 h-7 text-amber-500 mb-3"></i><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Operations</h3><p class="mt-1 text-sm text-slate-500">Recaps, reminders, follow-ups, vendor wrangling.</p></div>
+      <div id="support" class="glass rounded-2xl p-6"><i data-lucide="headphones" class="w-7 h-7 text-pink-500 mb-3"></i><h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Support</h3><p class="mt-1 text-sm text-slate-500">Grounded tier-1 replies with citations and tone control.</p></div>
+    </div>
+  </div>
+</section>
+
+<div data-shell-foot></div>
+</body></html>

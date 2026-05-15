@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Documentation — W5D</title>
+<meta name="description" content="How to reuse the W5D website kit: project structure, brand tokens, mega-menu, forms, animations and the heroes/sections libraries." />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{50:'#f3f1ff',100:'#ebe5ff',200:'#d9ceff',300:'#bda7ff',400:'#9c79ff',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95'},ink:{950:'#070711',900:'#0b0b18',800:'#11111f',700:'#1a1a2e'}},fontFamily:{sans:['Inter','system-ui','sans-serif'],display:['"Space Grotesk"','Inter','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/style.css" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="../js/logos.js" defer></script>
+<script src="../js/shell.js" defer></script>
+<script src="../js/megamenu.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script src="../js/api.js" defer></script>
+<style>
+  .doc-content h2 { font-family:'Space Grotesk',Inter,sans-serif; font-weight:700; font-size:1.875rem; margin-top:3rem; padding-top:1rem; border-top:1px solid rgba(148,163,184,0.15); color:inherit; scroll-margin-top:6rem; }
+  .doc-content h3 { font-family:'Space Grotesk',Inter,sans-serif; font-weight:600; font-size:1.25rem; margin-top:2rem; margin-bottom:.5rem; scroll-margin-top:6rem; }
+  .doc-content p, .doc-content li { line-height: 1.7; }
+  .doc-content p { margin-top: 1rem; color: rgb(71 85 105); }
+  .dark .doc-content p { color: rgb(148 163 184); }
+  .doc-content ul { margin-top: .75rem; padding-left: 1.25rem; list-style: disc; color: rgb(71 85 105); }
+  .dark .doc-content ul { color: rgb(148 163 184); }
+  .doc-content code:not(pre code) { background: rgba(139,92,246,0.12); color: #8b5cf6; padding: 1px 6px; border-radius: 4px; font-size: 0.875em; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .doc-pre { position: relative; }
+  .doc-pre > pre { background: rgb(15 23 42 / 0.6); border: 1px solid rgba(148,163,184,0.15); border-radius: 12px; padding: 1.25rem; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.65; color: #e2e8f0; }
+  .doc-pre > button { position: absolute; top: .65rem; right: .65rem; }
+  .toc a.is-active { color: #8b5cf6; font-weight: 600; }
+  /* Tables */
+  .doc-content table { width: 100%; margin-top: 1rem; font-size: .875rem; border-collapse: collapse; }
+  .doc-content th, .doc-content td { text-align: left; padding: .65rem .85rem; border-bottom: 1px solid rgba(148,163,184,0.15); }
+  .doc-content th { font-weight: 600; color: #0f172a; }
+  .dark .doc-content th { color: #fff; }
+  .doc-content tbody tr:hover { background: rgba(139,92,246,.04); }
+  /* Callout boxes */
+  .callout { border-radius: 12px; padding: 1rem 1.25rem; margin-top: 1.5rem; border: 1px solid; display: flex; gap: .75rem; align-items: flex-start; font-size: .9rem; }
+  .callout--tip  { border-color: rgba(16,185,129,.4); background: rgba(16,185,129,.06); color: #047857; }
+  .dark .callout--tip { color: #6ee7b7; }
+  .callout--warn { border-color: rgba(245,158,11,.4); background: rgba(245,158,11,.06); color: #b45309; }
+  .dark .callout--warn { color: #fcd34d; }
+  .callout--info { border-color: rgba(139,92,246,.35); background: rgba(139,92,246,.06); color: #6d28d9; }
+  .dark .callout--info { color: #c4b5fd; }
+</style>
+</head>
+<body data-prefix="../" class="bg-white text-slate-800 dark:bg-ink-950 dark:text-slate-200 transition-colors duration-300">
+<div data-shell></div>
+
+<!-- Header -->
+<section class="relative pt-36 pb-12 overflow-hidden">
+  <div class="absolute inset-0 grid-bg"></div>
+  <div class="absolute -top-32 left-1/3 w-[500px] h-[500px] orb orb-1"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6" data-rv="up">
+    <span class="text-xs uppercase tracking-[0.25em] text-brand-500 font-semibold">Documentation</span>
+    <h1 class="font-display font-bold text-4xl sm:text-6xl mt-3 text-slate-900 dark:text-white">The <span class="gradient-shift">W5D Kit</span> docs.</h1>
+    <p class="mt-4 max-w-2xl text-slate-600 dark:text-slate-400">Everything you need to reuse this codebase for a new product, brand, or marketing site — without reinventing the design system.</p>
+    <div class="mt-6 flex items-center gap-2 text-sm">
+      <a href="#quickstart" class="btn-primary rounded-lg px-4 py-2 font-semibold">Quickstart</a>
+      <a href="heros.html" class="btn-ghost rounded-lg px-4 py-2 font-semibold">Heroes</a>
+      <a href="sections.html" class="btn-ghost rounded-lg px-4 py-2 font-semibold">Sections</a>
+    </div>
+  </div>
+</section>
+
+<!-- Body: sidebar + content -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
+  <div class="grid lg:grid-cols-[240px_1fr] gap-10">
+
+    <!-- Sticky TOC -->
+    <aside class="lg:sticky lg:top-28 self-start hidden lg:block">
+      <p class="text-xs uppercase tracking-widest text-slate-500 font-semibold mb-3">On this page</p>
+      <nav class="toc text-sm space-y-1.5 text-slate-600 dark:text-slate-400">
+        <a href="#intro" class="block hover:text-brand-500">Introduction</a>
+        <a href="#quickstart" class="block hover:text-brand-500">Quickstart</a>
+        <a href="#structure" class="block hover:text-brand-500">Project structure</a>
+        <a href="#brand" class="block hover:text-brand-500">Brand &amp; theme tokens</a>
+        <a href="#themes" class="block hover:text-brand-500">Dark / light mode</a>
+        <a href="#shell" class="block hover:text-brand-500">Page shell</a>
+        <a href="#megamenu" class="block hover:text-brand-500">Mega-menu</a>
+        <a href="#anim" class="block hover:text-brand-500">Animation utilities</a>
+        <a href="#heros" class="block hover:text-brand-500">Heroes library</a>
+        <a href="#sections" class="block hover:text-brand-500">Sections library</a>
+        <a href="#forms" class="block hover:text-brand-500">Forms &amp; Table API</a>
+        <a href="#tables" class="block hover:text-brand-500">Database schemas</a>
+        <a href="#a11y" class="block hover:text-brand-500">Accessibility</a>
+        <a href="#perf" class="block hover:text-brand-500">Performance</a>
+        <a href="#deploy" class="block hover:text-brand-500">Deploy</a>
+        <a href="#rebrand" class="block hover:text-brand-500">Rebranding playbook</a>
+        <a href="#faq" class="block hover:text-brand-500">FAQ</a>
+        <a href="#changelog" class="block hover:text-brand-500">Changelog</a>
+      </nav>
+    </aside>
+
+    <article class="doc-content">
+
+      <!-- Intro -->
+      <section id="intro">
+        <h2 class="!mt-0 !pt-0 !border-0">Introduction</h2>
+        <p>The W5D Kit is a static, build-step-free website system. Every file is a plain HTML page that loads <strong>Tailwind CSS</strong> via CDN, a tiny <code>style.css</code> for the design system, and a few small JS modules for interactivity (mega-menu, theme toggle, forms, animations).</p>
+        <p>It ships with three homepages, fourteen inner pages, twelve animated heroes, twenty-eight content sections, and four wired forms — enough to launch a complete marketing site in a day, or to reuse for any new product.</p>
+        <div class="callout callout--info"><i data-lucide="info" class="w-5 h-5 shrink-0 mt-0.5"></i><div><strong>Stack:</strong> HTML + Tailwind (CDN) + vanilla JS + Lucide icons + a RESTful Table API. No bundler, no build step, no framework.</div></div>
+      </section>
+
+      <!-- Quickstart -->
+      <section id="quickstart">
+        <h2>Quickstart</h2>
+        <p>Want a new page that looks like the rest of the site? Copy this skeleton and fill the body.</p>
+        <h3>1. Copy the page skeleton</h3>
+        <div class="doc-pre">
+          <pre id="snip-skel">&lt;!DOCTYPE html&gt;
+&lt;html lang="en" class="dark scroll-smooth"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8" /&gt;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;title&gt;Your page — W5D&lt;/title&gt;
+&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+&lt;script&gt;tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{500:'#8b5cf6'},ink:{950:'#070711'}},fontFamily:{display:['"Space Grotesk"','Inter','sans-serif']}}}}&lt;/script&gt;
+&lt;link rel="stylesheet" href="../css/style.css" /&gt;
+&lt;script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer&gt;&lt;/script&gt;
+&lt;script src="../js/shell.js" defer&gt;&lt;/script&gt;
+&lt;script src="../js/megamenu.js" defer&gt;&lt;/script&gt;
+&lt;script src="../js/main.js" defer&gt;&lt;/script&gt;
+&lt;script src="../js/api.js" defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body data-prefix="../" class="bg-white text-slate-800 dark:bg-ink-950 dark:text-slate-200"&gt;
+&lt;div data-shell&gt;&lt;/div&gt;
+&lt;!-- your sections here --&gt;
+&lt;div data-shell-foot&gt;&lt;/div&gt;
+&lt;/body&gt;&lt;/html&gt;</pre>
+          <button data-copy="#snip-skel" class="btn-ghost rounded-lg px-2.5 py-1 text-xs inline-flex items-center gap-1"><i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy</button>
+        </div>
+        <div class="callout callout--tip"><i data-lucide="lightbulb" class="w-5 h-5 shrink-0 mt-0.5"></i><div>Set <code>data-prefix="../"</code> for files in <code>/pages/</code>. Use <code>data-prefix=""</code> (or omit it) for files in the project root.</div></div>
+
+        <h3>2. Drop in a hero + sections</h3>
+        <p>Open <a href="heros.html" class="text-brand-500 link-underline">heros.html</a> or <a href="sections.html" class="text-brand-500 link-underline">sections.html</a>, pick a block, and paste it between <code>data-shell</code> and <code>data-shell-foot</code>. The shell injects the navbar and footer automatically.</p>
+      </section>
+
+      <!-- Structure -->
+      <section id="structure">
+        <h2>Project structure</h2>
+        <div class="doc-pre">
+          <pre>index.html              home-2.html            home-3.html
+README.md
+css/
+  └── style.css         design tokens, animations, utilities
+js/
+  ├── main.js           theme, mobile nav, FAQ, tabs, reveals, copy
+  ├── shell.js          renders nav + footer on inner pages
+  ├── megamenu.js       NAV data + mega-panel rendering
+  ├── api.js            wires newsletter / contact / demo / careers forms
+  └── logos.js          inline SVG partner wordmarks
+pages/
+  ├── about.html         pricing.html         features.html
+  ├── integrations.html  contact.html         blog.html
+  ├── blog-post.html     careers.html         changelog.html
+  ├── security.html      privacy.html         terms.html
+  ├── 404.html           blocks.html
+  ├── heros.html         12 animated heroes
+  ├── sections.html      28 content sections
+  └── documentations.html  ← you are here</pre>
+        </div>
+      </section>
+
+      <!-- Brand -->
+      <section id="brand">
+        <h2>Brand &amp; theme tokens</h2>
+        <p>Tokens are defined in two places that you should always edit together: the inline <code>tailwind.config</code> in every page's <code>&lt;head&gt;</code>, and CSS variables in <code>css/style.css</code>.</p>
+
+        <h3>Tailwind colors</h3>
+        <table>
+          <thead><tr><th>Token</th><th>Value</th><th>Usage</th></tr></thead>
+          <tbody>
+            <tr><td><code>brand.500</code></td><td>#8b5cf6</td><td>Primary CTAs, links, accents</td></tr>
+            <tr><td><code>brand.600</code></td><td>#7c3aed</td><td>Gradient end, hover</td></tr>
+            <tr><td><code>ink.950</code></td><td>#070711</td><td>Page background (dark)</td></tr>
+            <tr><td><code>ink.900</code></td><td>#0b0b18</td><td>Surface (dark)</td></tr>
+            <tr><td><code>ink.800</code></td><td>#11111f</td><td>Inset surface (dark)</td></tr>
+          </tbody>
+        </table>
+
+        <h3>CSS variables (gradients)</h3>
+        <div class="doc-pre"><pre id="snip-vars">:root {
+  --w5d-grad-1: #8b5cf6; /* primary */
+  --w5d-grad-2: #6366f1; /* indigo  */
+  --w5d-grad-3: #06b6d4; /* cyan    */
+  --w5d-grad-4: #ec4899; /* pink    */
+}</pre><button data-copy="#snip-vars" class="btn-ghost rounded-lg px-2.5 py-1 text-xs inline-flex items-center gap-1"><i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy</button></div>
+
+        <h3>Fonts</h3>
+        <p><strong>Display:</strong> Space Grotesk (500/600/700). <strong>Body:</strong> Inter (300–800). Both are loaded from Google Fonts in every page. Use <code>class="font-display"</code> for headings.</p>
+      </section>
+
+      <!-- Theme -->
+      <section id="themes">
+        <h2>Dark / light mode</h2>
+        <p>The kit defaults to <strong>dark</strong>. The theme is stored in <code>localStorage</code> under <code>w5d-theme</code> and the <code>html</code> element gets the <code>.dark</code> class. <code>main.js</code> wires every <code>[data-theme-toggle]</code> button automatically.</p>
+        <div class="doc-pre"><pre id="snip-theme">&lt;button data-theme-toggle aria-label="Toggle theme"&gt;
+  &lt;i data-theme-icon="sun"  data-lucide="sun"  class="w-5 h-5"&gt;&lt;/i&gt;
+  &lt;i data-theme-icon="moon" data-lucide="moon" class="w-5 h-5 hidden"&gt;&lt;/i&gt;
+&lt;/button&gt;</pre><button data-copy="#snip-theme" class="btn-ghost rounded-lg px-2.5 py-1 text-xs inline-flex items-center gap-1"><i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy</button></div>
+        <p>For dark-aware styling use Tailwind's <code>dark:</code> variant — e.g. <code>bg-white dark:bg-ink-950</code>, <code>text-slate-800 dark:text-slate-200</code>.</p>
+      </section>
+
+      <!-- Shell -->
+      <section id="shell">
+        <h2>Page shell (auto nav + footer)</h2>
+        <p>Every inner page gets its navbar and footer injected by <code>js/shell.js</code>. You only need two markers:</p>
+        <div class="doc-pre"><pre id="snip-shell">&lt;body data-prefix="../"&gt;
+  &lt;div data-shell&gt;&lt;/div&gt;        &lt;!-- nav goes here --&gt;
+  &lt;!-- your page content --&gt;
+  &lt;div data-shell-foot&gt;&lt;/div&gt;   &lt;!-- footer goes here --&gt;
+&lt;/body&gt;</pre><button data-copy="#snip-shell" class="btn-ghost rounded-lg px-2.5 py-1 text-xs inline-flex items-center gap-1"><i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy</button></div>
+        <p>The <code>data-prefix</code> on <code>&lt;body&gt;</code> tells the shell where the project root is. Set it to <code>""</code> on root pages and <code>"../"</code> on pages in <code>/pages/</code>.</p>
+      </section>
+
+      <!-- Mega-menu -->
+      <section id="megamenu">
+        <h2>Mega-menu</h2>
+        <p>The mega-menu is data-driven — edit the <code>NAV</code> object at the top of <code>js/megamenu.js</code> to add or remove items. Each top-level key becomes a hover trigger; each group becomes a column; each entry becomes a styled link with icon + description.</p>
+        <h3>Add a new menu item</h3>
+        <div class="doc-pre"><pre id="snip-mm">// js/megamenu.js
+product: {
+  title: 'Product',
+  groups: [
+    { heading: 'Platform', items: [
+      { i: 'sparkles',  t: 'Features overview', d: 'Everything in one map.', href: 'pages/features.html' },
+      { i: 'rocket',    t: 'Your new page',     d: 'Short description.',     href: 'pages/your-page.html' }
+    ]}
+  ],
+  promo: { tag: 'New', title: 'Featured story', body: 'Pitch line', href: 'pages/blog-post.html' }
+}</pre><button data-copy="#snip-mm" class="btn-ghost rounded-lg px-2.5 py-1 text-xs inline-flex items-center gap-1"><i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy</button></div>
+        <p>Icon names use the <a href="https://lucide.dev" class="text-brand-500 link-underline">Lucide</a> icon set.</p>
+        <div class="callout callout--info"><i data-lucide="mouse-pointer" class="w-5 h-5 shrink-0 mt-0.5"></i><div>The panel uses an internal padding bridge plus a 120ms close-delay so the cursor can travel from trigger to panel without the menu disappearing — a common UX bug fixed once for all pages.</div></div>
+      </section>
+
+      <!-- Animations -->
+      <section id="anim">
+        <h2>Animation utilities</h2>
+        <p>Drop a class on any element. All utilities live in <code>css/style.css</code> and respect <code>prefers-reduced-motion</code>.</p>
+        <table>
+          <thead><tr><th>Class</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td><code>orb orb-1/2/3</code></td><td>Floating gradient blob (place inside <code>relative overflow-hidden</code>)</td></tr>
+            <tr><td><code>aurora</code></td><td>Aurora ribbons backdrop</td></tr>
+            <tr><td><code>conic-spin</code></td><td>Slow conic-gradient spotlight</td></tr>
+            <tr><td><code>stars</code></td><td>CSS-only drifting starfield</td></tr>
+            <tr><td><code>mesh-bg</code></td><td>Breathing mesh gradient</td></tr>
+            <tr><td><code>beam</code></td><td>Diagonal scanning light beam</td></tr>
+            <tr><td><code>noise</code></td><td>SVG film grain overlay</td></tr>
+            <tr><td><code>grid-bg</code></td><td>Faint grid backdrop</td></tr>
+            <tr><td><code>glass</code></td><td>Frosted-glass surface</td></tr>
+            <tr><td><code>grad-border</code></td><td>1px gradient border</td></tr>
+            <tr><td><code>gradient-text</code></td><td>Static gradient text</td></tr>
+            <tr><td><code>gradient-shift</code></td><td>Looping shifting gradient text</td></tr>
+            <tr><td><code>tilt</code></td><td>Subtle 3D tilt on hover</td></tr>
+            <tr><td><code>shine</code></td><td>Light sweep on hover</td></tr>
+            <tr><td><code>float-y</code> / <code>breath</code></td><td>Gentle float / breathe loops</td></tr>
+            <tr><td><code>marquee</code> / <code>marquee-y</code></td><td>Horizontal / vertical scrolling track</td></tr>
+            <tr><td><code>headline-marquee</code></td><td>Editorial big-type marquee</td></tr>
+            <tr><td><code>spotlight</code></td><td>Cursor-follow radial light (pair with <code>main.js</code>)</td></tr>
+            <tr><td><code>pulse-ring</code></td><td>Expanding ring around an element</td></tr>
+            <tr><td><code>typing-dot</code></td><td>Three-dot typing indicator</td></tr>
+            <tr><td><code>wave-text</code></td><td>Underline that doubles as accent</td></tr>
+            <tr><td><code>bounce-y</code></td><td>Subtle scroll-cue bounce</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Reveal on scroll</h3>
+        <p>Add <code>data-rv</code> to any element. It fades in when scrolled into view. Pair with <code>.stagger</code> on the parent to animate children one after the other.</p>
+        <div class="doc-pre"><pre id="snip-rv">&lt;div data-rv="up" class="stagger"&gt;
+  &lt;h2&gt;Headline&lt;/h2&gt;
+  &lt;p&gt;Subtitle&lt;/p&gt;
+  &lt;a&gt;CTA&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;!-- variants --&gt;
+data-rv="up" | "down" | "left" | "right" | "zoom" | "rotate"</pre><button data-copy="#snip-rv" class="btn-ghost rounded-lg px-2.5 py-1 text-xs inline-flex items-center gap-1"><i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy</button></div>
+      </section>
+
+      <!-- Heroes -->
+      <section id="heros">
+        <h2>Heroes library</h2>
+        <p>Twelve self-contained hero sections live at <a href="heros.html" class="text-brand-500 link-underline">/pages/heros.html</a>. Each one is wrapped in a <code>&lt;section id="hN"&gt;</code> so you can link to it.</p>
+        <table>
+          <thead><tr><th>#</th><th>Style</th><th>Best for</th></tr></thead>
+          <tbody>
+            <tr><td>01</td><td>Aurora centered</td><td>SaaS launch, broad audience</td></tr>
+            <tr><td>02</td><td>Split + product mock</td><td>Product-led, dev-tool, AI</td></tr>
+            <tr><td>03</td><td>Editorial display</td><td>Brand, agency, manifesto</td></tr>
+            <tr><td>04</td><td>Conic spotlight</td><td>Feature launches</td></tr>
+            <tr><td>05</td><td>Starfield night</td><td>Engineering / infra</td></tr>
+            <tr><td>06</td><td>Bento card grid</td><td>Multi-feature platforms</td></tr>
+            <tr><td>07</td><td>Video-style mock</td><td>Demos, walkthroughs</td></tr>
+            <tr><td>08</td><td>Beam scanner</td><td>Developer tools, CLIs</td></tr>
+            <tr><td>09</td><td>3D card stack</td><td>Knowledge, content products</td></tr>
+            <tr><td>10</td><td>Marquee headline</td><td>Brand-forward / culture</td></tr>
+            <tr><td>11</td><td>Form-first capture</td><td>Newsletters, waitlists</td></tr>
+            <tr><td>12</td><td>Minimal type-only</td><td>Portfolios, agencies</td></tr>
+          </tbody>
+        </table>
+        <p>To copy, open the page, find the <code>&lt;!-- HERO 0X --&gt;</code> comment block and grab the entire <code>&lt;section&gt;</code>.</p>
+      </section>
+
+      <!-- Sections -->
+      <section id="sections">
+        <h2>Sections library</h2>
+        <p>Twenty-eight content sections at <a href="sections.html" class="text-brand-500 link-underline">/pages/sections.html</a>, organized by purpose: trust, features, social proof, pricing, conversion and footers.</p>
+        <h3>Categories</h3>
+        <ul>
+          <li><strong>Trust</strong> — logo cloud (01), stats (02), awards (24), comparison (09)</li>
+          <li><strong>Features</strong> — 3-up grid (03), alternating splits (04), bento (05), tabs (07)</li>
+          <li><strong>How it works</strong> — three steps (06), timeline (15)</li>
+          <li><strong>Pricing</strong> — 3-tier (08), comparison table (22)</li>
+          <li><strong>Social proof</strong> — testimonial wall (10), single quote (11)</li>
+          <li><strong>Conversion</strong> — FAQ (12), CTA banners (13, 14, 25), newsletter (23)</li>
+          <li><strong>Content</strong> — blog teasers (17), team (16), integrations (18), code (20), chart (21)</li>
+          <li><strong>Footers + 404</strong> — full footer (26), minimal (27), 404 inline (28)</li>
+        </ul>
+      </section>
+
+      <!-- Forms -->
+      <section id="forms">
+        <h2>Forms &amp; Table API</h2>
+        <p>Drop a single attribute on a <code>&lt;form&gt;</code> and it's wired to the right RESTful endpoint with success/error states. <code>js/api.js</code> handles everything.</p>
+        <table>
+          <thead><tr><th>Selector</th><th>Endpoint</th><th>Required fields</th></tr></thead>
+          <tbody>
+            <tr><td><code>form[data-newsletter]</code></td><td><code>POST /tables/subscribers</code></td><td><code>email</code></td></tr>
+            <tr><td><code>form[data-contact]</code></td><td><code>POST /tables/contact_messages</code></td><td><code>name, email, message</code></td></tr>
+            <tr><td><code>form[data-demo]</code></td><td><code>POST /tables/demo_requests</code></td><td><code>name, work_email, company</code></td></tr>
+            <tr><td><code>form[data-careers]</code></td><td><code>POST /tables/careers_applications</code></td><td><code>name, email, role</code></td></tr>
+          </tbody>
+        </table>
+        <h3>Example: contact form</h3>
+        <div class="doc-pre"><pre id="snip-contact">&lt;form data-contact class="space-y-4"&gt;
+  &lt;input name="name"     required type="text"  placeholder="Full name" /&gt;
+  &lt;input name="email"    required type="email" placeholder="Email" /&gt;
+  &lt;input name="company"           type="text"  placeholder="Company" /&gt;
+  &lt;select name="topic"&gt;
+    &lt;option value="sales"&gt;Sales&lt;/option&gt;
+    &lt;option value="support"&gt;Support&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;textarea name="message" required rows="5"&gt;&lt;/textarea&gt;
+  &lt;button type="submit"&gt;Send message&lt;/button&gt;
+&lt;/form&gt;</pre><button data-copy="#snip-contact" class="btn-ghost rounded-lg px-2.5 py-1 text-xs inline-flex items-center gap-1"><i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy</button></div>
+        <div class="callout callout--warn"><i data-lucide="alert-triangle" class="w-5 h-5 shrink-0 mt-0.5"></i><div>Field <code>name</code> attributes must match the table schema exactly. <code>js/api.js</code> reads them via <code>FormData</code>.</div></div>
+      </section>
+
+      <!-- Tables -->
+      <section id="tables">
+        <h2>Database schemas</h2>
+        <p>Four tables back the wired forms. Each row gets a UUID <code>id</code> and timestamps automatically.</p>
+        <table>
+          <thead><tr><th>Table</th><th>Fields</th></tr></thead>
+          <tbody>
+            <tr><td><code>subscribers</code></td><td>email, source_page, status</td></tr>
+            <tr><td><code>contact_messages</code></td><td>name, email, company, topic, message, status</td></tr>
+            <tr><td><code>demo_requests</code></td><td>name, work_email, company, team_size, use_case, status</td></tr>
+            <tr><td><code>careers_applications</code></td><td>name, email, role, portfolio_url, cover_letter, status</td></tr>
+          </tbody>
+        </table>
+        <h3>REST endpoints</h3>
+        <ul>
+          <li><code>GET /tables/{table}?page=1&amp;limit=100</code></li>
+          <li><code>GET /tables/{table}/{id}</code></li>
+          <li><code>POST /tables/{table}</code></li>
+          <li><code>PATCH /tables/{table}/{id}</code></li>
+          <li><code>DELETE /tables/{table}/{id}</code></li>
+        </ul>
+      </section>
+
+      <!-- A11y -->
+      <section id="a11y">
+        <h2>Accessibility</h2>
+        <ul>
+          <li>Focus rings: visible 2px brand-color rings on all focusable elements (<code>:focus-visible</code>).</li>
+          <li>Mega-menu: <code>aria-haspopup</code>, <code>aria-expanded</code>, focus-within open, Escape closes.</li>
+          <li>Mobile menu auto-closes when a link is tapped.</li>
+          <li>All animations honour <code>prefers-reduced-motion</code>.</li>
+          <li>Use semantic landmarks (<code>header</code>, <code>main</code>, <code>section</code>, <code>footer</code>) — never wrap with bare <code>div</code> when a tag fits.</li>
+        </ul>
+      </section>
+
+      <!-- Performance -->
+      <section id="perf">
+        <h2>Performance</h2>
+        <ul>
+          <li>All scripts use <code>defer</code> — HTML parses first, no blocking.</li>
+          <li>Animations are GPU-friendly (transform / opacity only).</li>
+          <li>No images by default — all visuals are CSS / SVG / icon font.</li>
+          <li>Lucide icons load once on the <code>DOMContentLoaded</code> tick.</li>
+          <li>The Tailwind CDN warning is expected. For production, compile Tailwind via the CLI to drop the bundle to ~20 KB.</li>
+        </ul>
+      </section>
+
+      <!-- Deploy -->
+      <section id="deploy">
+        <h2>Deploy</h2>
+        <p>The site is fully static — drop the project folder on any static host (the <strong>Publish tab</strong> in this environment, or Netlify, Vercel, S3, GitHub Pages, etc.). The Table API endpoints are relative, so they'll route through whatever host you publish on.</p>
+        <div class="callout callout--tip"><i data-lucide="rocket" class="w-5 h-5 shrink-0 mt-0.5"></i><div>To deploy in this environment, open the <strong>Publish tab</strong> — it handles everything in one click.</div></div>
+      </section>
+
+      <!-- Rebrand -->
+      <section id="rebrand">
+        <h2>Rebranding playbook</h2>
+        <p>Reusing the kit for a new brand takes about an hour:</p>
+        <ol class="list-decimal pl-5 space-y-2 mt-3 text-slate-600 dark:text-slate-400">
+          <li>Find/replace <code>W5D</code> with your new name (across all HTML + JS).</li>
+          <li>Update the logo: edit the <code>W5</code> mark inside <code>js/shell.js</code> and the three home pages.</li>
+          <li>Swap brand colors: change <code>brand.500</code> in every <code>tailwind.config</code> block <em>and</em> the <code>--w5d-grad-*</code> variables in <code>css/style.css</code>.</li>
+          <li>Replace the fonts in the Google Fonts <code>&lt;link&gt;</code> if you want a different display family.</li>
+          <li>Update the <code>NAV</code> object in <code>js/megamenu.js</code> to match your IA.</li>
+          <li>Rewrite copy on the three homepages — everything else cascades.</li>
+        </ol>
+        <div class="callout callout--info"><i data-lucide="search" class="w-5 h-5 shrink-0 mt-0.5"></i><div>Tip: most editors can do a project-wide find/replace. Be sure to include <code>js/</code> as well as <code>*.html</code>.</div></div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq">
+        <h2>FAQ</h2>
+        <div class="space-y-3 mt-4">
+          <details data-faq class="glass rounded-xl p-4" open><summary data-faq-btn class="flex items-center justify-between cursor-pointer font-semibold text-slate-900 dark:text-white">Why no build step?<i data-lucide="plus" data-faq-icon class="w-5 h-5 transition-transform"></i></summary><div data-faq-panel class="mt-3 text-sm text-slate-600 dark:text-slate-400">Because most marketing sites don't need one. CDN Tailwind is fine for prototypes and small sites. Compile when you outgrow it.</div></details>
+          <details data-faq class="glass rounded-xl p-4"><summary data-faq-btn class="flex items-center justify-between cursor-pointer font-semibold text-slate-900 dark:text-white">Can I add a router / SPA?<i data-lucide="plus" data-faq-icon class="w-5 h-5 transition-transform"></i></summary><div data-faq-panel class="hidden mt-3 text-sm text-slate-600 dark:text-slate-400">You can, but the kit is intentionally MPA-first — every page is a real HTML file. Easier SEO, easier sharing, easier debugging.</div></details>
+          <details data-faq class="glass rounded-xl p-4"><summary data-faq-btn class="flex items-center justify-between cursor-pointer font-semibold text-slate-900 dark:text-white">How do I add a new form?<i data-lucide="plus" data-faq-icon class="w-5 h-5 transition-transform"></i></summary><div data-faq-panel class="hidden mt-3 text-sm text-slate-600 dark:text-slate-400">Define a new table via TableSchemaUpdate, then either use one of the existing <code>data-*</code> selectors or extend <code>js/api.js</code> with a new handler.</div></details>
+          <details data-faq class="glass rounded-xl p-4"><summary data-faq-btn class="flex items-center justify-between cursor-pointer font-semibold text-slate-900 dark:text-white">Where do animations come from?<i data-lucide="plus" data-faq-icon class="w-5 h-5 transition-transform"></i></summary><div data-faq-panel class="hidden mt-3 text-sm text-slate-600 dark:text-slate-400">All custom animations are in <code>css/style.css</code> as utility classes. AOS is loaded as a fallback on some pages but the in-house <code>data-rv</code> system is preferred.</div></details>
+        </div>
+      </section>
+
+      <!-- Changelog -->
+      <section id="changelog">
+        <h2>Changelog</h2>
+        <ul>
+          <li><strong>v1.2</strong> — Heroes library (12), Sections library (28), this docs page, mega-menu hover-bridge fix, focus rings, mobile menu auto-close, <code>data-rv</code> reveal system.</li>
+          <li><strong>v1.1</strong> — Mega-menu, shell renderer, all inner pages, four wired forms, brand audit (NextAI → W5D).</li>
+          <li><strong>v1.0</strong> — Three homepages, dark/light theme, Tailwind config, Lucide icons.</li>
+        </ul>
+      </section>
+
+      <!-- Closer -->
+      <div class="mt-16 grad-border glass rounded-3xl p-8 text-center">
+        <h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white">Ready to build?</h3>
+        <p class="mt-2 text-slate-500">Start from a hero, add a few sections, ship today.</p>
+        <div class="mt-5 inline-flex flex-wrap items-center justify-center gap-3">
+          <a href="heros.html" class="btn-primary rounded-xl px-5 py-2.5 text-sm font-semibold">Browse heroes</a>
+          <a href="sections.html" class="btn-ghost rounded-xl px-5 py-2.5 text-sm font-semibold">Browse sections</a>
+          <a href="contact.html" class="btn-ghost rounded-xl px-5 py-2.5 text-sm font-semibold">Talk to us</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<div data-shell-foot></div>
+
+<script>
+  // TOC active-link highlight
+  document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('.toc a');
+    const map = new Map();
+    links.forEach(l => { const id = l.getAttribute('href').slice(1); const el = document.getElementById(id); if (el) map.set(el, l); });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('is-active'));
+          map.get(e.target)?.classList.add('is-active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    map.forEach((_, sec) => io.observe(sec));
+  });
+</script>
+</body></html>

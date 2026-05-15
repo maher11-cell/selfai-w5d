@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sections Library — W5D</title>
+<meta name="description" content="Twenty-eight animated, copy-paste content sections built with TailwindCSS — features, pricing, testimonials, FAQs and more." />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{50:'#f3f1ff',100:'#ebe5ff',200:'#d9ceff',300:'#bda7ff',400:'#9c79ff',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95'},ink:{950:'#070711',900:'#0b0b18',800:'#11111f',700:'#1a1a2e'}},fontFamily:{sans:['Inter','system-ui','sans-serif'],display:['"Space Grotesk"','Inter','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/style.css" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+<script src="../js/logos.js" defer></script>
+<script src="../js/shell.js" defer></script>
+<script src="../js/megamenu.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script src="../js/api.js" defer></script>
+<style>
+  .sec-divider { padding: 4rem 0; border-top: 1px solid rgba(148,163,184,0.15); }
+  .sec-tag { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #8b5cf6; font-weight: 600; }
+</style>
+</head>
+<body data-prefix="../" class="bg-white text-slate-800 dark:bg-ink-950 dark:text-slate-200 transition-colors duration-300">
+<div data-shell></div>
+
+<!-- Page intro -->
+<section class="relative pt-36 pb-12 overflow-hidden">
+  <div class="absolute inset-0 grid-bg"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 text-center" data-rv="up">
+    <span class="sec-tag">Library · 28 sections</span>
+    <h1 class="font-display font-bold text-4xl sm:text-6xl mt-3 text-slate-900 dark:text-white">Every <span class="gradient-shift">section</span> you need, animated.</h1>
+    <p class="mt-5 max-w-2xl mx-auto text-slate-600 dark:text-slate-400">Features, pricing, testimonials, FAQs, stats, CTAs, comparisons, timelines, blogs, footers — all in one place.</p>
+  </div>
+</section>
+
+<!-- Index -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 pb-10">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-2 text-sm">
+    <a href="#s1"  class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">01 · Logo cloud marquee</a>
+    <a href="#s2"  class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">02 · Stats counters</a>
+    <a href="#s3"  class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">03 · Feature grid (3-up)</a>
+    <a href="#s4"  class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">04 · Alternating splits</a>
+    <a href="#s5"  class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">05 · Bento highlights</a>
+    <a href="#s6"  class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">06 · How it works (3 steps)</a>
+    <a href="#s7"  class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">07 · Tabs / use cases</a>
+    <a href="#s8"  class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">08 · Pricing 3-tier</a>
+    <a href="#s9"  class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">09 · Comparison table</a>
+    <a href="#s10" class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">10 · Testimonial wall</a>
+    <a href="#s11" class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">11 · Single big quote</a>
+    <a href="#s12" class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">12 · FAQ accordion</a>
+    <a href="#s13" class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">13 · CTA banner</a>
+    <a href="#s14" class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">14 · CTA + email capture</a>
+    <a href="#s15" class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">15 · Timeline / milestones</a>
+    <a href="#s16" class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">16 · Team grid</a>
+    <a href="#s17" class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">17 · Blog teaser</a>
+    <a href="#s18" class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">18 · Integrations grid</a>
+    <a href="#s19" class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">19 · Vertical scroll marquee</a>
+    <a href="#s20" class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">20 · Code showcase</a>
+    <a href="#s21" class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">21 · Stats + chart</a>
+    <a href="#s22" class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">22 · Pricing comparison</a>
+    <a href="#s23" class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">23 · Newsletter band</a>
+    <a href="#s24" class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">24 · Awards / press</a>
+    <a href="#s25" class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">25 · Big CTA + card</a>
+    <a href="#s26" class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">26 · Footer (full)</a>
+    <a href="#s27" class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">27 · Footer (minimal)</a>
+    <a href="#s28" class="glass rounded-lg px-3 py-2 hover:border-brand-500/60 transition">28 · 404 inline</a>
+  </div>
+</section>
+
+<!-- =========================================================
+     01 · Logo cloud marquee
+     ========================================================= -->
+<section id="s1" class="sec-divider">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <p class="text-center sec-tag" data-rv="up">Trusted by teams at</p>
+    <div class="marquee mt-6" data-rv="up">
+      <div class="marquee-track items-center text-slate-500 dark:text-slate-400">
+        <span class="text-2xl font-display font-bold tracking-tight">Northwind</span>
+        <span class="text-2xl font-display font-bold tracking-tight">Lumen</span>
+        <span class="text-2xl font-display font-bold tracking-tight">Atlasly</span>
+        <span class="text-2xl font-display font-bold tracking-tight">Kindred</span>
+        <span class="text-2xl font-display font-bold tracking-tight">Verity</span>
+        <span class="text-2xl font-display font-bold tracking-tight">Quanta</span>
+        <span class="text-2xl font-display font-bold tracking-tight">Pivotline</span>
+        <span class="text-2xl font-display font-bold tracking-tight">Northwind</span>
+        <span class="text-2xl font-display font-bold tracking-tight">Lumen</span>
+        <span class="text-2xl font-display font-bold tracking-tight">Atlasly</span>
+        <span class="text-2xl font-display font-bold tracking-tight">Kindred</span>
+        <span class="text-2xl font-display font-bold tracking-tight">Verity</span>
+        <span class="text-2xl font-display font-bold tracking-tight">Quanta</span>
+        <span class="text-2xl font-display font-bold tracking-tight">Pivotline</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 · Stats counters -->
+<section id="s2" class="sec-divider">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger" data-rv="up">
+    <div class="glass rounded-2xl p-6 text-center"><p class="font-display font-bold text-4xl text-slate-900 dark:text-white"><span data-counter="12400" class="stat-num">0</span>+</p><p class="text-xs text-slate-500 mt-1">Active teams</p></div>
+    <div class="glass rounded-2xl p-6 text-center"><p class="font-display font-bold text-4xl text-slate-900 dark:text-white"><span data-counter="99.99" data-decimals="2" data-suffix="%" class="stat-num">0</span></p><p class="text-xs text-slate-500 mt-1">Uptime SLA</p></div>
+    <div class="glass rounded-2xl p-6 text-center"><p class="font-display font-bold text-4xl text-slate-900 dark:text-white"><span data-counter="60" data-suffix="%" class="stat-num">0</span></p><p class="text-xs text-slate-500 mt-1">Cheaper long runs</p></div>
+    <div class="glass rounded-2xl p-6 text-center"><p class="font-display font-bold text-4xl text-slate-900 dark:text-white"><span data-counter="120" class="stat-num">0</span>+</p><p class="text-xs text-slate-500 mt-1">Native integrations</p></div>
+  </div>
+</section>
+
+<!-- 03 · Feature grid (3-up) -->
+<section id="s3" class="sec-divider">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center" data-rv="up">
+      <p class="sec-tag">Features</p>
+      <h2 class="font-display font-bold text-3xl sm:text-5xl mt-2 text-slate-900 dark:text-white">A workspace for the work you actually do.</h2>
+    </div>
+    <div class="mt-12 grid md:grid-cols-3 gap-5 stagger" data-rv="up">
+      <div class="glass rounded-2xl p-6 tilt"><i data-lucide="bot" class="w-8 h-8 text-brand-500"></i><h3 class="font-semibold mt-3 text-slate-900 dark:text-white">Agents that finish</h3><p class="text-sm text-slate-500 mt-1.5">Multi-step reasoning, parallel tools, durable execution.</p></div>
+      <div class="glass rounded-2xl p-6 tilt"><i data-lucide="database" class="w-8 h-8 text-cyan-500"></i><h3 class="font-semibold mt-3 text-slate-900 dark:text-white">Cited knowledge</h3><p class="text-sm text-slate-500 mt-1.5">Every answer points at the source paragraph.</p></div>
+      <div class="glass rounded-2xl p-6 tilt"><i data-lucide="git-branch" class="w-8 h-8 text-pink-500"></i><h3 class="font-semibold mt-3 text-slate-900 dark:text-white">Visual workflows</h3><p class="text-sm text-slate-500 mt-1.5">Drag, observe, replay — without leaving the canvas.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 · Alternating splits -->
+<section id="s4" class="sec-divider">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-20">
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
+      <div data-rv="right"><p class="sec-tag">For marketing</p><h3 class="font-display font-bold text-3xl sm:text-4xl mt-2 text-slate-900 dark:text-white">Brief in, campaign out.</h3><p class="mt-4 text-slate-600 dark:text-slate-400">Turn a sentence into a research note, three drafts, and a launch checklist — without copy-pasting between tabs.</p></div>
+      <div class="grad-border glass rounded-3xl p-6 aspect-video flex items-center justify-center" data-rv="left"><i data-lucide="megaphone" class="w-20 h-20 text-brand-500/60"></i></div>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
+      <div class="lg:order-2" data-rv="left"><p class="sec-tag">For engineering</p><h3 class="font-display font-bold text-3xl sm:text-4xl mt-2 text-slate-900 dark:text-white">PR review, on-call, docs.</h3><p class="mt-4 text-slate-600 dark:text-slate-400">A typed SDK, a CLI, and a CI step. Ship features, not duct-tape prompts.</p></div>
+      <div class="grad-border glass rounded-3xl p-6 aspect-video flex items-center justify-center lg:order-1" data-rv="right"><i data-lucide="code-2" class="w-20 h-20 text-cyan-500/60"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 · Bento highlights -->
+<section id="s5" class="sec-divider">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-8" data-rv="up">
+      <p class="sec-tag">Highlights</p>
+      <h2 class="font-display font-bold text-3xl sm:text-5xl mt-2 text-slate-900 dark:text-white">Pick the tile that matches your stack.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4 stagger" data-rv="up">
+      <div class="md:col-span-2 grad-border glass rounded-3xl p-7 relative overflow-hidden tilt min-h-[260px]">
+        <div class="absolute inset-0 mesh-bg opacity-40"></div>
+        <div class="relative"><i data-lucide="sparkles" class="w-7 h-7 text-brand-500"></i><h3 class="font-display font-bold text-2xl mt-3 text-slate-900 dark:text-white">Agents 2.0</h3><p class="text-sm text-slate-500 mt-2 max-w-md">Parallel tool use, deterministic replays, cost-aware long runs.</p></div>
+      </div>
+      <div class="glass rounded-3xl p-6 tilt"><i data-lucide="shield-check" class="w-7 h-7 text-emerald-500"></i><h4 class="font-semibold mt-3 text-slate-900 dark:text-white">SOC 2 + SSO</h4><p class="text-xs text-slate-500 mt-1.5">Audit trail every team will actually read.</p></div>
+      <div class="glass rounded-3xl p-6 tilt"><i data-lucide="layers" class="w-7 h-7 text-amber-500"></i><h4 class="font-semibold mt-3 text-slate-900 dark:text-white">Per-team policies</h4><p class="text-xs text-slate-500 mt-1.5">Limits, allowlists, cost ceilings.</p></div>
+      <div class="glass rounded-3xl p-6 tilt"><i data-lucide="clock" class="w-7 h-7 text-rose-500"></i><h4 class="font-semibold mt-3 text-slate-900 dark:text-white">p95 &lt; 280ms</h4><p class="text-xs text-slate-500 mt-1.5">A workspace that respects your hands.</p></div>
+      <div class="glass rounded-3xl p-6 tilt"><i data-lucide="terminal" class="w-7 h-7 text-cyan-500"></i><h4 class="font-semibold mt-3 text-slate-900 dark:text-white">REST + 6 SDKs</h4><p class="text-xs text-slate-500 mt-1.5">Webhooks, idempotency, the works.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 · How it works -->
+<section id="s6" class="sec-divider">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center" data-rv="up">
+      <p class="sec-tag">How it works</p>
+      <h2 class="font-display font-bold text-3xl sm:text-5xl mt-2 text-slate-900 dark:text-white">Three steps. No setup theatre.</h2>
+    </div>
+    <div class="mt-12 grid md:grid-cols-3 gap-6 stagger" data-rv="up">
+      <div class="relative"><div class="grad-border glass rounded-2xl p-6"><span class="font-display text-5xl gradient-text font-bold">1</span><h3 class="font-semibold mt-2 text-slate-900 dark:text-white">Connect your sources</h3><p class="text-sm text-slate-500 mt-2">Notion, Drive, Slack, your wiki. We index, you don't.</p></div></div>
+      <div class="relative"><div class="grad-border glass rounded-2xl p-6"><span class="font-display text-5xl gradient-text font-bold">2</span><h3 class="font-semibold mt-2 text-slate-900 dark:text-white">Describe the job</h3><p class="text-sm text-slate-500 mt-2">A sentence is enough. Or pick from a starter library.</p></div></div>
+      <div class="relative"><div class="grad-border glass rounded-2xl p-6"><span class="font-display text-5xl gradient-text font-bold">3</span><h3 class="font-semibold mt-2 text-slate-900 dark:text-white">Ship it</h3><p class="text-sm text-slate-500 mt-2">Schedule, share, or wire it into your existing workflow.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 · Tabs / use cases -->
+<section id="s7" class="sec-divider">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center" data-rv="up">
+      <p class="sec-tag">Use cases</p>
+      <h2 class="font-display font-bold text-3xl sm:text-5xl mt-2 text-slate-900 dark:text-white">One platform, four teams.</h2>
+    </div>
+    <div data-tabs class="mt-10" data-rv="up">
+      <div class="flex flex-wrap justify-center gap-2 mb-6">
+        <button data-tab="m" class="is-active px-4 py-2 rounded-lg text-sm font-semibold glass [&.is-active]:bg-brand-500 [&.is-active]:text-white [&.is-active]:border-brand-500">Marketing</button>
+        <button data-tab="e" class="px-4 py-2 rounded-lg text-sm font-semibold glass [&.is-active]:bg-brand-500 [&.is-active]:text-white">Engineering</button>
+        <button data-tab="o" class="px-4 py-2 rounded-lg text-sm font-semibold glass [&.is-active]:bg-brand-500 [&.is-active]:text-white">Operations</button>
+        <button data-tab="s" class="px-4 py-2 rounded-lg text-sm font-semibold glass [&.is-active]:bg-brand-500 [&.is-active]:text-white">Support</button>
+      </div>
+      <div data-tab-panel="m" class="grad-border glass rounded-3xl p-8"><h3 class="font-display font-bold text-xl text-slate-900 dark:text-white">Marketing — brief in, campaign out.</h3><p class="mt-2 text-sm text-slate-500">A single brief becomes a research note, three drafts, a launch checklist, and a Slack post.</p></div>
+      <div data-tab-panel="e" class="hidden grad-border glass rounded-3xl p-8"><h3 class="font-display font-bold text-xl text-slate-900 dark:text-white">Engineering — fewer meetings.</h3><p class="mt-2 text-sm text-slate-500">Auto-summarized PRs, on-call recaps, and a doc bot trained on your codebase.</p></div>
+      <div data-tab-panel="o" class="hidden grad-border glass rounded-3xl p-8"><h3 class="font-display font-bold text-xl text-slate-900 dark:text-white">Operations — recaps, reminders.</h3><p class="mt-2 text-sm text-slate-500">QBR notes, follow-ups, and a calm inbox that closes its own loops.</p></div>
+      <div data-tab-panel="s" class="hidden grad-border glass rounded-3xl p-8"><h3 class="font-display font-bold text-xl text-slate-900 dark:text-white">Support — grounded tier-1.</h3><p class="mt-2 text-sm text-slate-500">Cited replies in the macros your agents already use. No extra tab.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 · Pricing 3-tier -->
+<section id="s8" class="sec-divider">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center" data-rv="up"><p class="sec-tag">Pricing</p><h2 class="font-display font-bold text-3xl sm:text-5xl mt-2 text-slate-900 dark:text-white">Plans that scale with your work.</h2></div>
+    <div class="mt-10 grid md:grid-cols-3 gap-5 stagger" data-rv="up">
+      <div class="glass rounded-3xl p-7"><h3 class="font-display font-bold text-xl text-slate-900 dark:text-white">Starter</h3><p class="text-xs text-slate-500 mt-1">For solo operators</p><p class="font-display text-4xl font-bold mt-5 text-slate-900 dark:text-white">$0<span class="text-base font-normal text-slate-500">/mo</span></p><ul class="mt-6 space-y-2 text-sm text-slate-600 dark:text-slate-400"><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> 100 runs / month</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> 5 sources</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Community support</li></ul><a href="contact.html" class="mt-7 btn-ghost rounded-xl px-4 py-2.5 text-sm font-semibold inline-flex">Start free</a></div>
+      <div class="grad-border glass rounded-3xl p-7 relative shadow-2xl shadow-brand-500/20"><span class="absolute -top-3 right-6 bg-gradient-to-r from-brand-500 to-cyan-400 text-white text-[11px] font-semibold px-3 py-1 rounded-full">Popular</span><h3 class="font-display font-bold text-xl text-slate-900 dark:text-white">Team</h3><p class="text-xs text-slate-500 mt-1">For collaborative teams</p><p class="font-display text-4xl font-bold mt-5 text-slate-900 dark:text-white">$29<span class="text-base font-normal text-slate-500">/seat/mo</span></p><ul class="mt-6 space-y-2 text-sm text-slate-600 dark:text-slate-400"><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> 5,000 runs / month</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Unlimited sources</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> SSO, roles, audit</li></ul><a href="contact.html" class="mt-7 btn-primary rounded-xl px-4 py-2.5 text-sm font-semibold inline-flex">Start trial</a></div>
+      <div class="glass rounded-3xl p-7"><h3 class="font-display font-bold text-xl text-slate-900 dark:text-white">Enterprise</h3><p class="text-xs text-slate-500 mt-1">SOC 2, VPC, SLAs</p><p class="font-display text-4xl font-bold mt-5 text-slate-900 dark:text-white">Custom</p><ul class="mt-6 space-y-2 text-sm text-slate-600 dark:text-slate-400"><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Unlimited runs</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> EU residency, VPC</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Solutions team</li></ul><a href="contact.html" class="mt-7 btn-ghost rounded-xl px-4 py-2.5 text-sm font-semibold inline-flex">Talk to sales</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 · Comparison table -->
+<section id="s9" class="sec-divider">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="text-center" data-rv="up"><p class="sec-tag">Compare</p><h2 class="font-display font-bold text-3xl sm:text-5xl mt-2 text-slate-900 dark:text-white">W5D vs. spreadsheet duct-tape.</h2></div>
+    <div class="mt-10 glass rounded-2xl overflow-hidden" data-rv="up">
+      <table class="w-full text-sm">
+        <thead><tr class="text-left border-b border-slate-200/60 dark:border-white/10"><th class="px-4 py-3 font-semibold">Capability</th><th class="px-4 py-3 font-semibold text-brand-500">W5D</th><th class="px-4 py-3 font-semibold text-slate-500">DIY stack</th></tr></thead>
+        <tbody class="divide-y divide-slate-200/60 dark:divide-white/5">
+          <tr><td class="px-4 py-3">Cited answers</td><td class="px-4 py-3 text-brand-500"><i data-lucide="check" class="w-4 h-4 inline"></i> Native</td><td class="px-4 py-3 text-slate-500">Build it yourself</td></tr>
+          <tr><td class="px-4 py-3">Audit trail (SOC 2)</td><td class="px-4 py-3 text-brand-500"><i data-lucide="check" class="w-4 h-4 inline"></i> Default</td><td class="px-4 py-3 text-slate-500">Months of work</td></tr>
+          <tr><td class="px-4 py-3">Long-running cost</td><td class="px-4 py-3 text-brand-500">−60%</td><td class="px-4 py-3 text-slate-500">Surprise invoices</td></tr>
+          <tr><td class="px-4 py-3">Tooling integrations</td><td class="px-4 py-3 text-brand-500">120+ native</td><td class="px-4 py-3 text-slate-500">Glue code</td></tr>
+          <tr><td class="px-4 py-3">Time to first value</td><td class="px-4 py-3 text-brand-500">Same day</td><td class="px-4 py-3 text-slate-500">Quarter</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · Testimonial wall -->
+<section id="s10" class="sec-divider">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center" data-rv="up"><p class="sec-tag">Loved by teams</p><h2 class="font-display font-bold text-3xl sm:text-5xl mt-2 text-slate-900 dark:text-white">What customers actually say.</h2></div>
+    <div class="mt-10 grid md:grid-cols-3 gap-5 stagger" data-rv="up">
+      <figure class="glass rounded-2xl p-6"><div class="flex text-amber-400 mb-3">★★★★★</div><blockquote class="text-sm text-slate-700 dark:text-slate-300">A six-person team that out-ships agencies five times its size. The cited answers alone paid for the year.</blockquote><figcaption class="mt-4 text-xs text-slate-500">Priya R. — VP Marketing, Northwind</figcaption></figure>
+      <figure class="glass rounded-2xl p-6"><div class="flex text-amber-400 mb-3">★★★★★</div><blockquote class="text-sm text-slate-700 dark:text-slate-300">Replaced four bespoke prompt libraries. Our security review was three days, not three months.</blockquote><figcaption class="mt-4 text-xs text-slate-500">Daniel K. — CTO, Lumen</figcaption></figure>
+      <figure class="glass rounded-2xl p-6"><div class="flex text-amber-400 mb-3">★★★★★</div><blockquote class="text-sm text-slate-700 dark:text-slate-300">Calmer inbox, fewer meetings. The team got its evenings back.</blockquote><figcaption class="mt-4 text-xs text-slate-500">Mei L. — Head of Ops, Atlasly</figcaption></figure>
+      <figure class="glass rounded-2xl p-6"><div class="flex text-amber-400 mb-3">★★★★★</div><blockquote class="text-sm text-slate-700 dark:text-slate-300">The audit trail sold our security team. Everything else was a bonus.</blockquote><figcaption class="mt-4 text-xs text-slate-500">Jordan T. — CISO, Verity</figcaption></figure>
+      <figure class="glass rounded-2xl p-6"><div class="flex text-amber-400 mb-3">★★★★★</div><blockquote class="text-sm text-slate-700 dark:text-slate-300">It deflects 38% of tier-1 tickets, with citations support actually trusts.</blockquote><figcaption class="mt-4 text-xs text-slate-500">Sam O. — Support Lead, Quanta</figcaption></figure>
+      <figure class="glass rounded-2xl p-6"><div class="flex text-amber-400 mb-3">★★★★★</div><blockquote class="text-sm text-slate-700 dark:text-slate-300">The SDK was the friendliest one in our review. Live in two days.</blockquote><figcaption class="mt-4 text-xs text-slate-500">Avery W. — Eng Lead, Pivotline</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · Single big quote -->
+<section id="s11" class="sec-divider">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center" data-rv="zoom">
+    <i data-lucide="quote" class="w-10 h-10 text-brand-500 mx-auto"></i>
+    <blockquote class="font-display font-bold text-3xl sm:text-5xl text-slate-900 dark:text-white mt-6 leading-tight">"It's the first AI tool our security team approved without a fight — and the first our marketing team didn't quietly stop using by month two."</blockquote>
+    <figcaption class="mt-6 text-sm text-slate-500">— Priya R., VP Marketing at Northwind</figcaption>
+  </div>
+</section>
+
+<!-- 12 · FAQ accordion -->
+<section id="s12" class="sec-divider">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="text-center" data-rv="up"><p class="sec-tag">FAQ</p><h2 class="font-display font-bold text-3xl sm:text-5xl mt-2 text-slate-900 dark:text-white">Common questions.</h2></div>
+    <div class="mt-10 space-y-3" data-rv="up">
+      <details data-faq class="glass rounded-xl p-4 group" open><summary data-faq-btn class="flex items-center justify-between cursor-pointer font-semibold text-slate-900 dark:text-white">Do you train on our data?<i data-lucide="plus" data-faq-icon class="w-5 h-5 transition-transform"></i></summary><div data-faq-panel class="mt-3 text-sm text-slate-600 dark:text-slate-400">No. Your data is yours. We never train shared models on customer content.</div></details>
+      <details data-faq class="glass rounded-xl p-4 group"><summary data-faq-btn class="flex items-center justify-between cursor-pointer font-semibold text-slate-900 dark:text-white">Where is data stored?<i data-lucide="plus" data-faq-icon class="w-5 h-5 transition-transform"></i></summary><div data-faq-panel class="hidden mt-3 text-sm text-slate-600 dark:text-slate-400">US-east by default, EU-west on request. VPC deployments available on Enterprise.</div></details>
+      <details data-faq class="glass rounded-xl p-4 group"><summary data-faq-btn class="flex items-center justify-between cursor-pointer font-semibold text-slate-900 dark:text-white">What models do you use?<i data-lucide="plus" data-faq-icon class="w-5 h-5 transition-transform"></i></summary><div data-faq-panel class="hidden mt-3 text-sm text-slate-600 dark:text-slate-400">Best-in-class frontier models, swappable per workspace, with deterministic replays.</div></details>
+      <details data-faq class="glass rounded-xl p-4 group"><summary data-faq-btn class="flex items-center justify-between cursor-pointer font-semibold text-slate-900 dark:text-white">Can we self-host?<i data-lucide="plus" data-faq-icon class="w-5 h-5 transition-transform"></i></summary><div data-faq-panel class="hidden mt-3 text-sm text-slate-600 dark:text-slate-400">VPC and hybrid deployments are available on Enterprise. Talk to us.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- 13 · CTA banner -->
+<section id="s13" class="sec-divider">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="grad-border rounded-3xl p-10 text-center relative overflow-hidden" data-rv="zoom">
+      <div class="absolute inset-0 mesh-bg opacity-50"></div>
+      <div class="relative">
+        <h2 class="font-display font-bold text-3xl sm:text-5xl text-slate-900 dark:text-white">Try it free for 30 days.</h2>
+        <p class="mt-3 text-slate-600 dark:text-slate-400">No credit card. Invite your team in two clicks.</p>
+        <div class="mt-6 inline-flex items-center gap-3"><a href="contact.html" class="btn-primary rounded-xl px-6 py-3 text-sm font-semibold inline-flex items-center gap-2 shine">Start free <i data-lucide="arrow-right" class="w-4 h-4"></i></a><a href="pricing.html" class="link-underline text-sm font-semibold">See pricing</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 · CTA + email capture -->
+<section id="s14" class="sec-divider">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="glass rounded-3xl p-8 sm:p-10 grid sm:grid-cols-[1fr_auto] gap-6 items-center" data-rv="up">
+      <div><h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white">Stay in the loop.</h3><p class="text-sm text-slate-500 mt-1">Field notes from the team, every Wednesday.</p></div>
+      <form data-newsletter class="flex w-full sm:w-auto"><input type="email" required placeholder="you@company.com" class="flex-1 sm:w-64 bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-l-lg px-3 py-2.5 text-sm focus:outline-none focus:border-brand-500" /><button type="submit" class="btn-primary rounded-r-lg px-4 text-sm font-semibold">Subscribe</button></form>
+    </div>
+  </div>
+</section>
+
+<!-- 15 · Timeline / milestones -->
+<section id="s15" class="sec-divider">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="text-center" data-rv="up"><p class="sec-tag">Story</p><h2 class="font-display font-bold text-3xl sm:text-5xl mt-2 text-slate-900 dark:text-white">A short timeline.</h2></div>
+    <ol class="mt-12 relative border-l border-brand-500/30 ml-3 space-y-8" data-rv="up">
+      <li class="pl-6 relative"><span class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-brand-500 ring-4 ring-brand-500/20"></span><time class="text-xs text-brand-500 font-semibold">2024</time><h4 class="font-semibold text-slate-900 dark:text-white mt-1">Started in a basement</h4><p class="text-sm text-slate-500 mt-1">Three founders, one whiteboard, one belief: software should be calm.</p></li>
+      <li class="pl-6 relative"><span class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-brand-500 ring-4 ring-brand-500/20"></span><time class="text-xs text-brand-500 font-semibold">2025</time><h4 class="font-semibold text-slate-900 dark:text-white mt-1">Public beta · 1,200 teams</h4><p class="text-sm text-slate-500 mt-1">Shipped Knowledge, Workflows, and the first 60 integrations.</p></li>
+      <li class="pl-6 relative"><span class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-brand-500 ring-4 ring-brand-500/20"></span><time class="text-xs text-brand-500 font-semibold">2026</time><h4 class="font-semibold text-slate-900 dark:text-white mt-1">Agents 2.0 · 12k+ teams</h4><p class="text-sm text-slate-500 mt-1">Parallel tools, deterministic replays, SOC 2 Type II.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 16 · Team grid -->
+<section id="s16" class="sec-divider">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center" data-rv="up"><p class="sec-tag">The team</p><h2 class="font-display font-bold text-3xl sm:text-5xl mt-2 text-slate-900 dark:text-white">A small crew, three time zones.</h2></div>
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 stagger" data-rv="up">
+      <div class="glass rounded-2xl p-5 text-center"><div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-brand-500 to-cyan-400 flex items-center justify-center text-white font-display font-bold text-xl">PR</div><h4 class="font-semibold mt-3 text-slate-900 dark:text-white">Priya R.</h4><p class="text-xs text-slate-500">CEO &amp; co-founder</p></div>
+      <div class="glass rounded-2xl p-5 text-center"><div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-cyan-400 to-pink-500 flex items-center justify-center text-white font-display font-bold text-xl">DK</div><h4 class="font-semibold mt-3 text-slate-900 dark:text-white">Daniel K.</h4><p class="text-xs text-slate-500">CTO &amp; co-founder</p></div>
+      <div class="glass rounded-2xl p-5 text-center"><div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-pink-500 to-amber-400 flex items-center justify-center text-white font-display font-bold text-xl">ML</div><h4 class="font-semibold mt-3 text-slate-900 dark:text-white">Mei L.</h4><p class="text-xs text-slate-500">Head of Design</p></div>
+      <div class="glass rounded-2xl p-5 text-center"><div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-emerald-400 to-cyan-500 flex items-center justify-center text-white font-display font-bold text-xl">JT</div><h4 class="font-semibold mt-3 text-slate-900 dark:text-white">Jordan T.</h4><p class="text-xs text-slate-500">Head of Security</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 17 · Blog teaser -->
+<section id="s17" class="sec-divider">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-end justify-between gap-4 flex-wrap" data-rv="up">
+      <div><p class="sec-tag">From the blog</p><h2 class="font-display font-bold text-3xl sm:text-5xl mt-2 text-slate-900 dark:text-white">Field notes.</h2></div>
+      <a href="blog.html" class="link-underline text-sm font-semibold">All posts →</a>
+    </div>
+    <div class="mt-10 grid md:grid-cols-3 gap-5 stagger" data-rv="up">
+      <a href="blog-post.html" class="glass rounded-2xl overflow-hidden tilt block"><div class="aspect-[16/10] bg-gradient-to-br from-brand-500/40 via-indigo-500/30 to-cyan-400/30 flex items-center justify-center"><i data-lucide="bot" class="w-12 h-12 text-white/80"></i></div><div class="p-5"><span class="text-xs text-brand-500 font-semibold">Engineering</span><h3 class="font-semibold mt-1.5 text-slate-900 dark:text-white">How Agents 2.0 cut long-run costs by 60%</h3><p class="text-xs text-slate-500 mt-2">A look at parallel tool use and why determinism matters.</p></div></a>
+      <a href="blog-post.html" class="glass rounded-2xl overflow-hidden tilt block"><div class="aspect-[16/10] bg-gradient-to-br from-pink-500/40 via-rose-500/30 to-amber-400/30 flex items-center justify-center"><i data-lucide="megaphone" class="w-12 h-12 text-white/80"></i></div><div class="p-5"><span class="text-xs text-brand-500 font-semibold">Marketing</span><h3 class="font-semibold mt-1.5 text-slate-900 dark:text-white">A six-person team that out-ships agencies</h3><p class="text-xs text-slate-500 mt-2">Inside Northwind's growth motion with W5D.</p></div></a>
+      <a href="blog-post.html" class="glass rounded-2xl overflow-hidden tilt block"><div class="aspect-[16/10] bg-gradient-to-br from-emerald-400/40 via-cyan-500/30 to-brand-500/30 flex items-center justify-center"><i data-lucide="shield-check" class="w-12 h-12 text-white/80"></i></div><div class="p-5"><span class="text-xs text-brand-500 font-semibold">Security</span><h3 class="font-semibold mt-1.5 text-slate-900 dark:text-white">SOC 2 Type II — what we changed to get there</h3><p class="text-xs text-slate-500 mt-2">A lightweight playbook for early-stage teams.</p></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- 18 · Integrations grid -->
+<section id="s18" class="sec-divider">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center" data-rv="up"><p class="sec-tag">Integrations</p><h2 class="font-display font-bold text-3xl sm:text-5xl mt-2 text-slate-900 dark:text-white">Connects to your stack.</h2></div>
+    <div class="mt-10 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3 stagger" data-rv="up">
+      <div class="glass rounded-xl aspect-square flex items-center justify-center tilt"><i data-lucide="hash" class="w-7 h-7 text-brand-500"></i></div>
+      <div class="glass rounded-xl aspect-square flex items-center justify-center tilt"><i data-lucide="git-branch" class="w-7 h-7"></i></div>
+      <div class="glass rounded-xl aspect-square flex items-center justify-center tilt"><i data-lucide="pen-tool" class="w-7 h-7 text-pink-500"></i></div>
+      <div class="glass rounded-xl aspect-square flex items-center justify-center tilt"><i data-lucide="kanban" class="w-7 h-7 text-cyan-500"></i></div>
+      <div class="glass rounded-xl aspect-square flex items-center justify-center tilt"><i data-lucide="globe" class="w-7 h-7 text-amber-500"></i></div>
+      <div class="glass rounded-xl aspect-square flex items-center justify-center tilt"><i data-lucide="mail" class="w-7 h-7 text-emerald-500"></i></div>
+      <div class="glass rounded-xl aspect-square flex items-center justify-center tilt"><i data-lucide="cloud" class="w-7 h-7"></i></div>
+      <div class="glass rounded-xl aspect-square flex items-center justify-center tilt"><i data-lucide="database" class="w-7 h-7 text-cyan-500"></i></div>
+      <div class="glass rounded-xl aspect-square flex items-center justify-center tilt"><i data-lucide="calendar" class="w-7 h-7 text-rose-500"></i></div>
+      <div class="glass rounded-xl aspect-square flex items-center justify-center tilt"><i data-lucide="message-circle" class="w-7 h-7 text-brand-500"></i></div>
+      <div class="glass rounded-xl aspect-square flex items-center justify-center tilt"><i data-lucide="folder" class="w-7 h-7 text-amber-500"></i></div>
+      <div class="glass rounded-xl aspect-square flex items-center justify-center tilt"><i data-lucide="plus" class="w-7 h-7 text-slate-500"></i></div>
+    </div>
+    <div class="mt-8 text-center"><a href="integrations.html" class="link-underline text-sm font-semibold">All 120+ integrations →</a></div>
+  </div>
+</section>
+
+<!-- 19 · Vertical scroll marquee -->
+<section id="s19" class="sec-divider">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 items-center">
+    <div data-rv="right">
+      <p class="sec-tag">Always-on</p>
+      <h2 class="font-display font-bold text-3xl sm:text-5xl mt-2 text-slate-900 dark:text-white">A workspace that closes its own loops.</h2>
+      <p class="mt-4 text-slate-600 dark:text-slate-400 max-w-md">Reminders, recaps, follow-ups, summaries — the small stuff that makes teams feel calm.</p>
+    </div>
+    <div class="marquee-y h-72 glass rounded-2xl p-4" data-rv="left">
+      <div class="marquee-y-track">
+        <p class="rounded-lg bg-brand-500/10 text-brand-600 dark:text-brand-300 px-3 py-2 text-xs">✓ Drafted Q3 recap (12 sources)</p>
+        <p class="rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-3 py-2 text-xs">→ Sent renewal nudge to 4 accounts</p>
+        <p class="rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 px-3 py-2 text-xs">⏰ Reminded Priya about the QBR</p>
+        <p class="rounded-lg bg-rose-500/10 text-rose-600 dark:text-rose-400 px-3 py-2 text-xs">⚑ Flagged 1 outlier in NPS data</p>
+        <p class="rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 px-3 py-2 text-xs">✎ Summarized 32 support tickets</p>
+        <p class="rounded-lg bg-pink-500/10 text-pink-600 dark:text-pink-400 px-3 py-2 text-xs">↻ Re-indexed Notion (2,140 pages)</p>
+        <!-- duplicate for loop -->
+        <p class="rounded-lg bg-brand-500/10 text-brand-600 dark:text-brand-300 px-3 py-2 text-xs">✓ Drafted Q3 recap (12 sources)</p>
+        <p class="rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-3 py-2 text-xs">→ Sent renewal nudge to 4 accounts</p>
+        <p class="rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 px-3 py-2 text-xs">⏰ Reminded Priya about the QBR</p>
+        <p class="rounded-lg bg-rose-500/10 text-rose-600 dark:text-rose-400 px-3 py-2 text-xs">⚑ Flagged 1 outlier in NPS data</p>
+        <p class="rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 px-3 py-2 text-xs">✎ Summarized 32 support tickets</p>
+        <p class="rounded-lg bg-pink-500/10 text-pink-600 dark:text-pink-400 px-3 py-2 text-xs">↻ Re-indexed Notion (2,140 pages)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 20 · Code showcase -->
+<section id="s20" class="sec-divider">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="text-center" data-rv="up"><p class="sec-tag">Developer API</p><h2 class="font-display font-bold text-3xl sm:text-5xl mt-2 text-slate-900 dark:text-white">Six SDKs. One shape.</h2></div>
+    <div data-tabs class="mt-10 grad-border glass rounded-2xl overflow-hidden" data-rv="up">
+      <div class="flex items-center gap-1 px-3 pt-3 border-b border-slate-200/60 dark:border-white/5">
+        <button data-tab="ts" class="is-active px-3 py-1.5 rounded-md text-xs font-semibold [&.is-active]:bg-brand-500/10 [&.is-active]:text-brand-500">TypeScript</button>
+        <button data-tab="py" class="px-3 py-1.5 rounded-md text-xs font-semibold [&.is-active]:bg-brand-500/10 [&.is-active]:text-brand-500">Python</button>
+        <button data-tab="go" class="px-3 py-1.5 rounded-md text-xs font-semibold [&.is-active]:bg-brand-500/10 [&.is-active]:text-brand-500">Go</button>
+        <button data-tab="cu" class="px-3 py-1.5 rounded-md text-xs font-semibold [&.is-active]:bg-brand-500/10 [&.is-active]:text-brand-500">cURL</button>
+      </div>
+      <pre data-tab-panel="ts" class="code-block p-5 overflow-x-auto whitespace-pre"><span class="tok-c">// Run a workflow</span>
+<span class="tok-k">import</span> { W5D } <span class="tok-k">from</span> <span class="tok-s">"@w5d/sdk"</span>;
+<span class="tok-k">const</span> w5d = <span class="tok-k">new</span> W5D({ apiKey: process.env.W5D_KEY });
+<span class="tok-k">const</span> run = <span class="tok-k">await</span> w5d.workflows.run(<span class="tok-s">"qbr-recap"</span>, {
+  account: <span class="tok-s">"northwind"</span>,
+});
+console.log(run.output);</pre>
+      <pre data-tab-panel="py" class="hidden code-block p-5 overflow-x-auto whitespace-pre"><span class="tok-k">from</span> w5d <span class="tok-k">import</span> Client
+client = Client(api_key=os.environ[<span class="tok-s">"W5D_KEY"</span>])
+run = client.workflows.run(<span class="tok-s">"qbr-recap"</span>, account=<span class="tok-s">"northwind"</span>)
+print(run.output)</pre>
+      <pre data-tab-panel="go" class="hidden code-block p-5 overflow-x-auto whitespace-pre">c := w5d.<span class="tok-n">New</span>(os.<span class="tok-n">Getenv</span>(<span class="tok-s">"W5D_KEY"</span>))
+run, _ := c.<span class="tok-n">Workflows</span>.<span class="tok-n">Run</span>(<span class="tok-s">"qbr-recap"</span>, w5d.M{<span class="tok-s">"account"</span>: <span class="tok-s">"northwind"</span>})
+fmt.<span class="tok-n">Println</span>(run.Output)</pre>
+      <pre data-tab-panel="cu" class="hidden code-block p-5 overflow-x-auto whitespace-pre">curl https://api.w5d.ai/v1/workflows/qbr-recap/run \
+  -H <span class="tok-s">"Authorization: Bearer $W5D_KEY"</span> \
+  -d <span class="tok-s">'{"account":"northwind"}'</span></pre>
+    </div>
+  </div>
+</section>
+
+<!-- 21 · Stats + chart -->
+<section id="s21" class="sec-divider">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 items-center">
+    <div data-rv="right">
+      <p class="sec-tag">Impact</p>
+      <h2 class="font-display font-bold text-3xl sm:text-5xl mt-2 text-slate-900 dark:text-white">Customers ship more, faster.</h2>
+      <p class="mt-4 text-slate-600 dark:text-slate-400">Average time-to-first-value across cohorts in 2025.</p>
+      <ul class="mt-6 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Day 1 — 86% of teams sent their first run</li>
+        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Week 1 — first integration wired, on average</li>
+        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-500"></i> Week 4 — first business outcome attributed</li>
+      </ul>
+    </div>
+    <div class="glass rounded-2xl p-6" data-rv="left">
+      <div class="flex items-end gap-2 h-56">
+        <div class="flex-1 bg-gradient-to-t from-brand-500/20 to-brand-500 rounded-t-md" style="height:40%"></div>
+        <div class="flex-1 bg-gradient-to-t from-brand-500/20 to-brand-500 rounded-t-md" style="height:55%"></div>
+        <div class="flex-1 bg-gradient-to-t from-brand-500/20 to-brand-500 rounded-t-md" style="height:65%"></div>
+        <div class="flex-1 bg-gradient-to-t from-brand-500/20 to-brand-500 rounded-t-md" style="height:78%"></div>
+        <div class="flex-1 bg-gradient-to-t from-brand-500/20 to-brand-500 rounded-t-md" style="height:88%"></div>
+        <div class="flex-1 bg-gradient-to-t from-brand-500/20 to-brand-500 rounded-t-md" style="height:96%"></div>
+      </div>
+      <div class="mt-2 grid grid-cols-6 gap-2 text-center text-[10px] text-slate-500"><span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 22 · Pricing comparison -->
+<section id="s22" class="sec-divider">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="text-center" data-rv="up"><p class="sec-tag">Compare plans</p><h2 class="font-display font-bold text-3xl sm:text-5xl mt-2 text-slate-900 dark:text-white">Pick the right tier.</h2></div>
+    <div class="mt-10 glass rounded-2xl overflow-x-auto" data-rv="up">
+      <table class="w-full text-sm min-w-[640px]">
+        <thead><tr class="text-left border-b border-slate-200/60 dark:border-white/10"><th class="px-4 py-3"></th><th class="px-4 py-3 font-semibold">Starter</th><th class="px-4 py-3 font-semibold text-brand-500">Team</th><th class="px-4 py-3 font-semibold">Enterprise</th></tr></thead>
+        <tbody class="divide-y divide-slate-200/60 dark:divide-white/5">
+          <tr><td class="px-4 py-3">Runs / month</td><td class="px-4 py-3">100</td><td class="px-4 py-3 text-brand-500">5,000</td><td class="px-4 py-3">Unlimited</td></tr>
+          <tr><td class="px-4 py-3">Sources</td><td class="px-4 py-3">5</td><td class="px-4 py-3 text-brand-500">Unlimited</td><td class="px-4 py-3">Unlimited</td></tr>
+          <tr><td class="px-4 py-3">SSO + SCIM</td><td class="px-4 py-3 text-slate-500">—</td><td class="px-4 py-3 text-brand-500"><i data-lucide="check" class="w-4 h-4 inline"></i></td><td class="px-4 py-3 text-brand-500"><i data-lucide="check" class="w-4 h-4 inline"></i></td></tr>
+          <tr><td class="px-4 py-3">Audit log retention</td><td class="px-4 py-3">7 days</td><td class="px-4 py-3 text-brand-500">90 days</td><td class="px-4 py-3">Custom</td></tr>
+          <tr><td class="px-4 py-3">Dedicated solutions</td><td class="px-4 py-3 text-slate-500">—</td><td class="px-4 py-3 text-slate-500">—</td><td class="px-4 py-3 text-brand-500"><i data-lucide="check" class="w-4 h-4 inline"></i></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 23 · Newsletter band -->
+<section id="s23" class="sec-divider">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="rounded-3xl bg-gradient-to-br from-brand-600 via-indigo-600 to-cyan-500 text-white p-10 sm:p-14 relative overflow-hidden" data-rv="zoom">
+      <div class="absolute inset-0 grid-bg opacity-30"></div>
+      <div class="relative grid lg:grid-cols-[1.4fr_1fr] gap-8 items-center">
+        <div><h2 class="font-display font-bold text-3xl sm:text-5xl">The W5D dispatch.</h2><p class="mt-3 text-white/85 max-w-md">A weekly note from the team. Notes from the build, never marketing fluff.</p></div>
+        <form data-newsletter class="flex bg-white/10 backdrop-blur p-1 rounded-xl"><input type="email" required placeholder="you@company.com" class="flex-1 bg-transparent placeholder-white/70 text-white px-3 py-2 text-sm focus:outline-none" /><button class="bg-white text-brand-600 rounded-lg px-4 text-sm font-semibold">Subscribe</button></form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 24 · Awards / press -->
+<section id="s24" class="sec-divider">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <p class="text-center sec-tag" data-rv="up">As featured in</p>
+    <div class="mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-slate-500 dark:text-slate-400" data-rv="up">
+      <span class="font-display font-bold text-xl tracking-tight">The Frontier</span>
+      <span class="font-display font-bold text-xl italic">Stackcraft</span>
+      <span class="font-display font-bold text-xl">Operator</span>
+      <span class="font-display font-bold text-xl">Ledger Daily</span>
+      <span class="font-display font-bold text-xl tracking-widest">SHIPLOG</span>
+    </div>
+    <div class="mt-10 grid sm:grid-cols-3 gap-5 stagger" data-rv="up">
+      <div class="glass rounded-2xl p-5"><i data-lucide="award" class="w-7 h-7 text-amber-500"></i><h4 class="font-semibold mt-3 text-slate-900 dark:text-white">Product of the Year — 2025</h4><p class="text-xs text-slate-500 mt-1">The Frontier Awards</p></div>
+      <div class="glass rounded-2xl p-5"><i data-lucide="trophy" class="w-7 h-7 text-amber-500"></i><h4 class="font-semibold mt-3 text-slate-900 dark:text-white">Top 10 calm software</h4><p class="text-xs text-slate-500 mt-1">Stackcraft</p></div>
+      <div class="glass rounded-2xl p-5"><i data-lucide="medal" class="w-7 h-7 text-amber-500"></i><h4 class="font-semibold mt-3 text-slate-900 dark:text-white">Best DX — 2025</h4><p class="text-xs text-slate-500 mt-1">Operator Magazine</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 25 · Big CTA + card -->
+<section id="s25" class="sec-divider">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
+      <div data-rv="right">
+        <p class="sec-tag">Get started</p>
+        <h2 class="font-display font-bold text-4xl sm:text-6xl mt-2 text-slate-900 dark:text-white leading-[1.05]">Stop renting your <span class="gradient-text">attention</span>.</h2>
+        <p class="mt-4 text-slate-600 dark:text-slate-400 max-w-md">Try W5D for 30 days. No credit card. Real teams ship in 24 hours.</p>
+        <div class="mt-7 inline-flex items-center gap-3"><a href="contact.html" class="btn-primary rounded-xl px-5 py-3 text-sm font-semibold inline-flex items-center gap-2 shine">Start free <i data-lucide="arrow-right" class="w-4 h-4"></i></a><a href="contact.html#demo" class="btn-ghost rounded-xl px-5 py-3 text-sm font-semibold">Book demo</a></div>
+      </div>
+      <div class="grad-border glass rounded-3xl p-7 tilt" data-rv="left">
+        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-500 flex items-center justify-center"><i data-lucide="zap" class="w-5 h-5"></i></div><div><p class="font-semibold text-slate-900 dark:text-white">Quickstart</p><p class="text-xs text-slate-500">Five minutes, one terminal</p></div></div>
+        <div class="mt-4 rounded-xl bg-slate-50 dark:bg-ink-900 px-4 py-3 code-block flex items-center justify-between"><span><span class="tok-k">npm</span> i <span class="tok-s">@w5d/sdk</span></span><button data-copy class="text-xs text-slate-400 hover:text-brand-500 inline-flex items-center gap-1"><i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy</button></div>
+        <div class="mt-3 rounded-xl bg-slate-50 dark:bg-ink-900 px-4 py-3 code-block flex items-center justify-between"><span><span class="tok-k">w5d</span> init <span class="tok-c">--workspace=acme</span></span><button data-copy class="text-xs text-slate-400 hover:text-brand-500 inline-flex items-center gap-1"><i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 26 · Footer (full) -->
+<section id="s26" class="sec-divider">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <p class="sec-tag mb-6" data-rv="up">Footer · full</p>
+    <div class="glass rounded-3xl p-8" data-rv="up">
+      <div class="grid md:grid-cols-5 gap-10">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2"><span class="inline-flex w-9 h-9 rounded-xl bg-gradient-to-br from-brand-500 via-indigo-500 to-cyan-400 items-center justify-center"><span class="font-display font-bold text-white text-sm">W5</span></span><span class="font-display font-bold text-lg text-slate-900 dark:text-white">W5D</span></div>
+          <p class="mt-4 text-sm text-slate-500 max-w-sm">The calm AI workspace for teams that actually ship.</p>
+          <form data-newsletter class="mt-5 flex max-w-sm"><input type="email" required placeholder="you@company.com" class="flex-1 bg-white dark:bg-ink-900 border border-slate-200/60 dark:border-white/10 rounded-l-lg px-3 py-2 text-sm focus:outline-none focus:border-brand-500" /><button type="submit" class="btn-primary rounded-r-lg px-4 text-sm font-semibold">Join</button></form>
+        </div>
+        <div><h4 class="font-semibold text-slate-900 dark:text-white text-sm">Product</h4><ul class="mt-3 space-y-2 text-sm text-slate-500"><li><a href="features.html" class="hover:text-brand-500">Features</a></li><li><a href="pricing.html" class="hover:text-brand-500">Pricing</a></li><li><a href="integrations.html" class="hover:text-brand-500">Integrations</a></li></ul></div>
+        <div><h4 class="font-semibold text-slate-900 dark:text-white text-sm">Company</h4><ul class="mt-3 space-y-2 text-sm text-slate-500"><li><a href="about.html" class="hover:text-brand-500">About</a></li><li><a href="blog.html" class="hover:text-brand-500">Blog</a></li><li><a href="careers.html" class="hover:text-brand-500">Careers</a></li></ul></div>
+        <div><h4 class="font-semibold text-slate-900 dark:text-white text-sm">Resources</h4><ul class="mt-3 space-y-2 text-sm text-slate-500"><li><a href="heros.html" class="hover:text-brand-500">Heroes</a></li><li><a href="sections.html" class="hover:text-brand-500">Sections</a></li><li><a href="documentations.html" class="hover:text-brand-500">Docs</a></li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 27 · Footer (minimal) -->
+<section id="s27" class="sec-divider">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <p class="sec-tag mb-6" data-rv="up">Footer · minimal</p>
+    <div class="glass rounded-2xl p-6 flex flex-wrap items-center justify-between gap-4" data-rv="up">
+      <div class="flex items-center gap-2"><span class="inline-flex w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-cyan-400 items-center justify-center"><span class="font-display font-bold text-white text-xs">W5</span></span><span class="font-display font-bold text-slate-900 dark:text-white">W5D</span></div>
+      <nav class="flex items-center gap-6 text-sm text-slate-500"><a href="about.html" class="hover:text-brand-500">About</a><a href="pricing.html" class="hover:text-brand-500">Pricing</a><a href="contact.html" class="hover:text-brand-500">Contact</a><a href="privacy.html" class="hover:text-brand-500">Privacy</a></nav>
+      <p class="text-xs text-slate-500">© 2026 W5D Labs Inc.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 28 · 404 inline -->
+<section id="s28" class="sec-divider">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center" data-rv="zoom">
+    <p class="sec-tag">Empty / 404 state</p>
+    <p class="font-display font-black text-[clamp(5rem,18vw,11rem)] gradient-shift leading-none">404</p>
+    <h2 class="font-display font-bold text-3xl text-slate-900 dark:text-white">That page slipped between meetings.</h2>
+    <p class="mt-3 text-slate-500">Try the homepage, or shout in the contact form — we'll point you the right way.</p>
+    <div class="mt-6 inline-flex items-center gap-3"><a href="../index.html" class="btn-primary rounded-xl px-5 py-2.5 text-sm font-semibold">Go home</a><a href="contact.html" class="btn-ghost rounded-xl px-5 py-2.5 text-sm font-semibold">Contact us</a></div>
+  </div>
+</section>
+
+<!-- Closer -->
+<section class="py-20 border-t border-slate-200/60 dark:border-white/5">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center" data-rv="up">
+    <h3 class="font-display font-bold text-3xl text-slate-900 dark:text-white">Need a hero too?</h3>
+    <div class="mt-5 inline-flex flex-wrap items-center justify-center gap-3">
+      <a href="heros.html" class="btn-primary rounded-xl px-5 py-2.5 text-sm font-semibold inline-flex items-center gap-2">Browse 12 heroes <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      <a href="documentations.html" class="btn-ghost rounded-xl px-5 py-2.5 text-sm font-semibold">Read the docs</a>
+    </div>
+  </div>
+</section>
+
+<div data-shell-foot></div>
+</body></html>
