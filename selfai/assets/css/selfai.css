@@ -1,0 +1,173 @@
+/* SelfAI — base styles (glass cards, skeleton loaders, animated logo) */
+
+:root {
+  --bg: #070711;
+  --line: rgba(255,255,255,0.08);
+  --line-strong: rgba(255,255,255,0.18);
+}
+
+body { font-family: 'Inter', system-ui, sans-serif; }
+
+/* === Glass surface === */
+.glass-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* === Buttons === */
+.btn {
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .5rem 1rem; border-radius: .55rem;
+  font-weight: 600; font-size: .875rem; line-height: 1;
+  transition: all .15s ease; cursor: pointer; user-select: none;
+  text-decoration: none;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  color: #fff; box-shadow: 0 6px 20px -8px rgba(139,92,246,.6);
+}
+.btn-primary:hover { transform: translateY(-1px); filter: brightness(1.1); }
+.btn-ghost {
+  background: rgba(255,255,255,0.04);
+  color: #e2e8f0;
+  border: 1px solid var(--line);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.08); }
+.btn[disabled] { opacity: .6; cursor: not-allowed; }
+
+/* === Form inputs === */
+.input {
+  display: block; width: 100%;
+  margin-top: .25rem;
+  padding: .65rem .9rem; border-radius: .55rem;
+  background: rgba(255,255,255,0.04);
+  color: #e2e8f0; font-size: .9rem;
+  border: 1px solid var(--line);
+  transition: border-color .15s, background .15s;
+}
+.input:focus { outline: none; border-color: #8b5cf6; background: rgba(139,92,246,.06); }
+
+/* === Skeleton loader === */
+.sk-line, .sk-block, .sk-area::before {
+  background: linear-gradient(90deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.10) 50%, rgba(255,255,255,.04) 100%);
+  background-size: 200% 100%;
+  animation: sk-shimmer 1.4s infinite;
+  border-radius: .4rem;
+}
+.sk-line { height: .9rem; width: 70%; }
+.sk-block { height: 4rem; }
+@keyframes sk-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.sk-area.is-loading { position: relative; min-height: 6rem; }
+
+/* === Animated logo glow === */
+.selfai-logo {
+  display: inline-flex; align-items: center; justify-content: center;
+  filter: drop-shadow(0 0 8px rgba(139,92,246,.35));
+}
+
+/* === Chat bubbles === */
+.bubble {
+  padding: .65rem .9rem; border-radius: .8rem;
+  font-size: .9rem; line-height: 1.55;
+  white-space: pre-wrap; word-wrap: break-word;
+}
+.bubble.user {
+  background: rgba(139,92,246,.18);
+  border: 1px solid rgba(139,92,246,.30);
+  margin-left: 2rem;
+}
+.bubble.assistant {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--line);
+  margin-right: 2rem;
+}
+.bubble-meta {
+  font-size: .68rem; color: #94a3b8;
+  margin-top: .15rem;
+}
+
+/* === Currency tiles === */
+.cur-tile {
+  border: 1px solid var(--line);
+  border-radius: .65rem;
+  padding: .5rem .6rem;
+  background: rgba(255,255,255,0.02);
+  display: flex; flex-direction: column; gap: .15rem;
+  transition: border-color .15s, background .15s;
+}
+.cur-tile:hover { border-color: var(--line-strong); }
+.cur-tile .cur-code { font-size: .7rem; letter-spacing: .12em; color: #94a3b8; }
+.cur-tile .cur-val { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: #fff; font-weight: 700; }
+
+/* === Clone tile === */
+.clone-card {
+  display: flex; flex-direction: column; gap: .5rem;
+  padding: 1rem; border-radius: .85rem;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.02);
+  transition: transform .15s, border-color .15s, box-shadow .15s;
+  text-decoration: none; color: inherit;
+}
+.clone-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(139,92,246,.5);
+  box-shadow: 0 14px 30px -18px rgba(139,92,246,.5);
+}
+.clone-card .clone-head { display: flex; align-items: center; gap: .55rem; }
+.clone-card .clone-icon { font-size: 1.5rem; }
+.clone-card .clone-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #fff; }
+.clone-card .clone-meta { font-size: .68rem; color: #94a3b8; }
+.clone-card .clone-desc { font-size: .8rem; color: #cbd5e1; line-height: 1.45; }
+.clone-card .clone-foot { display: flex; align-items: center; justify-content: space-between; font-size: .7rem; }
+
+/* === Docs styling === */
+.prose-doc h1 { font-family: 'Space Grotesk', sans-serif; }
+.prose-doc h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: #fff; margin: 2rem 0 .8rem; }
+.prose-doc p, .prose-doc li { color: #cbd5e1; line-height: 1.7; font-size: .95rem; }
+.prose-doc ul { list-style: disc; padding-left: 1.25rem; margin: .5rem 0 1rem; }
+.prose-doc ul li { margin-bottom: .35rem; }
+.prose-doc .kbd {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: rgba(255,255,255,0.06); padding: .1rem .35rem;
+  border-radius: .25rem; font-size: .85em;
+  border: 1px solid var(--line);
+}
+.prose-doc .code-block {
+  background: #0a0a18; border: 1px solid var(--line);
+  border-radius: .55rem; padding: 1rem; overflow-x: auto;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: .82rem; line-height: 1.6;
+  color: #e2e8f0; margin: 1rem 0;
+}
+.prose-doc .doc-table {
+  width: 100%; border-collapse: collapse; margin: 1rem 0;
+  font-size: .85rem; color: #cbd5e1;
+}
+.prose-doc .doc-table th, .prose-doc .doc-table td {
+  border: 1px solid var(--line);
+  padding: .5rem .65rem; vertical-align: top; text-align: left;
+}
+.prose-doc .doc-table th { background: rgba(255,255,255,0.04); color: #fff; font-weight: 600; }
+.prose-doc .link { color: #a78bfa; text-decoration: underline; text-underline-offset: 3px; }
+.prose-doc .link:hover { color: #c4b5fd; }
+.prose-doc .quote {
+  border-left: 3px solid #8b5cf6; padding: .35rem 1rem;
+  color: #e2e8f0; margin: 1rem 0; font-style: italic;
+  background: rgba(139,92,246,.05); border-radius: 0 .5rem .5rem 0;
+}
+
+/* === Feedback buttons === */
+.fb-btn { font-size: .7rem; opacity: .5; cursor: pointer; padding: 0 .25rem; background: none; border: 0; color: inherit; }
+.fb-btn:hover, .fb-btn.active { opacity: 1; }
+.fb-btn.up.active { color: #34d399; }
+.fb-btn.down.active { color: #fb7185; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sk-line, .sk-block, .sk-area::before { animation: none; }
+}
