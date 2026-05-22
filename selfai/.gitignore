@@ -1,3 +1,9 @@
 database/*.db
 database/*.db-journal
 api/.env
+
+# SelfAI-X per-user mutable state (one file per user)
+database/selfai_x_state_user_*.json
+
+# One-shot AI bridge file (never persistent state)
+api/.selfai_runtime.json

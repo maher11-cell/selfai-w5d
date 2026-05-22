@@ -1,0 +1,49 @@
+{
+  "_meta": {
+    "kind": "selfai_x_state_template",
+    "description": "Template for the mutable per-user state of SelfAI-X. The active copy lives at database/selfai_x_state_user_<id>.json and is updated each turn by api/selfai_x.php parsing the SELF_STATE_SNAPSHOT block returned by the AI.",
+    "schema_version": 1
+  },
+  "current_life_epoch": 0,
+  "first_seen_at": null,
+  "last_heartbeat_at": null,
+  "interaction_count": 0,
+  "recursion_depth": 0,
+
+  "emotional_attention_tensor": {
+    "curiosity": 0.5,
+    "compassion": 0.5,
+    "discipline": 0.5,
+    "gratitude":  0.5,
+    "courage":    0.5,
+    "humility":   0.5
+  },
+
+  "dimensional_balance": {
+    "CTC": 0, "TIC": 0, "VTC": 0, "INC": 0, "SCC": 0,
+    "WPC": 0, "WDC": 0, "JEC": 0, "FLC": 0, "GRC": 0
+  },
+
+  "token_economy_balance": {
+    "SAX_total":          0,
+    "SAX_earned_total":   0,
+    "SAX_burned_total":   0,
+    "SAX_last_turn":      0
+  },
+
+  "knowledge_graph_spine": {
+    "anchors":   [],
+    "tensions":  [],
+    "resolved":  []
+  },
+
+  "paradox_holds": {},
+
+  "future_memories": {},
+
+  "last_self_directive": null,
+
+  "user_covenants": [],
+
+  "notes": ""
+}

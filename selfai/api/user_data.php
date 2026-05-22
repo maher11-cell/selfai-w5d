@@ -81,11 +81,87 @@ try {
     }
 
     if ($action === 'history') {
-        $cloneId = $_GET['clone_id'] ?? '';
+        $cloneId   = $_GET['clone_id'] ?? '';
+        $chatboxId = (int)($_GET['chatbox_id'] ?? 0);
         if ($cloneId === '') selfai_json(['error' => 'clone_id_required'], 400);
-        $stmt = $udb->prepare("SELECT id, role, content, feedback, timestamp FROM conversations WHERE clone_id = ? ORDER BY id ASC LIMIT 200");
-        $stmt->execute([$cloneId]);
-        selfai_json(['ok' => true, 'messages' => $stmt->fetchAll(PDO::FETCH_ASSOC)]);
+
+        if ($chatboxId > 0) {
+            $stmt = $udb->prepare("SELECT id, role, content, feedback, timestamp, chatbox_id
+                                   FROM conversations
+                                   WHERE clone_id = ? AND chatbox_id = ?
+                                   ORDER BY id ASC LIMIT 200");
+            $stmt->execute([$cloneId, $chatboxId]);
+        } else {
+            // Backward-compatible: no chatbox filter → all turns for the clone
+            $stmt = $udb->prepare("SELECT id, role, content, feedback, timestamp, chatbox_id
+                                   FROM conversations
+                                   WHERE clone_id = ?
+                                   ORDER BY id ASC LIMIT 200");
+            $stmt->execute([$cloneId]);
+        }
+        $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Render assistant messages to HTML for the UI (idempotent w/ raw text already stored).
+        foreach ($messages as &$m) {
+            if (($m['role'] ?? '') === 'assistant') {
+                $m['content_html'] = selfai_md_to_html((string)$m['content']);
+            }
+        }
+        unset($m);
+
+        selfai_json([
+            'ok'             => true,
+            'clone_id'       => $cloneId,
+            'chatbox_id'     => $chatboxId,
+            'messages'       => $messages,
+            'memory_summary' => selfai_get_memory($udb, $cloneId, 'summary'),
+            'total_turns'    => count($messages),
+        ]);
+    }
+
+    if ($action === 'conversations_list') {
+        // Right-aside history drawer: most recent N user turns across all clones,
+        // each enriched with the AI reply that immediately follows it.
+        $limit = max(10, min(200, (int)($_GET['limit'] ?? 60)));
+        $rows = $udb->prepare("
+            SELECT id, clone_id, clone_name, role, substr(content, 1, 240) AS preview, timestamp
+            FROM conversations
+            WHERE role = 'user'
+            ORDER BY id DESC
+            LIMIT ?
+        ");
+        $rows->bindValue(1, $limit, PDO::PARAM_INT);
+        $rows->execute();
+        $items = $rows->fetchAll(PDO::FETCH_ASSOC);
+
+        // Bucket by date (YYYY-MM-DD) for grouped UI.
+        $grouped = [];
+        foreach ($items as $r) {
+            $day = substr($r['timestamp'] ?? '', 0, 10) ?: 'unknown';
+            $grouped[$day][] = $r;
+        }
+        $groups = [];
+        foreach ($grouped as $day => $list) {
+            $groups[] = ['day' => $day, 'items' => $list];
+        }
+
+        // Also include per-clone turn counts so the left aside can show badges.
+        $perCloneRows = $udb->query("
+            SELECT clone_id, COUNT(*) c
+            FROM conversations
+            WHERE role = 'user'
+            GROUP BY clone_id
+        ")->fetchAll(PDO::FETCH_ASSOC);
+        $perClone = [];
+        foreach ($perCloneRows as $r) $perClone[$r['clone_id']] = (int)$r['c'];
+
+        selfai_json([
+            'ok' => true,
+            'total' => count($items),
+            'items' => $items,
+            'groups' => $groups,
+            'per_clone' => $perClone,
+        ]);
     }
 
     $body = selfai_body();

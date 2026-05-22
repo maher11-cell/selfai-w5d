@@ -1,0 +1,544 @@
+{
+  "_meta": {
+    "version": 1,
+    "default_locale": "en",
+    "locales": [
+      "en",
+      "ar",
+      "fr"
+    ],
+    "notes": "Translations for SelfAI UI. RTL locales (Arabic) auto-flip via lang=ar attr."
+  },
+  "locales_info": {
+    "en": {
+      "code": "en",
+      "name": "English",
+      "native": "English",
+      "dir": "ltr",
+      "flag": "🇬🇧"
+    },
+    "ar": {
+      "code": "ar",
+      "name": "Arabic",
+      "native": "العربية",
+      "dir": "rtl",
+      "flag": "🇸🇦"
+    },
+    "fr": {
+      "code": "fr",
+      "name": "French",
+      "native": "Français",
+      "dir": "ltr",
+      "flag": "🇫🇷"
+    }
+  },
+  "strings": {
+    "common": {
+      "app_name": {
+        "en": "SelfAI",
+        "ar": "SelfAI",
+        "fr": "SelfAI"
+      },
+      "ecosystem": {
+        "en": "2030B Ecosystem",
+        "ar": "منظومة 2030B",
+        "fr": "Écosystème 2030B"
+      },
+      "tagline": {
+        "en": "Eleven specialized personas, one lifetime companion.",
+        "ar": "إحدى عشرة شخصية متخصصة، رفيق العمر.",
+        "fr": "Onze personnalités spécialisées, un compagnon pour la vie."
+      },
+      "send": {
+        "en": "Send",
+        "ar": "إرسال",
+        "fr": "Envoyer"
+      },
+      "cancel": {
+        "en": "Cancel",
+        "ar": "إلغاء",
+        "fr": "Annuler"
+      },
+      "save": {
+        "en": "Save",
+        "ar": "حفظ",
+        "fr": "Enregistrer"
+      },
+      "loading": {
+        "en": "Loading…",
+        "ar": "جارٍ التحميل…",
+        "fr": "Chargement…"
+      },
+      "error": {
+        "en": "Error",
+        "ar": "خطأ",
+        "fr": "Erreur"
+      },
+      "refresh": {
+        "en": "Refresh",
+        "ar": "تحديث",
+        "fr": "Actualiser"
+      },
+      "close": {
+        "en": "Close",
+        "ar": "إغلاق",
+        "fr": "Fermer"
+      },
+      "open": {
+        "en": "Open",
+        "ar": "فتح",
+        "fr": "Ouvrir"
+      },
+      "language": {
+        "en": "Language",
+        "ar": "اللغة",
+        "fr": "Langue"
+      }
+    },
+    "nav": {
+      "home": {
+        "en": "Home",
+        "ar": "الرئيسية",
+        "fr": "Accueil"
+      },
+      "dashboard": {
+        "en": "Dashboard",
+        "ar": "لوحة التحكم",
+        "fr": "Tableau de bord"
+      },
+      "docs": {
+        "en": "Install Docs",
+        "ar": "وثائق التثبيت",
+        "fr": "Documentation"
+      },
+      "w5d": {
+        "en": "W5D",
+        "ar": "W5D",
+        "fr": "W5D"
+      },
+      "sign_in": {
+        "en": "Sign in",
+        "ar": "تسجيل الدخول",
+        "fr": "Connexion"
+      },
+      "sign_out": {
+        "en": "Sign out",
+        "ar": "تسجيل الخروج",
+        "fr": "Déconnexion"
+      },
+      "get_started": {
+        "en": "Get started",
+        "ar": "ابدأ الآن",
+        "fr": "Commencer"
+      },
+      "greeting": {
+        "en": "Hi,",
+        "ar": "مرحبًا،",
+        "fr": "Bonjour,"
+      }
+    },
+    "auth": {
+      "create_title": {
+        "en": "Create your SelfAI",
+        "ar": "أنشئ نسخة SelfAI الخاصة بك",
+        "fr": "Créez votre SelfAI"
+      },
+      "welcome_back": {
+        "en": "Welcome back",
+        "ar": "أهلًا بعودتك",
+        "fr": "Bon retour"
+      },
+      "create_sub": {
+        "en": "A lifetime companion across 10 dimensions + 1 integrator.",
+        "ar": "رفيق العمر عبر ١٠ أبعاد + بُعد مُوحِّد.",
+        "fr": "Un compagnon de vie à travers 10 dimensions + 1 intégrateur."
+      },
+      "welcome_sub": {
+        "en": "Sign in to continue your evolution.",
+        "ar": "سجّل الدخول لمتابعة تطوّرك.",
+        "fr": "Connectez-vous pour poursuivre votre évolution."
+      },
+      "display_name": {
+        "en": "Display name",
+        "ar": "الاسم المعروض",
+        "fr": "Nom affiché"
+      },
+      "display_name_ph": {
+        "en": "Your name",
+        "ar": "اسمك",
+        "fr": "Votre nom"
+      },
+      "email": {
+        "en": "Email",
+        "ar": "البريد الإلكتروني",
+        "fr": "E-mail"
+      },
+      "email_ph": {
+        "en": "you@example.com",
+        "ar": "you@example.com",
+        "fr": "vous@exemple.com"
+      },
+      "password": {
+        "en": "Password",
+        "ar": "كلمة المرور",
+        "fr": "Mot de passe"
+      },
+      "password_ph": {
+        "en": "At least 6 characters",
+        "ar": "٦ أحرف على الأقل",
+        "fr": "Au moins 6 caractères"
+      },
+      "create_btn": {
+        "en": "Create account",
+        "ar": "إنشاء حساب",
+        "fr": "Créer un compte"
+      },
+      "sign_in_btn": {
+        "en": "Sign in",
+        "ar": "تسجيل الدخول",
+        "fr": "Se connecter"
+      },
+      "already_have": {
+        "en": "Already have an account?",
+        "ar": "لديك حساب بالفعل؟",
+        "fr": "Vous avez déjà un compte ?"
+      },
+      "new_here": {
+        "en": "New here?",
+        "ar": "هل أنت جديد هنا؟",
+        "fr": "Nouveau ici ?"
+      },
+      "go_signin": {
+        "en": "Sign in",
+        "ar": "تسجيل الدخول",
+        "fr": "Se connecter"
+      },
+      "go_signup": {
+        "en": "Create one",
+        "ar": "أنشئ حسابًا",
+        "fr": "Créer un compte"
+      },
+      "creating": {
+        "en": "Creating your SelfAI…",
+        "ar": "جارٍ إنشاء SelfAI…",
+        "fr": "Création de votre SelfAI…"
+      },
+      "signing_in": {
+        "en": "Signing in…",
+        "ar": "جارٍ تسجيل الدخول…",
+        "fr": "Connexion…"
+      },
+      "redirecting": {
+        "en": "Welcome — redirecting…",
+        "ar": "أهلًا — جارٍ التحويل…",
+        "fr": "Bienvenue — redirection…"
+      }
+    },
+    "dashboard": {
+      "hello_prefix": {
+        "en": "Hello,",
+        "ar": "مرحبًا،",
+        "fr": "Bonjour,"
+      },
+      "welcome_to": {
+        "en": "welcome to your SelfAI",
+        "ar": "أهلًا بك في SelfAI",
+        "fr": "bienvenue dans votre SelfAI"
+      },
+      "sub": {
+        "en": "Eleven specialized personas, one lifetime companion — powered by 2030B currencies.",
+        "ar": "إحدى عشرة شخصية متخصصة، رفيق العمر — مدعوم بعملات 2030B.",
+        "fr": "Onze personnalités spécialisées, un compagnon de vie — propulsé par les monnaies 2030B."
+      },
+      "sax_score": {
+        "en": "SelfAI-X score",
+        "ar": "نقاط SelfAI-X",
+        "fr": "Score SelfAI-X"
+      },
+      "sax_sub": {
+        "en": "tokenizable composite of 10 dimensions",
+        "ar": "مؤشر مُركَّب قابل للترميز عبر ١٠ أبعاد",
+        "fr": "indice composite tokenisable sur 10 dimensions"
+      },
+      "your_clones": {
+        "en": "Your 11 clones",
+        "ar": "نسخك الإحدى عشرة",
+        "fr": "Vos 11 clones"
+      },
+      "click_persona": {
+        "en": "Click any persona to start a conversation.",
+        "ar": "اضغط على أي شخصية لبدء المحادثة.",
+        "fr": "Cliquez sur une personnalité pour démarrer une conversation."
+      },
+      "stats": {
+        "en": "Stats",
+        "ar": "الإحصاءات",
+        "fr": "Statistiques"
+      },
+      "recent_activity": {
+        "en": "Recent activity",
+        "ar": "النشاط الأخير",
+        "fr": "Activité récente"
+      },
+      "total_messages": {
+        "en": "Total messages",
+        "ar": "إجمالي الرسائل",
+        "fr": "Messages au total"
+      },
+      "distinct_personas": {
+        "en": "Distinct personas used",
+        "ar": "الشخصيات المستخدمة",
+        "fr": "Personnalités distinctes"
+      },
+      "attributes_saved": {
+        "en": "Profile attributes saved",
+        "ar": "السمات المحفوظة",
+        "fr": "Attributs enregistrés"
+      },
+      "resumes_uploaded": {
+        "en": "Resumes uploaded",
+        "ar": "السير الذاتية المرفوعة",
+        "fr": "CV importés"
+      },
+      "feedback_avg": {
+        "en": "Feedback signal (avg)",
+        "ar": "متوسط التقييم",
+        "fr": "Note moyenne"
+      },
+      "top_persona": {
+        "en": "Top persona",
+        "ar": "أبرز شخصية",
+        "fr": "Personnalité phare"
+      },
+      "no_conv_yet": {
+        "en": "No conversations yet — pick a persona to begin.",
+        "ar": "لا توجد محادثات بعد — اختر شخصية للبدء.",
+        "fr": "Pas encore de conversation — choisissez une personnalité."
+      }
+    },
+    "chat": {
+      "personas": {
+        "en": "Personas",
+        "ar": "الشخصيات",
+        "fr": "Personnalités"
+      },
+      "history": {
+        "en": "History",
+        "ar": "السجل",
+        "fr": "Historique"
+      },
+      "long_term_memory": {
+        "en": "Long-term memory",
+        "ar": "الذاكرة طويلة الأمد",
+        "fr": "Mémoire à long terme"
+      },
+      "no_memory_yet": {
+        "en": "No long-term memory yet — keep chatting; a rolling summary builds automatically after ~16 turns.",
+        "ar": "لا توجد ذاكرة طويلة الأمد بعد — تابع الحوار؛ سيُبنى ملخّص تلقائي بعد نحو ١٦ دورًا.",
+        "fr": "Pas encore de mémoire — continuez à discuter ; un résumé se construit après ~16 échanges."
+      },
+      "loading_history": {
+        "en": "Loading history…",
+        "ar": "جارٍ تحميل السجل…",
+        "fr": "Chargement de l’historique…"
+      },
+      "say_hello": {
+        "en": "Say hello — your persona is ready.",
+        "ar": "ألقِ التحية — شخصيتك جاهزة.",
+        "fr": "Dites bonjour — votre personnalité est prête."
+      },
+      "no_conv_persona": {
+        "en": "No conversations yet with this persona.",
+        "ar": "لا توجد محادثات بعد مع هذه الشخصية.",
+        "fr": "Aucune conversation avec cette personnalité."
+      },
+      "talk_to": {
+        "en": "Talk to",
+        "ar": "تحدّث إلى",
+        "fr": "Parler à"
+      },
+      "thinking": {
+        "en": "…thinking…",
+        "ar": "…يفكّر…",
+        "fr": "…réflexion…"
+      },
+      "talking_to": {
+        "en": "Talking to your persona…",
+        "ar": "جارٍ التحدّث إلى الشخصية…",
+        "fr": "Conversation avec la personnalité…"
+      },
+      "via": {
+        "en": "via",
+        "ar": "عبر",
+        "fr": "via"
+      },
+      "earned": {
+        "en": "earned",
+        "ar": "اكتسبت",
+        "fr": "gagné"
+      },
+      "memory_active": {
+        "en": "memory active",
+        "ar": "الذاكرة نشطة",
+        "fr": "mémoire active"
+      },
+      "offline_warning": {
+        "en": "Offline preview — no live AI provider answered.",
+        "ar": "وضع المعاينة — لم يستجب أي مزوّد ذكاء اصطناعي.",
+        "fr": "Mode hors-ligne — aucun fournisseur d’IA n’a répondu."
+      },
+      "helpful": {
+        "en": "helpful",
+        "ar": "مفيد",
+        "fr": "utile"
+      },
+      "not_helpful": {
+        "en": "not helpful",
+        "ar": "غير مفيد",
+        "fr": "pas utile"
+      },
+      "just_now": {
+        "en": "just now",
+        "ar": "الآن",
+        "fr": "à l’instant"
+      },
+      "you": {
+        "en": "you",
+        "ar": "أنت",
+        "fr": "vous"
+      },
+      "assistant": {
+        "en": "assistant",
+        "ar": "مساعد",
+        "fr": "assistant"
+      },
+      "back_to_dashboard": {
+        "en": "Back to dashboard",
+        "ar": "العودة إلى لوحة التحكم",
+        "fr": "Retour au tableau de bord"
+      },
+      "refresh_history": {
+        "en": "Refresh history",
+        "ar": "تحديث السجل",
+        "fr": "Actualiser l’historique"
+      },
+      "open_personas": {
+        "en": "Open personas menu",
+        "ar": "افتح قائمة الشخصيات",
+        "fr": "Ouvrir le menu des personnalités"
+      },
+      "open_history": {
+        "en": "Open conversation history",
+        "ar": "افتح سجل المحادثات",
+        "fr": "Ouvrir l’historique"
+      },
+      "input_label": {
+        "en": "Your message",
+        "ar": "رسالتك",
+        "fr": "Votre message"
+      },
+      "ai_reply_label": {
+        "en": "Assistant reply",
+        "ar": "ردّ المساعد",
+        "fr": "Réponse de l’assistant"
+      },
+      "user_message_label": {
+        "en": "Your message",
+        "ar": "رسالتك",
+        "fr": "Votre message"
+      },
+      "copy": {
+        "en": "Copy",
+        "ar": "نسخ",
+        "fr": "Copier"
+      },
+      "copied": {
+        "en": "Copied",
+        "ar": "تم النسخ",
+        "fr": "Copié"
+      },
+      "regenerate": {
+        "en": "Regenerate",
+        "ar": "إعادة التوليد",
+        "fr": "Régénérer"
+      },
+      "thinking_short": {
+        "en": "…",
+        "ar": "…",
+        "fr": "…"
+      },
+      "currency_earned": {
+        "en": "earned",
+        "ar": "مكتسبة",
+        "fr": "gagnée"
+      },
+      "currency_lost": {
+        "en": "lost",
+        "ar": "مفقودة",
+        "fr": "perdue"
+      },
+      "new_chatbox": {
+        "en": "New chatbox",
+        "ar": "محادثة جديدة",
+        "fr": "Nouveau chat"
+      },
+      "chatboxes": {
+        "en": "Chatboxes",
+        "ar": "المحادثات",
+        "fr": "Chats"
+      },
+      "rename": {
+        "en": "Rename",
+        "ar": "إعادة تسمية",
+        "fr": "Renommer"
+      },
+      "delete": {
+        "en": "Delete",
+        "ar": "حذف",
+        "fr": "Supprimer"
+      },
+      "main_chatbox": {
+        "en": "Main chatbox",
+        "ar": "المحادثة الرئيسية",
+        "fr": "Chat principal"
+      },
+      "feedback_sent": {
+        "en": "Thanks for the feedback",
+        "ar": "شكرًا على الملاحظة",
+        "fr": "Merci pour le retour"
+      }
+    },
+    "errors": {
+      "could_not_load": {
+        "en": "Could not load",
+        "ar": "تعذّر التحميل",
+        "fr": "Impossible de charger"
+      },
+      "feedback_error": {
+        "en": "Feedback error",
+        "ar": "خطأ في التقييم",
+        "fr": "Erreur de retour"
+      },
+      "unknown": {
+        "en": "Could not complete",
+        "ar": "تعذّر إتمام العملية",
+        "fr": "Impossible de terminer"
+      },
+      "copy_failed": {
+        "en": "Copy failed",
+        "ar": "فشل النسخ",
+        "fr": "Échec de la copie"
+      },
+      "regen_failed": {
+        "en": "Regenerate failed",
+        "ar": "فشل إعادة التوليد",
+        "fr": "Échec de la régénération"
+      },
+      "chatbox_failed": {
+        "en": "Chatbox action failed",
+        "ar": "فشل إجراء المحادثة",
+        "fr": "Action de chat échouée"
+      }
+    }
+  }
+}
