@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "version": 1,
+    "description": "SelfAI typewriter animation config for assistant replies. Front-end (typewriter.js) reads this via api/animation.php (or inlines from layout). Respects prefers-reduced-motion."
+  },
+  "enabled": true,
+  "respect_prefers_reduced_motion": true,
+  "timing": {
+    "char_delay_ms": 100,
+    "phrase_loader_ms": 600,
+    "paragraph_pause_ms": 1300,
+    "max_total_ms": 45000,
+    "max_chars_animated": 1800
+  },
+  "boundaries": {
+    "phrase_split_regex": "[\\.!?؟…]+\\s+",
+    "paragraph_split_selector": "p, h1, h2, h3, blockquote, pre, ul, ol",
+    "skip_inside": ["pre", "code"]
+  },
+  "loader": {
+    "show_between_phrases": true,
+    "label_key": "chat.thinking_short",
+    "label_fallback": "…",
+    "dots": 3,
+    "dot_interval_ms": 180
+  },
+  "cursor": {
+    "show": true,
+    "char": "▎",
+    "blink_ms": 600
+  },
+  "audio": {
+    "enabled": false,
+    "tick_volume": 0.08
+  },
+  "fast_forward_on_click": true,
+  "fast_forward_event": "click"
+}

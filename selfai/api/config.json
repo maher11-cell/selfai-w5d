@@ -10,21 +10,51 @@
   "default_model": "deepseek-chat",
   "deepseek_v4_model": "deepseek-chat",
   "deepseek_endpoint": "https://api.deepseek.com/v1/chat/completions",
+  "openrouter_endpoint": "https://openrouter.ai/api/v1/chat/completions",
+  "openrouter_models": [
+    "deepseek/deepseek-v4-flash:free",
+    "openai/gpt-oss-20b:free",
+    "z-ai/glm-4.5-air:free",
+    "meta-llama/llama-3.3-70b-instruct:free",
+    "google/gemma-4-26b-a4b-it:free",
+    "qwen/qwen3-next-80b-a3b-instruct:free",
+    "openai/gpt-oss-120b:free"
+  ],
   "temperature": 0.7,
-  "max_context_messages": 10,
+  "max_context_messages": 12,
+  "summary_after_turns": 16,
+  "summary_keep_recent": 8,
   "free_fallbacks": [
     {
-      "id": "openrouter_free",
-      "name": "OpenRouter (free tier)",
+      "id": "openrouter_deepseek_v4",
+      "name": "OpenRouter — DeepSeek V4 Flash (free)",
       "endpoint": "https://openrouter.ai/api/v1/chat/completions",
-      "model": "meta-llama/llama-3.1-8b-instruct:free",
-      "notes": "Set OPENROUTER_API_KEY in selfai/api/.env to enable"
+      "model": "deepseek/deepseek-v4-flash:free",
+      "env": "OPENROUTER_API_KEY",
+      "notes": "Primary free provider — DeepSeek V4 via OpenRouter, 1M ctx"
+    },
+    {
+      "id": "openrouter_gpt_oss",
+      "name": "OpenRouter — GPT-OSS-20B (free)",
+      "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+      "model": "openai/gpt-oss-20b:free",
+      "env": "OPENROUTER_API_KEY",
+      "notes": "Backup free model on OpenRouter"
+    },
+    {
+      "id": "openrouter_glm_air",
+      "name": "OpenRouter — GLM-4.5-Air (free)",
+      "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+      "model": "z-ai/glm-4.5-air:free",
+      "env": "OPENROUTER_API_KEY",
+      "notes": "Second backup free model on OpenRouter"
     },
     {
       "id": "groq_free",
       "name": "Groq (free tier, llama-3.3-70b)",
       "endpoint": "https://api.groq.com/openai/v1/chat/completions",
       "model": "llama-3.3-70b-versatile",
+      "env": "GROQ_API_KEY",
       "notes": "Set GROQ_API_KEY in selfai/api/.env"
     },
     {
@@ -32,6 +62,7 @@
       "name": "Google Gemini (free tier)",
       "endpoint": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
       "model": "gemini-2.0-flash-exp",
+      "env": "GEMINI_API_KEY",
       "notes": "Set GEMINI_API_KEY in selfai/api/.env"
     },
     {
@@ -39,15 +70,16 @@
       "name": "Hugging Face Router (free)",
       "endpoint": "https://router.huggingface.co/v1/chat/completions",
       "model": "meta-llama/Llama-3.2-3B-Instruct",
+      "env": "HF_TOKEN",
       "notes": "Set HF_TOKEN in selfai/api/.env"
     }
   ],
   "scoring_weights": {
-    "interactions": 0.30,
-    "data_richness": 0.20,
-    "resume_uploads": 0.10,
-    "clone_mastery": 0.20,
-    "feedback": 0.20
+    "interactions": 0.3,
+    "data_richness": 0.2,
+    "resume_uploads": 0.1,
+    "clone_mastery": 0.2,
+    "feedback": 0.2
   },
   "clones": [
     {
